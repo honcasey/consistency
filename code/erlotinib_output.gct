@@ -1,0 +1,77 @@
+#1.3
+50	1	7	24
+id	type	name	description	target	belongs_to	group_by	score	BRD-K70401845-summary
+cell_id	na	na	na	na	na	na	na	Summary
+_id	na	na	na	na	na	na	na	BRD-K70401845
+name	na	na	na	na	na	na	na	erlotinib
+pert_type	na	na	na	na	na	na	na	trt_cp
+moiety	na	na	na	na	na	na	na	erlotinib
+moa	na	na	na	na	na	na	na	EGFR inhibitor
+gene_targets	na	na	na	na	na	na	na	EGFR
+gene_ids	na	na	na	na	na	na	na	1956.00
+inchikey	na	na	na	na	na	na	na	AAKJLRGGTJKAMG-UHFFFAOYSA-N
+smiles	na	na	na	na	na	na	na	COCCOc1cc2ncnc(Nc3cccc(c3)C#C)c2cc1OCCOC
+pubchem_cid	na	na	na	na	na	na	na	-666.00
+cell_ids	na	na	na	na	na	na	na	A375|A549|HA1E|HCC515|HEPG2|HT29|MCF7|PC3|VCAP
+pert_itimes	na	na	na	na	na	na	na	6 h
+pert_idoses	na	na	na	na	na	na	na	10 µM
+num_cell	na	na	na	na	na	na	na	9.00
+num_time	na	na	na	na	na	na	na	1.00
+num_dose	na	na	na	na	na	na	na	1.00
+tas_q75	na	na	na	na	na	na	na	0.24
+icc	na	na	na	na	na	na	na	0.53
+url	na	na	na	na	na	na	na	BRD-K70401845
+type	na	na	na	na	na	na	na	CP
+description	na	na	na	na	na	na	na	EGFR inhibitor|epidermal growth factor receptor (EGFR) inhibitor|tyrosine kinase inhibitor
+target	na	na	na	na	na	na	na	EGFR|NR1I2
+is_index	na	na	na	na	na	na	na	
+BRD-K70401845	CP	erlotinib	EGFR inhibitor, epidermal growth factor receptor (EGFR) inhibitor, tyrosine kinase inhibitor	EGFR, NR1I2	EGFR inhibitor	1.00	99.99	99.99
+BRD-A48570745	CP	ivermectin	GABA receptor agonist, acetylcholine receptor allosteric modulator, GABA release stimulant, purinergic receptor allosteric modulator	CHRNA7, GABRB3, GLRA3, P2RX7		1.00	99.89	99.89
+BRD-A50737080	CP	CGK-733	ATM kinase inhibitor, ATR kinase inhibitor	ATM, ATR		1.00	99.89	99.89
+BRD-K15592317	CP	CP466722	ATM kinase inhibitor	ATM		1.00	99.89	99.89
+BRD-K60460488	CP	nelfinavir	HIV protease inhibitor, proteasome inhibitor	CYP2C19, CYP3A5, CYP3A7	HIV protease inhibitor	1.00	99.89	99.89
+BRD-K64052750	CP	gefitinib	EGFR inhibitor	EGFR, CYP2C19	EGFR inhibitor	1.00	99.89	99.89
+BRD-K74133369	CP	oligomycin-a	ATP synthase inhibitor, ATPase inhibitor	ATP5A1	ATP synthase inhibitor, ATPase inhibitor	1.00	99.89	99.89
+BRD-K77286328	CP	reversine	Aurora kinase inhibitor, adenosine receptor antagonist	AURKB, ADORA3, AURKA, INCENP, MAP2K1	Aurora kinase inhibitor	1.00	99.89	99.89
+BRD-A58564983	CP	selamectin	nematocide			1.00	99.86	99.86
+BRD-K38477985	CP	malonoben	protein tyrosine kinase inhibitor, tyrosine kinase inhibitor	EGFR		1.00	99.86	99.86
+CGS001-8891	KD	EIF2B3	eukaryotic translation initiation factor 2B, subunit 3 gamma, 58kDa		EIF Proteins LOF	2.00	99.82	99.82
+CGS001-54556	KD	ING3	Zinc fingers, PHD-type, inhibitor of growth family, member 3			2.00	99.75	99.75
+KD_AMINOACYL_TRNA_SYNTHETASES_CLASS_II	PCL	Aminoacyl tRNA synthetases class II LOF				0.00	99.67	99.67
+CGS001-5947	KD	RBP1	Fatty acid binding protein family, retinol binding protein 1, cellular			2.00	99.58	99.58
+CP_PKC_INHIBITOR	PCL	PKC inhibitor				0.00	99.45	99.45
+CP_GLYCOGEN_SYNTHASE_KINASE_INHIBITOR	PCL	Glycogen synthase kinase inhibitor				0.00	99.39	99.39
+CGS001-3673	KD	ITGA2	Integrins, integrin, alpha 2 (CD49B, alpha 2 subunit of VLA-2 receptor)		Integrin subunits alpha LOF	2.00	99.37	99.37
+CGS001-3845	KD	KRAS	RAS subfamily, v-Ki-ras2 Kirsten rat sarcoma viral oncogene homolog			2.00	99.37	99.37
+CGS001-488	KD	ATP2A2	Calcium-ATPases, ATPase, Ca++ transporting, cardiac muscle, slow twitch 2			2.00	99.37	99.37
+CP_RAF_INHIBITOR	PCL	RAF inhibitor				0.00	99.32	99.32
+CGS001-7415	KD	VCP	ATPases / AAA-type, valosin containing protein			2.00	99.30	99.30
+CGS001-10000	KD	AKT3	Akt (Protein kinase B), v-akt murine thymoma viral oncogene homolog 3 (protein kinase B, gamma)		Akt Signaling LOF	2.00	99.26	99.26
+ccsbBroad304_04240	OE	CLPB	Ankyrin repeat domain containing, ClpB caseinolytic peptidase B homolog (E. coli)			2.00	99.26	99.26
+CGS001-10939	KD	AFG3L2	ATPases / AAA-type, AFG3 ATPase family gene 3-like 2 (S. cerevisiae)			2.00	99.22	99.22
+CP_VITAMIN_D_RECEPTOR_AGONIST	PCL	Vitamin D receptor agonist				0.00	99.19	99.19
+CP_CYCLOOXYGENASE_INHIBITOR	PCL	Cyclooxygenase inhibitor				0.00	6.45	6.45
+KD_APOLIPOPROTEINS	PCL	Apolipoproteins LOF				0.00	4.39	4.39
+KD_MEDIATOR_COMPLEX	PCL	Mediator complex LOF				0.00	4.27	4.27
+CP_MDM_INHIBITOR	PCL	MDM inhibitor				0.00	3.19	3.19
+KD_SERPIN_PEPTIDASE_INHIBITORS	PCL	Serpin peptidase inhibitors LOF				0.00	-4.85	-4.85
+BRD-K35687265	CP	ON-01910	PLK inhibitor, cell cycle inhibitor, MCL1 inhibitor, protein kinase inhibitor	CDK1, FLT1, FYN, MCL1, PDGFRA, PLK1, PLK2, SRC		1.00	-48.32	-48.32
+BRD-K80527266	CP	triacsin-c	adrenergic receptor antagonist	ACSL1		1.00	-48.92	-48.92
+BRD-K88560311	CP	rucaparib	PARP inhibitor	PARP1, PARP2	PARP inhibitor	1.00	-50.41	-50.41
+BRD-K19416115	CP	sitagliptin	dipeptidyl peptidase inhibitor, HMGCR inhibitor, insulin secretagogue, tumor necrosis factor expression inhibitor	DPP4, CYP2C8, FASLG, HMGCR, SLC22A8		1.00	-64.38	-64.38
+BRD-K74765201	CP	tomelukast	leukotriene receptor antagonist	CYSLTR1		1.00	-67.25	-67.25
+BRD-K28120222	CP	parthenolide	NFkB pathway inhibitor, adiponectin receptor agonist	ADIPOR2, IKBKB, RELA		1.00	-67.63	-67.63
+BRD-M07438658	CP	lapatinib	EGFR inhibitor, EGFR antagonist, epidermal growth factor receptor (EGFR) inhibitor, receptor tyrosine protein kinase inhibitor, tyrosine kinase inhibitor	EGFR, ERBB2, CYP3A5		1.00	-71.16	-71.16
+BRD-K55991774	CP	BAS-09104376	HIV integrase inhibitor			1.00	-87.08	-87.08
+CGS001-9189	KD	ZBED1	Pseudoautosomal regions / PAR1, zinc finger, BED-type containing 1			2.00	-90.51	-90.51
+BRD-K15402119	CP	huperzine-a	acetylcholinesterase inhibitor, glutamate receptor antagonist	ACHE		1.00	-92.28	-92.28
+CGS001-1978	KD	EIF4EBP1	eukaryotic translation initiation factor 4E binding protein 1			2.00	-92.40	-92.40
+BRD-K59633790	CP	VU-0420363-1	SARS coronavirus 3C-like protease inhibitor			1.00	-92.54	-92.54
+CGS001-2132	KD	EXT2	Exostosin glycosyltransferase family, exostosin 2			2.00	-92.69	-92.69
+CGS001-51530	KD	ZC3HC1	Zinc fingers, C3HC-type, zinc finger, C3HC-type containing 1			2.00	-93.76	-93.76
+CGS001-7760	KD	ZNF213	Zinc fingers, C2H2-type, zinc finger protein 213			2.00	-94.18	-94.18
+CGS001-134864	KD	TAAR1	GPCR / Class A : Trace amine associated receptors, trace amine associated receptor 1			2.00	-94.66	-94.66
+CGS001-639	KD	PRDM1	Zinc fingers, C2H2-type, PR domain containing 1, with ZNF domain			2.00	-94.82	-94.82
+CGS001-23401	KD	FRAT2	frequently rearranged in advanced T-cell lymphomas 2			2.00	-95.89	-95.89
+CGS001-1387	KD	CREBBP	Chromatin-modifying enzymes / K-acetyltransferases, CREB binding protein			2.00	-96.02	-96.02
+CGS001-339403	KD	RXFP4	GPCR / Class A : Relaxin family peptide receptors, relaxin/insulin-like family peptide receptor 4			2.00	-96.12	-96.12

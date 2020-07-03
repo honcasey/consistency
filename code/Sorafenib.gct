@@ -1,0 +1,77 @@
+#1.3
+50	1	7	24
+id	type	name	description	target	belongs_to	group_by	score	BRD-K49810818-summary
+cell_id	na	na	na	na	na	na	na	Summary
+_id	na	na	na	na	na	na	na	BRD-K49810818
+name	na	na	na	na	na	na	na	sorafenib
+pert_type	na	na	na	na	na	na	na	trt_cp
+moiety	na	na	na	na	na	na	na	sorafenib
+moa	na	na	na	na	na	na	na	RAF inhibitor|FLT3 inhibitor|KIT inhibitor|PDGFR tyrosine kinase receptor inhibitor|RET tyrosine kinase inhibitor|VEGFR inhibitor
+gene_targets	na	na	na	na	na	na	na	RET|BRAF|FLT3|KDR|RAF1|FLT1|FLT4|KIT|DDR2|FGFR1|PDGFRB
+gene_ids	na	na	na	na	na	na	na	5979|673|2322|3791|5894|2321|2324|3815|4921|2260|5159
+inchikey	na	na	na	na	na	na	na	MLDQJTXFUGDVEO-UHFFFAOYSA-N
+smiles	na	na	na	na	na	na	na	CNC(=O)c1cc(Oc2ccc(NC(=O)Nc3ccc(Cl)c(c3)C(F)(F)F)cc2)ccn1
+pubchem_cid	na	na	na	na	na	na	na	-666.00
+cell_ids	na	na	na	na	na	na	na	A375|A549|HA1E|HCC515|HEPG2|HT29|MCF7|PC3|VCAP
+pert_itimes	na	na	na	na	na	na	na	6 h
+pert_idoses	na	na	na	na	na	na	na	10 µM
+num_cell	na	na	na	na	na	na	na	9.00
+num_time	na	na	na	na	na	na	na	1.00
+num_dose	na	na	na	na	na	na	na	1.00
+tas_q75	na	na	na	na	na	na	na	0.32
+icc	na	na	na	na	na	na	na	0.65
+url	na	na	na	na	na	na	na	BRD-K49810818
+type	na	na	na	na	na	na	na	CP
+description	na	na	na	na	na	na	na	RAF inhibitor|FLT3 inhibitor|KIT inhibitor|PDGFR tyrosine kinase receptor inhibitor|RET tyrosine kinase inhibitor|VEGFR inhibitor|angiogenesis inhibitor|VEGFR antagonist
+target	na	na	na	na	na	na	na	RET|BRAF|FLT3|KDR|RAF1|FLT1|FLT4|KIT|DDR2|FGFR1|PDGFRB|CYP2B6|CYP2C8|CYP3A5|PDGFB|SLCO1B3
+is_index	na	na	na	na	na	na	na	
+BRD-K49810818	CP	sorafenib	RAF inhibitor, FLT3 inhibitor, KIT inhibitor, PDGFR tyrosine kinase receptor inhibitor, RET tyrosine kinase inhibitor, VEGFR inhibitor, angiogenesis inhibitor, VEGFR antagonist	RET, BRAF, FLT3, KDR, RAF1, FLT1, FLT4, KIT, DDR2, FGFR1, PDGFRB, CYP2B6, CYP2C8, CYP3A5, PDGFB, SLCO1B3	FLT3 inhibitor, PDGFR/KIT inhibitor, RAF inhibitor, VEGFR inhibitor	1.00	100.00	100.00
+BRD-K39120595	CP	bithionol	autotaxin inhibitor	ESR1, ESR2, MCL1		1.00	99.93	99.93
+BRD-K59469039	CP	AG-879	angiogenesis inhibitor, EGFR inhibitor, tyrosine kinase inhibitor, VEGFR inhibitor	ERBB2, KDR, NTRK1	EGFR inhibitor, VEGFR inhibitor	1.00	99.92	99.92
+CP_PKC_INHIBITOR	PCL	PKC inhibitor				0.00	99.90	99.90
+CP_PDGFR_KIT_INHIBITOR	PCL	PDGFR/KIT inhibitor				0.00	99.89	99.89
+CP_VEGFR_INHIBITOR	PCL	VEGFR inhibitor				0.00	99.89	99.89
+BRD-K38477985	CP	malonoben	protein tyrosine kinase inhibitor, tyrosine kinase inhibitor	EGFR		1.00	99.89	99.89
+CP_FGFR_INHIBITOR	PCL	FGFR inhibitor				0.00	99.86	99.86
+BRD-K88677950	CP	PD-198306	MAP kinase inhibitor, MEK inhibitor	MAP2K1, MAP2K2, MAPK1, MAPK3	MEK inhibitor	1.00	99.86	99.86
+BRD-K03816923	CP	rottlerin	large conductance potassium channel activator, MAP kinase inhibitor, PKC inhibitor, protein kinase inhibitor, tissue transglutaminase inhibitor	KCNH2, PRKCD, TGM2		1.00	99.79	99.79
+CP_GLYCOGEN_SYNTHASE_KINASE_INHIBITOR	PCL	Glycogen synthase kinase inhibitor				0.00	99.77	99.77
+BRD-A50737080	CP	CGK-733	ATM kinase inhibitor, ATR kinase inhibitor	ATM, ATR		1.00	99.72	99.72
+BRD-K15616905	CP	CCCP	mitochondrial oxidative phosphorylation uncoupler			1.00	99.72	99.72
+BRD-A08003242	CP	rhodomyrtoxin-b	cytotoxic, DNA intercalator			1.00	99.71	99.71
+BRD-K68336408	CP	tyrphostin-AG-1478	EGFR inhibitor	EGFR, MAPK14	EGFR inhibitor	1.00	99.68	99.68
+ccsbBroad304_00833	OE	IFNG	Interferons, interferon, gamma			2.00	98.91	98.91
+CGS001-5859	KD	QARS	Aminoacyl tRNA synthetases / Class I, glutaminyl-tRNA synthetase			2.00	98.24	98.24
+CGS001-8894	KD	EIF2S2	Serine/threonine phosphatases / Protein phosphatase 1, regulatory subunits, eukaryotic translation initiation factor 2, subunit 2 beta, 38kDa		EIF Proteins LOF	2.00	98.17	98.17
+ccsbBroad304_01186	OE	PHB	prohibitin			2.00	97.85	97.85
+ccsbBroad304_02370	OE	HRSP12	heat-responsive protein 12			2.00	97.08	97.08
+CGS001-1314	KD	COPA	Endogenous ligands, coatomer protein complex, subunit alpha		Vesicular Transport LOF	2.00	96.76	96.76
+CGS001-3309	KD	HSPA5	Heat shock proteins / HSP70, heat shock 70kDa protein 5 (glucose-regulated protein, 78kDa)		Heat shock 70kDa proteins LOF	2.00	96.44	96.44
+ccsbBroad304_00602	OE	SLC37A4	SLC37 family of phosphosugar/phosphate exchangers, solute carrier family 37 (glucose-6-phosphate transporter), member 4			2.00	96.44	96.44
+ccsbBroad304_03177	OE	FIS1	fission 1 (mitochondrial outer membrane) homolog (S. cerevisiae)			2.00	96.44	96.44
+CGS001-5226	KD	PGD	phosphogluconate dehydrogenase			2.00	96.41	96.41
+CP_AROMATASE_INHIBITOR	PCL	Aromatase inhibitor				0.00	4.58	4.58
+CP_DNA_POLYMERASE_INHIBITOR	PCL	DNA polymerase inhibitor				0.00	4.43	4.43
+CP_CALMODULIN_ANTAGONIST	PCL	Calmodulin antagonist				0.00	3.91	3.91
+OE_SUPRESSORS_OF_CYTOKINE_SIGNALING	PCL	Supressors of cytokine signaling GOF				0.00	2.84	2.84
+CP_FXR_ANTAGONIST	PCL	FXR antagonist				0.00	-2.51	-2.51
+BRD-A44551378	CP	LFM-A12	EGFR inhibitor, epidermal growth factor receptor (EGFR) inhibitor	EGFR		1.00	-39.70	-39.70
+BRD-A36267905	CP	buphenine	adrenergic receptor agonist	ADRB2	Beta-adrenergic receptor agonist	1.00	-40.28	-40.28
+BRD-K43245338	CP	MDL-28170	calpain inhibitor, cathepsin inhibitor	CAPN1, CTSB, CTSL		1.00	-40.36	-40.36
+BRD-K17349619	CP	HLI-373	MDM inhibitor	MDM2	MDM inhibitor	1.00	-46.04	-46.04
+BRD-K96527333	CP	dehydroisoandosterone	GABA receptor modulator			1.00	-46.54	-46.54
+BRD-A35338386	CP	NECA	adenosine receptor agonist	ADORA1, ADORA2A, ADORA2B, ADORA3, HSP90B1	Adenosine receptor agonist	1.00	-47.70	-47.70
+BRD-A58955223	CP	sulforaphane	anticancer agent, aryl hydrocarbon receptor antagonist, nuclear factor erythroid derived, like (NRF2) activator	NFE2L2		1.00	-58.55	-58.55
+BRD-K01638814	CP	rilmenidine	adrenergic receptor agonist, imidazoline receptor agonist	NISCH	Imidazoline ligand	1.00	-60.53	-60.53
+CGS001-388585	KD	HES5	Basic helix-loop-helix proteins, hairy and enhancer of split 5 (Drosophila)			2.00	-69.93	-69.93
+CGS001-3569	KD	IL6	Interferons, interleukin 6 (interferon, beta 2)			2.00	-70.44	-70.44
+BRD-K91696562	CP	orantinib	PDGFR tyrosine kinase receptor inhibitor, FGFR inhibitor, VEGFR inhibitor, angiogenesis inhibitor, apoptosis stimulant, Aurora kinase inhibitor, FGFR antagonist, fibroblast growth factor receptor (FGFR) antagonist, fibroblast growth factor receptor inhibitor, kinase insert domain receptor inhibitor, platelet-derived growth factor receptor (PDGFR) inhibitor, serine/threonine kinase inhibitor, vascular endothelial growth factor receptor 2 (VEGFR2) inhibitor, VEGFR antagonist	PDGFRB, AURKA, AURKB, KDR, EGFR, FGFR1, FGFR2, PDGFRA, TBK1	FGFR inhibitor	1.00	-70.89	-70.89
+CGS001-1659	KD	DHX8	DEAH-boxes, DEAH (Asp-Glu-Ala-His) box polypeptide 8			2.00	-74.07	-74.07
+CGS001-222	KD	ALDH3B2	Aldehyde dehydrogenases, aldehyde dehydrogenase 3 family, member B2			2.00	-74.41	-74.41
+BRD-K00184207	CP	GR-206	aryl hydrocarbon receptor ligand			1.00	-74.54	-74.54
+CGS001-255877	KD	BCL6B	BTB/POZ domain containing, B-cell CLL/lymphoma 6, member B			2.00	-75.44	-75.44
+CGS001-1051	KD	CEBPB	basic leucine zipper proteins, CCAAT/enhancer binding protein (C/EBP), beta			2.00	-81.68	-81.68
+CGS001-5925	KD	RB1	Endogenous ligands, retinoblastoma 1			2.00	-82.63	-82.63
+CGS001-55054	KD	ATG16L1	WD repeat domain containing, ATG16 autophagy related 16-like 1 (S. cerevisiae)			2.00	-82.91	-82.91
+CGS001-23196	KD	FAM120A	family with sequence similarity 120A			2.00	-83.77	-83.77
+CGS001-56834	KD	GPR137	GPCR / Unclassified : 7TM orphan receptors, G protein-coupled receptor 137			2.00	-92.67	-92.67

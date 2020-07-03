@@ -1,0 +1,77 @@
+#1.3
+50	1	7	24
+id	type	name	description	target	belongs_to	group_by	score	BRD-M07438658-summary
+cell_id	na	na	na	na	na	na	na	Summary
+_id	na	na	na	na	na	na	na	BRD-M07438658
+name	na	na	na	na	na	na	na	lapatinib
+pert_type	na	na	na	na	na	na	na	trt_cp
+moiety	na	na	na	na	na	na	na	lapatinib
+moa	na	na	na	na	na	na	na	EGFR inhibitor|ErbB2 inhibitor
+gene_targets	na	na	na	na	na	na	na	EGFR|ERBB2
+gene_ids	na	na	na	na	na	na	na	1956|2064
+inchikey	na	na	na	na	na	na	na	-666.00
+smiles	na	na	na	na	na	na	na	-666.00
+pubchem_cid	na	na	na	na	na	na	na	-666.00
+cell_ids	na	na	na	na	na	na	na	A375|A549|HA1E|HCC515|HT29|MCF7|PC3|VCAP
+pert_itimes	na	na	na	na	na	na	na	6 h
+pert_idoses	na	na	na	na	na	na	na	10 µM
+num_cell	na	na	na	na	na	na	na	8.00
+num_time	na	na	na	na	na	na	na	1.00
+num_dose	na	na	na	na	na	na	na	1.00
+tas_q75	na	na	na	na	na	na	na	0.24
+icc	na	na	na	na	na	na	na	0.49
+url	na	na	na	na	na	na	na	BRD-M07438658
+type	na	na	na	na	na	na	na	CP
+description	na	na	na	na	na	na	na	EGFR inhibitor|EGFR antagonist|epidermal growth factor receptor (EGFR) inhibitor|receptor tyrosine protein kinase inhibitor|tyrosine kinase inhibitor
+target	na	na	na	na	na	na	na	EGFR|ERBB2|CYP3A5
+is_index	na	na	na	na	na	na	na	
+BRD-M07438658	CP	lapatinib	EGFR inhibitor, EGFR antagonist, epidermal growth factor receptor (EGFR) inhibitor, receptor tyrosine protein kinase inhibitor, tyrosine kinase inhibitor	EGFR, ERBB2, CYP3A5		1.00	99.99	99.99
+BRD-K40645748	CP	mefloquine	acidifying agent non gastric, adenosine receptor antagonist, calmodulin antagonist, hemoglobin antagonist, pannexin inhibitor	ADORA2A, HBA1, PANX1		1.00	99.75	99.75
+BRD-K86930074	CP	cediranib	VEGFR inhibitor, KIT inhibitor, angiogenesis inhibitor, VEGFR antagonist	KDR, FLT1, FLT4, KIT, PDGFRB, CSF1R, FLT3, PDGFRA	PDGFR/KIT inhibitor, VEGFR inhibitor	1.00	99.75	99.75
+BRD-K98426715	CP	tubacin	HDAC inhibitor	HDAC6		1.00	99.75	99.75
+BRD-K01567962	CP	pyrazolanthrone	JNK inhibitor, AP inhibitor, dual specificity protein kinase inhibitor, leucine rich repeat kinase inhibitor	MAPK10, MAPK8, MAPK9, TTK, LRRK2, MAPK8IP1		1.00	99.72	99.72
+BRD-K73293050	CP	WZ-3146	EGFR inhibitor, epidermal growth factor receptor (EGFR) inhibitor	EGFR		1.00	99.68	99.68
+CGS001-199704	KD	ZNF585A	Zinc fingers, C2H2-type, zinc finger protein 585A			2.00	99.68	99.68
+BRD-K15402119	CP	huperzine-a	acetylcholinesterase inhibitor, glutamate receptor antagonist	ACHE		1.00	99.65	99.65
+BRD-K67831364	CP	ZM-323881	vascular endothelial growth factor receptor 2 (VEGFR2) inhibitor, VEGFR inhibitor	KDR	VEGFR inhibitor	1.00	99.65	99.65
+CGS001-81611	KD	ANP32E	ANP32 acidic nuclear phosphoproteins, acidic (leucine-rich) nuclear phosphoprotein 32 family, member E			2.00	99.65	99.65
+BRD-K52850071	CP	JAK3-Inhibitor-II	JAK inhibitor, ALK tyrosine kinase receptor inhibitor, EGFR inhibitor	EGFR, ALK, JAK1, JAK2, JAK3	JAK inhibitor	1.00	99.61	99.61
+BRD-A98702003	CP	carbenoxolone	11-beta hydroxysteroid dehydrogenase inhibitor	HSD11B1, GJA1, GJA10, GJA3, GJA4, GJA5, GJA8, GJA9, GJB1, GJB2, GJB3, GJB4, GJB5, GJB6, GJB7, GJC1, GJC2, GJC3, GJD2, GJD3, GJD4, GJE1, PANX1, PANX2, PANX3		1.00	99.54	99.54
+CGS001-9706	KD	ULK2	Unc-51-like kinase (ULK) family, unc-51-like kinase 2 (C. elegans)			2.00	99.47	99.47
+ccsbBroad304_06711	OE	PFAS	phosphoribosylformylglycinamidine synthase			2.00	99.47	99.47
+CGS001-2697	KD	GJA1	Ion channels / Gap junction proteins (connexins), gap junction protein, alpha 1, 43kDa			2.00	99.44	99.44
+CGS001-55892	KD	MYNN	BTB/POZ domain containing, myoneurin			2.00	99.44	99.44
+CGS001-1736	KD	DKC1	dyskeratosis congenita 1, dyskerin			2.00	99.40	99.40
+CGS001-7185	KD	TRAF1	TNF receptor-associated factor 1			2.00	99.40	99.40
+CGS001-6197	KD	RPS6KA3	RSK subfamily, ribosomal protein S6 kinase, 90kDa, polypeptide 3			2.00	99.36	99.36
+CGS001-1960	KD	EGR3	Zinc fingers, C2H2-type, early growth response 3			2.00	98.95	98.95
+CP_MEK_INHIBITOR	PCL	MEK inhibitor				0.00	98.24	98.24
+CP_SRC_INHIBITOR	PCL	SRC inhibitor				0.00	98.01	98.01
+CP_EGFR_INHIBITOR	PCL	EGFR inhibitor				0.00	97.10	97.10
+CP_NOREPINEPHRINE_REPUTAKE_INHIBITOR	PCL	Norepinephrine reuptake inhibitor				0.00	96.72	96.72
+CP_TRICYCLIC_ANTIDEPRESSANT	PCL	Tricyclic antidepressant				0.00	95.13	95.13
+CP_ATPASE_INHIBITOR	PCL	ATPase inhibitor				0.00	-16.00	-16.00
+OE_NFKB_ACTIVATION	PCL	NFKB Activation GOF				0.00	-16.21	-16.21
+CP_PROTEIN_SYNTHESIS_INHIBITOR	PCL	Protein synthesis inhibitor				0.00	-29.42	-29.42
+KD_RNA_POLYMERASE_ENZYMES	PCL	RNA Polymerase Enzymes LOF				0.00	-35.40	-35.40
+KD_UBIQUITIN_SPECIFIC_PEPTIDASES	PCL	Ubiquitin-specific peptidases LOF				0.00	-42.65	-42.65
+BRD-K50660797	CP	epicatechin	beta amyloid protein neurotoxicity inhibitor, beta secretase inhibitor, cyclooxygenase inhibitor, DNA gyrase inhibitor, DNA polymerase beta inhibitor, fatty acid synthase inhibitor, HCV inhibitor, sodium/glucose cotransporter inhibitor	FASN, APP, BACE1, SLC5A1		1.00	-75.86	-75.86
+BRD-A60245366	CP	AS-601245	JNK inhibitor	GSK3B, MAPK10, MAPK8, MAPK9, PIM1		1.00	-77.54	-77.54
+BRD-A95696820	CP	acadesine	adenosine release stimulant, AMPK activator, AMPK stimulant			1.00	-79.14	-79.14
+BRD-K51816706	CP	oxindole-I	protein kinase inhibitor, vascular endothelial growth factor receptor (VEGFR) inhibitor	AKT1, KDR, PDPK1, RET		1.00	-81.28	-81.28
+BRD-K71266197	CP	PSB-06126	NTPDase inhibitor	ENTPD3		1.00	-81.55	-81.55
+BRD-K69032158	CP	diprotin-a	dipeptidyl peptidase inhibitor	DPP4		1.00	-83.97	-83.97
+BRD-K17953061	CP	staurosporine	PKC inhibitor, AKT inhibitor, BMX inhibitor, CDK inhibitor, CHK inhibitor, G protein coupled receptor agonist, glycogen synthase kinase inhibitor, leucine rich repeat kinase inhibitor, ribosomal protein inhibitor, sodium/hydrogen exchanger inhibitor	CDK2, GSK3B, CAMK2B, CDK1, CDK5, CHEK1, CHRM1, CHRM2, CHRM4, CSK, DAPK1, GPR35, IKBKB, ITK, LCK, LRRK2, MAP2K4, MAP2K6, MAPKAPK2, PAK2, PDPK1, PHKG2, PIK3CG, PIM1, PKN1, PRKACB, PRKCI, PRKCQ, RPS6KA1, STK3, SYK, TNIK, ZAP70		1.00	-84.40	-84.40
+BRD-K13642330	CP	cosmosiin	cytochrome P450 inhibitor			1.00	-87.45	-87.45
+BRD-K37312348	CP	kenpaullone	CDK inhibitor, glycogen synthase kinase inhibitor, src inhibitor	GSK3B, CDK1, CDK5, CCNB1, CDK2, LCK	CDK inhibitor, Glycogen synthase kinase inhibitor	1.00	-93.16	-93.16
+BRD-K60623809	CP	SU-11652	FGFR inhibitor, PDGFR tyrosine kinase receptor inhibitor, tyrosine kinase receptor & angiogenic inhibitor, VEGFR inhibitor	KDR, PDGFRB, CAMK1G, FGF2, FGFR1, FLT1, KIT, PDGFRA		1.00	-93.42	-93.42
+CGS001-4771	KD	NF2	A-kinase anchor proteins, neurofibromin 2 (merlin)			2.00	-94.23	-94.23
+CGS001-84159	KD	ARID5B	AT rich interactive domain 5B (MRF1-like)			2.00	-94.40	-94.40
+ccsbBroad304_06464	OE	ITGB2	Integrins, integrin, beta 2 (complement component 3 receptor 3 and 4 subunit)			2.00	-94.42	-94.42
+CGS001-283150	KD	FOXR1	Forkhead boxes, forkhead box R1			2.00	-94.52	-94.52
+CGS001-169841	KD	ZNF169	Zinc fingers, C2H2-type, zinc finger protein 169			2.00	-94.68	-94.68
+CGS001-1213	KD	CLTC	clathrin, heavy chain (Hc)			2.00	-95.70	-95.70
+CGS001-23355	KD	VPS8	vacuolar protein sorting 8 homolog (S. cerevisiae)			2.00	-95.71	-95.71
+CGS001-8572	KD	PDLIM4	PDZ and LIM domain 4			2.00	-95.91	-95.91
+ccsbBroad304_02396	OE	TCIRG1	ATPases / V-type, T-cell, immune regulator 1, ATPase, H+ transporting, lysosomal V0 subunit A3			2.00	-95.94	-95.94
+ccsbBroad304_09471	OE	CSNK1A1L	Casein kinase 1 (CK1) family, casein kinase 1, alpha 1-like			2.00	-96.48	-96.48

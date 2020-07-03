@@ -1,0 +1,77 @@
+#1.3
+50	1	7	24
+id	type	name	description	target	belongs_to	group_by	score	BRD-K49865102-summary
+cell_id	na	na	na	na	na	na	na	Summary
+_id	na	na	na	na	na	na	na	BRD-K49865102
+name	na	na	na	na	na	na	na	PD-0325901
+pert_type	na	na	na	na	na	na	na	trt_cp
+moiety	na	na	na	na	na	na	na	PD-0325901
+moa	na	na	na	na	na	na	na	MEK inhibitor|MAP kinase inhibitor|Protein kinase inhibitor
+gene_targets	na	na	na	na	na	na	na	MAP2K1
+gene_ids	na	na	na	na	na	na	na	5604.00
+inchikey	na	na	na	na	na	na	na	SUDAHWBOROXANE-SECBINFHSA-N
+smiles	na	na	na	na	na	na	na	OC[C@@H](O)CONC(=O)c1ccc(F)c(F)c1Nc1ccc(I)cc1F
+pubchem_cid	na	na	na	na	na	na	na	9826530.00
+cell_ids	na	na	na	na	na	na	na	A375|A549|HA1E|HCC515|HEPG2|HT29|MCF7|PC3|VCAP
+pert_itimes	na	na	na	na	na	na	na	6 h
+pert_idoses	na	na	na	na	na	na	na	10 µM
+num_cell	na	na	na	na	na	na	na	9.00
+num_time	na	na	na	na	na	na	na	1.00
+num_dose	na	na	na	na	na	na	na	1.00
+tas_q75	na	na	na	na	na	na	na	0.38
+icc	na	na	na	na	na	na	na	0.56
+url	na	na	na	na	na	na	na	BRD-K49865102
+type	na	na	na	na	na	na	na	CP
+description	na	na	na	na	na	na	na	MEK inhibitor|MAP kinase inhibitor|protein kinase inhibitor
+target	na	na	na	na	na	na	na	MAP2K1|MAP2K2
+is_index	na	na	na	na	na	na	na	
+BRD-K49865102	CP	PD-0325901	MEK inhibitor, MAP kinase inhibitor, protein kinase inhibitor	MAP2K1, MAP2K2	MEK inhibitor	1.00	99.99	99.99
+CP_MEK_INHIBITOR	PCL	MEK inhibitor				0.00	99.97	99.97
+BRD-K05104363	CP	PD-184352	MEK inhibitor, MAP kinase inhibitor	MAP2K1, MAP2K2, MAP3K1, MAP3K2	MEK inhibitor	1.00	99.89	99.89
+BRD-K41895714	CP	AS-605240	Phosphatidylinositol 3-kinase (PI3K) inhibitor, PI3K inhibitor	MAOB, PIK3CA, PIK3CB, PIK3CD, PIK3CG	PI3K inhibitor	1.00	99.89	99.89
+BRD-K89014967	CP	AS-703026	MEK inhibitor	MAP2K1, MAP2K2	MEK inhibitor	1.00	99.89	99.89
+BRD-K12244279	CP	MEK1-2-inhibitor	MEK inhibitor	MAP2K1, MAP2K2	MEK inhibitor	1.00	99.86	99.86
+BRD-K57080016	CP	selumetinib	MEK inhibitor, MAP kinase inhibitor	MAP2K1, MAP2K2	MEK inhibitor	1.00	99.86	99.86
+CP_RAF_INHIBITOR	PCL	RAF inhibitor				0.00	99.83	99.83
+BRD-K67578145	CP	GDC-0879	RAF inhibitor	BRAF	RAF inhibitor	1.00	99.82	99.82
+BRD-K05804044	CP	AZ-628	RAF inhibitor	BRAF, RAF1	RAF inhibitor	1.00	99.75	99.75
+BRD-K18787491	CP	U-0126	MEK inhibitor, JAK inhibitor, MAP kinase inhibitor	AKT1, CHEK1, GSK3B, JAK2, LCK, MAP2K1, MAP2K2, MAP2K7, MAPK1, MAPK11, MAPK12, MAPK14, MAPK8, PRKCA, RAF1, ROCK1, RPS6KB1, SGK1	MEK inhibitor	1.00	99.75	99.75
+CP_SRC_INHIBITOR	PCL	SRC inhibitor				0.00	99.73	99.73
+BRD-K88677950	CP	PD-198306	MAP kinase inhibitor, MEK inhibitor	MAP2K1, MAP2K2, MAPK1, MAPK3	MEK inhibitor	1.00	99.71	99.71
+ccsbBroad304_06131	OE	DUSP6	Protein tyrosine phosphatases / Class I Cys-based PTPs : MAP kinase phosphatases, dual specificity phosphatase 6			2.00	99.58	99.58
+CP_HSP_INHIBITOR	PCL	HSP inhibitor				0.00	99.48	99.48
+CP_IGF_1_INHIBITOR	PCL	IGF-1 inhibitor				0.00	99.34	99.34
+ccsbBroad304_06130	OE	DUSP4	Protein tyrosine phosphatases / Class I Cys-based PTPs : MAP kinase phosphatases, dual specificity phosphatase 4			2.00	99.01	99.01
+CGS001-10793	KD	ZNF273	Zinc fingers, C2H2-type, zinc finger protein 273			2.00	98.98	98.98
+CGS001-6197	KD	RPS6KA3	RSK subfamily, ribosomal protein S6 kinase, 90kDa, polypeptide 3			2.00	98.87	98.87
+CGS001-1737	KD	DLAT	dihydrolipoamide S-acetyltransferase			2.00	98.73	98.73
+CGS001-4129	KD	MAOB	Catecholamine turnover, monoamine oxidase B			2.00	98.73	98.73
+CGS001-672	KD	BRCA1	Fanconi anemia, complementation groups, breast cancer 1, early onset			2.00	98.73	98.73
+CGS001-3995	KD	FADS3	Fatty acid desaturases, fatty acid desaturase 3			2.00	98.68	98.68
+CGS001-29899	KD	GPSM2	Tetratricopeptide (TTC) repeat domain containing, G-protein signaling modulator 2			2.00	98.66	98.66
+CGS001-10644	KD	IGF2BP2	RNA binding motif (RRM) containing, insulin-like growth factor 2 mRNA binding protein 2			2.00	98.63	98.63
+CP_PROTEIN_SYNTHESIS_INHIBITOR	PCL	Protein synthesis inhibitor				0.00	-15.44	-15.44
+OE_PURINERGIC_RECEPTORS_P2Y	PCL	Purinergic receptors P2Y GOF				0.00	-15.74	-15.74
+CP_TUBULIN_INHIBITOR	PCL	Tubulin inhibitor				0.00	-52.65	-52.65
+OE_NFKB_ACTIVATION	PCL	NFKB Activation GOF				0.00	-69.06	-69.06
+CGS001-5947	KD	RBP1	Fatty acid binding protein family, retinol binding protein 1, cellular			2.00	-93.06	-93.06
+CGS001-2181	KD	ACSL3	Acyl-CoA synthetase family, acyl-CoA synthetase long-chain family member 3			2.00	-93.73	-93.73
+CGS001-4718	KD	NDUFC2	Mitochondrial respiratory chain complex / Complex I, NADH dehydrogenase (ubiquinone) 1, subcomplex unknown, 2, 14.5kDa			2.00	-93.85	-93.85
+ccsbBroad304_00348	OE	MAP3K8	MAPKKK:STE-unique family, mitogen-activated protein kinase kinase kinase 8			2.00	-94.68	-94.68
+BRD-K16478699	CP	PLX-4720	RAF inhibitor	BRAF, KDR	RAF inhibitor	1.00	-94.72	-94.72
+CGS001-81550	KD	TDRD3	Tudor domain containing, tudor domain containing 3			2.00	-95.28	-95.28
+BRD-K77987382	CP	mebendazole	acetylcholinesterase inhibitor, microtubule inhibitor, tubulin inhibitor	TUBA1A, TUBB, TUBB4B	Tubulin inhibitor	1.00	-95.46	-95.46
+BRD-K97056771	CP	HY-11007	Abl kinase inhibitor, Bcr-Abl kinase inhibitor	ABL1, BCR		1.00	-95.60	-95.60
+CP_PKC_ACTIVATOR	PCL	PKC activator				0.00	-95.87	-95.87
+ccsbBroad304_05098	OE	MAGEB6	melanoma antigen family B, 6			2.00	-96.17	-96.17
+BRD-A63998256	CP	helveticoside	ATPase inhibitor	ATP1A1	ATPase inhibitor	1.00	-96.20	-96.20
+ccsbBroad304_03232	OE	VPS28	vacuolar protein sorting 28 homolog (S. cerevisiae)			2.00	-97.32	-97.32
+BRD-K63606607	CP	bufalin	ATPase inhibitor, chloride channel activator	ATP1A1	ATPase inhibitor	1.00	-97.39	-97.39
+ccsbBroad304_02048	OE	BCL10	B-cell CLL/lymphoma 10		NFKB Activation GOF	2.00	-97.71	-97.71
+BRD-A54927599	CP	KF-38789	P selectin inhibitor	SELP		1.00	-98.03	-98.03
+BRD-A15079084	CP	phorbol-12-myristate-13-acetate	PKC activator, CD antagonist	CD4, KCNT2, PRKCA, TRPV4	PKC activator	1.00	-98.46	-98.46
+BRD-K12539581	CP	nocodazole	tubulin inhibitor, Tubulin Polymerization Inhibitors	HPGDS	Tubulin inhibitor	1.00	-98.56	-98.56
+BRD-K91145395	CP	prostratin	NFkB pathway activator, PKC activator	PRKCA, PRKCB, PRKCD, PRKCE, PRKCG, PRKCH, PRKCQ	PKC activator	1.00	-98.56	-98.56
+BRD-A52650764	CP	ingenol	PKC activator	PRKCD, PRKCE	PKC activator	1.00	-98.63	-98.63
+CGS001-694	KD	BTG1	B-cell translocation gene 1, anti-proliferative			2.00	-98.66	-98.66
+ccsbBroad304_01688	OE	TNFRSF1A	Tumour necrosis factor (TNF) receptor family, tumor necrosis factor receptor superfamily, member 1A		NFKB Activation GOF	2.00	-99.12	-99.12
