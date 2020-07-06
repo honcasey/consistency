@@ -1,4 +1,4 @@
-# hash:sha256:7ae1bbedf01a3092a093e5e4bc58cb794f11b2a62a907ea19ae8aa50b32b6051
+# hash:sha256:7e8a3204620cc4f91f6b2625f5d511875759dedeb08c7958719a766c436ef17d
 FROM registry.codeocean.com/codeocean/r-base:3.6.0-ubuntu18.04
 
 ARG DEBIAN_FRONTEND=noninteractive
@@ -15,8 +15,9 @@ RUN apt-get update \
         rstudio-server=1.2.5033 \
     && rm -rf /var/lib/apt/lists/*
 
+RUN Rscript -e 'remotes::install_version("CePa")'
+
 RUN Rscript -e 'options(warn=2); install.packages("BiocManager")'
 RUN Rscript -e 'options(warn=2); BiocManager::install(c( \
-        "PharmacoGx", \
-        "phantasus" \
-    ))' # Original versions: 1.17.1 latest
+        "PharmacoGx" \
+    ))' # Original versions: 1.17.1

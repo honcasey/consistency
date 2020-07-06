@@ -1,0 +1,3107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Record
+    xmlns="http://pubchem.ncbi.nlm.nih.gov/pug_view"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+    xs:schemaLocation="http://pubchem.ncbi.nlm.nih.gov/pug_view https://pubchem.ncbi.nlm.nih.gov/pug_view/pug_view.xsd"
+>
+  <RecordType>CID</RecordType>
+  <RecordNumber>6505803</RecordNumber>
+  <RecordTitle>Tanespimycin</RecordTitle>
+  <Section>
+    <TOCHeading>Structures</TOCHeading>
+    <Description>Structure depictions and information for 2D, 3D, and crystal related</Description>
+    <Section>
+      <TOCHeading>2D Structure</TOCHeading>
+      <Description>A two-dimensional representation of the compound</Description>
+      <DisplayControls>
+        <MoveToTop>true</MoveToTop>
+      </DisplayControls>
+      <Information>
+        <ReferenceNumber>32</ReferenceNumber>
+        <Value>
+          <Boolean>true</Boolean>
+        </Value>
+      </Information>
+    </Section>
+    <Section>
+      <TOCHeading>3D Conformer</TOCHeading>
+      <Description>A three-dimensional representation of the compound. The 3D structure is not experimentally determined, but computed by PubChem. More detailed information on this conformer model is described in the PubChem3D thematic series published in the Journal of Cheminformatics.</Description>
+      <DisplayControls>
+        <MoveToTop>true</MoveToTop>
+      </DisplayControls>
+      <Information>
+        <ReferenceNumber>32</ReferenceNumber>
+        <Description>Tanespimycin</Description>
+        <Value>
+          <Number>6505803</Number>
+        </Value>
+      </Information>
+    </Section>
+  </Section>
+  <Section>
+    <TOCHeading>Names and Identifiers</TOCHeading>
+    <Description>Record identifiers, synonyms, chemical names, descriptors, etc.</Description>
+    <Section>
+      <TOCHeading>Record Description</TOCHeading>
+      <Description>Summary Information</Description>
+      <DisplayControls>
+        <HideThisSection>true</HideThisSection>
+        <MoveToTop>true</MoveToTop>
+      </DisplayControls>
+      <Information>
+        <ReferenceNumber>1</ReferenceNumber>
+        <Name>Record Description</Name>
+        <Description>Ontology Summary</Description>
+        <Value>
+          <StringWithMarkup>
+            <String>Tanespimycin is a 19-membered macrocyle that is geldanamycin in which the methoxy substituent attached to the benzoquinone moiety has been replaced by an allylamino group. It is a potent inhibitor of heat shock protein 90 (Hsp90). A less toxic analogue than geldanamycin, it induces apoptosis and displays antitumour effects. It has a role as an antineoplastic agent, a Hsp90 inhibitor and an apoptosis inducer. It is a secondary amino compound, an ansamycin, a carbamate ester, an organic heterobicyclic compound and a member of 1,4-benzoquinones. It derives from a geldanamycin.</String>
+            <Markup>
+              <Start>0</Start>
+              <Length>12</Length>
+              <URL>https://pubchem.ncbi.nlm.nih.gov/compound/Tanespimycin</URL>
+              <Type>PubChem Internal Link</Type>
+              <Extra>CID-6505803</Extra>
+            </Markup>
+            <Markup>
+              <Start>48</Start>
+              <Length>12</Length>
+              <URL>https://pubchem.ncbi.nlm.nih.gov/compound/geldanamycin</URL>
+              <Type>PubChem Internal Link</Type>
+              <Extra>CID-3460</Extra>
+            </Markup>
+            <Markup>
+              <Start>110</Start>
+              <Length>12</Length>
+              <URL>https://pubchem.ncbi.nlm.nih.gov/compound/benzoquinone</URL>
+              <Type>PubChem Internal Link</Type>
+              <Extra>CID-4650</Extra>
+            </Markup>
+            <Markup>
+              <Start>258</Start>
+              <Length>12</Length>
+              <URL>https://pubchem.ncbi.nlm.nih.gov/compound/geldanamycin</URL>
+              <Type>PubChem Internal Link</Type>
+              <Extra>CID-3460</Extra>
+            </Markup>
+            <Markup>
+              <Start>430</Start>
+              <Length>5</Length>
+              <URL>https://pubchem.ncbi.nlm.nih.gov/compound/amino</URL>
+              <Type>PubChem Internal Link</Type>
+              <Extra>CID-136037442</Extra>
+            </Markup>
+            <Markup>
+              <Start>567</Start>
+              <Length>12</Length>
+              <URL>https://pubchem.ncbi.nlm.nih.gov/compound/geldanamycin</URL>
+              <Type>PubChem Internal Link</Type>
+              <Extra>CID-3460</Extra>
+            </Markup>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>8</ReferenceNumber>
+        <Value>
+          <StringWithMarkup>
+            <String>Tanespimycin, manufactured by Conforma Therapeutics is under development as a small molecule inhibitor of heat shock protein 90 (HSP90). It is developed for the treatment of several types of cancer, solid tumors or chronic myelogenous leukemia.</String>
+            <Markup>
+              <Start>0</Start>
+              <Length>12</Length>
+              <URL>https://pubchem.ncbi.nlm.nih.gov/compound/Tanespimycin</URL>
+              <Type>PubChem Internal Link</Type>
+              <Extra>CID-6505803</Extra>
+            </Markup>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>27</ReferenceNumber>
+        <Name>Record Description</Name>
+        <Description>Pharmacology</Description>
+        <Value>
+          <StringWithMarkup>
+            <String>Tanespimycin is a benzoquinone antineoplastic antibiotic derived from the antineoplastic antibiotic geldanamycin. Tanespimycin binds to and inhibits the cytosolic chaperone functions of heat shock protein 90 (HSP90). HSP90 maintains the stability and functional shape of many oncogenic signaling proteins; the inhibition of HSP90 promotes the proteasomal degradation of oncogenic signaling proteins that may be overexpressed by tumor cells.</String>
+            <Markup>
+              <Start>0</Start>
+              <Length>12</Length>
+              <URL>https://pubchem.ncbi.nlm.nih.gov/compound/Tanespimycin</URL>
+              <Type>PubChem Internal Link</Type>
+              <Extra>CID-6505803</Extra>
+            </Markup>
+            <Markup>
+              <Start>18</Start>
+              <Length>12</Length>
+              <URL>https://pubchem.ncbi.nlm.nih.gov/compound/benzoquinone</URL>
+              <Type>PubChem Internal Link</Type>
+              <Extra>CID-4650</Extra>
+            </Markup>
+            <Markup>
+              <Start>100</Start>
+              <Length>12</Length>
+              <URL>https://pubchem.ncbi.nlm.nih.gov/compound/geldanamycin</URL>
+              <Type>PubChem Internal Link</Type>
+              <Extra>CID-3460</Extra>
+            </Markup>
+            <Markup>
+              <Start>114</Start>
+              <Length>12</Length>
+              <URL>https://pubchem.ncbi.nlm.nih.gov/compound/Tanespimycin</URL>
+              <Type>PubChem Internal Link</Type>
+              <Extra>CID-6505803</Extra>
+            </Markup>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+    </Section>
+    <Section>
+      <TOCHeading>Computed Descriptors</TOCHeading>
+      <Description>Descriptors generated from chemical structure input</Description>
+      <Section>
+        <TOCHeading>IUPAC Name</TOCHeading>
+        <Description>Chemical name computed from chemical structure that uses International Union of Pure and Applied Chemistry (IUPAC) nomenclature standards.</Description>
+        <URL>http://old.iupac.org/publications/books/seriestitles/nomenclature.html</URL>
+        <Information>
+          <ReferenceNumber>32</ReferenceNumber>
+          <Reference>Computed by LexiChem 2.6.6 (PubChem release 2019.06.18)</Reference>
+          <Value>
+            <StringWithMarkup>
+              <String>[(4E,6Z,8S,9S,10E,12S,13R,14S,16R)-13-hydroxy-8,14-dimethoxy-4,10,12,16-tetramethyl-3,20,22-trioxo-19-(prop-2-enylamino)-2-azabicyclo[16.3.1]docosa-1(21),4,6,10,18-pentaen-9-yl] carbamate</String>
+              <Markup>
+                <Start>3</Start>
+                <Length>1</Length>
+                <Type>Italics</Type>
+              </Markup>
+              <Markup>
+                <Start>6</Start>
+                <Length>1</Length>
+                <Type>Italics</Type>
+              </Markup>
+              <Markup>
+                <Start>9</Start>
+                <Length>1</Length>
+                <Type>Italics</Type>
+              </Markup>
+              <Markup>
+                <Start>12</Start>
+                <Length>1</Length>
+                <Type>Italics</Type>
+              </Markup>
+              <Markup>
+                <Start>16</Start>
+                <Length>1</Length>
+                <Type>Italics</Type>
+              </Markup>
+              <Markup>
+                <Start>20</Start>
+                <Length>1</Length>
+                <Type>Italics</Type>
+              </Markup>
+              <Markup>
+                <Start>24</Start>
+                <Length>1</Length>
+                <Type>Italics</Type>
+              </Markup>
+              <Markup>
+                <Start>28</Start>
+                <Length>1</Length>
+                <Type>Italics</Type>
+              </Markup>
+              <Markup>
+                <Start>32</Start>
+                <Length>1</Length>
+                <Type>Italics</Type>
+              </Markup>
+            </StringWithMarkup>
+          </Value>
+        </Information>
+      </Section>
+      <Section>
+        <TOCHeading>InChI</TOCHeading>
+        <Description>International Chemical Identifier (InChI) computed from chemical structure using the International Union of Pure and Applied Chemistry (IUPAC) standard.</Description>
+        <URL>http://www.iupac.org/home/publications/e-resources/inchi.html</URL>
+        <Information>
+          <ReferenceNumber>32</ReferenceNumber>
+          <Reference>Computed by InChI 1.0.5 (PubChem release 2019.06.18)</Reference>
+          <Value>
+            <StringWithMarkup>
+              <String>InChI=1S/C31H43N3O8/c1-8-12-33-26-21-13-17(2)14-25(41-7)27(36)19(4)15-20(5)29(42-31(32)39)24(40-6)11-9-10-18(3)30(38)34-22(28(21)37)16-23(26)35/h8-11,15-17,19,24-25,27,29,33,36H,1,12-14H2,2-7H3,(H2,32,39)(H,34,38)/b11-9-,18-10+,20-15+/t17-,19+,24+,25+,27-,29+/m1/s1</String>
+            </StringWithMarkup>
+          </Value>
+        </Information>
+      </Section>
+      <Section>
+        <TOCHeading>InChI Key</TOCHeading>
+        <Description>International Chemical Identifier hash (InChIKey) computed from chemical structure using the International Union of Pure and Applied Chemistry (IUPAC) standard.</Description>
+        <URL>http://www.iupac.org/home/publications/e-resources/inchi.html</URL>
+        <Information>
+          <ReferenceNumber>32</ReferenceNumber>
+          <Reference>Computed by InChI 1.0.5 (PubChem release 2019.06.18)</Reference>
+          <Value>
+            <StringWithMarkup>
+              <String>AYUNIORJHRXIBJ-TXHRRWQRSA-N</String>
+            </StringWithMarkup>
+          </Value>
+        </Information>
+      </Section>
+      <Section>
+        <TOCHeading>Canonical SMILES</TOCHeading>
+        <Description>Simplified Molecular-Input Line-Entry System (SMILES) computed from chemical structure devoid of isotopic and stereochemical information.</Description>
+        <URL>http://www.daylight.com/dayhtml/doc/theory/theory.smiles.html</URL>
+        <Information>
+          <ReferenceNumber>32</ReferenceNumber>
+          <Reference>Computed by OEChem 2.1.5 (PubChem release 2019.06.18)</Reference>
+          <Value>
+            <StringWithMarkup>
+              <String>CC1CC(C(C(C=C(C(C(C=CC=C(C(=O)NC2=CC(=O)C(=C(C1)C2=O)NCC=C)C)OC)OC(=O)N)C)C)O)OC</String>
+            </StringWithMarkup>
+          </Value>
+        </Information>
+      </Section>
+      <Section>
+        <TOCHeading>Isomeric SMILES</TOCHeading>
+        <Description>Simplified Molecular-Input Line-Entry System (SMILES) computed from chemical structure containing isotopic and stereochemical information.  SMILES written with isotopic and chiral specifications are collectively known as &quot;isomeric SMILES&quot;.</Description>
+        <URL>http://www.daylight.com/dayhtml/doc/theory/theory.smiles.html</URL>
+        <Information>
+          <ReferenceNumber>32</ReferenceNumber>
+          <Reference>Computed by OEChem 2.1.5 (PubChem release 2019.06.18)</Reference>
+          <Value>
+            <StringWithMarkup>
+              <String>C[C@H]1C[C@@H]([C@@H]([C@H](/C=C(/[C@@H]([C@H](/C=C\C=C(\C(=O)NC2=CC(=O)C(=C(C1)C2=O)NCC=C)/C)OC)OC(=O)N)\C)C)O)OC</String>
+            </StringWithMarkup>
+          </Value>
+        </Information>
+      </Section>
+    </Section>
+    <Section>
+      <TOCHeading>Molecular Formula</TOCHeading>
+      <Description>A chemical formula is a way of expressing information about the proportions of atoms that constitute a particular chemical compound, using a single line of chemical element symbols and numbers. PubChem uses the Hill system whereby the number of carbon atoms in a molecule is indicated first, the number of hydrogen atoms second, and then the number of all other chemical elements in alphabetical order. When the formula contains no carbon, all the elements, including hydrogen, are listed alphabetically. Sources other than PubChem may include a variant of the formula that is more structural or natural to chemists, for example &quot;H2SO4&quot; for sulfuric acid, rather than the Hill version &quot;H2O4S.&quot;</Description>
+      <DisplayControls>
+        <MoveToTop>true</MoveToTop>
+      </DisplayControls>
+      <Information>
+        <ReferenceNumber>32</ReferenceNumber>
+        <Reference>Computed by PubChem 2.1 (PubChem release 2019.06.18)</Reference>
+        <Value>
+          <StringWithMarkup>
+            <String>C31H43N3O8</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+    </Section>
+    <Section>
+      <TOCHeading>Other Identifiers</TOCHeading>
+      <Description>Important identifiers assigned to this chemical substance by authoritative organizations</Description>
+      <Section>
+        <TOCHeading>CAS</TOCHeading>
+        <Description>A proprietary registry number assigned by the Chemical Abstracts Service (CAS) division of the American Chemical Society (ACS) often used to help describe chemical ingredients.</Description>
+        <URL>http://en.wikipedia.org/wiki/CAS_Registry_Number</URL>
+        <Information>
+          <ReferenceNumber>2</ReferenceNumber>
+          <Value>
+            <StringWithMarkup>
+              <String>75747-14-7</String>
+            </StringWithMarkup>
+          </Value>
+        </Information>
+        <Information>
+          <ReferenceNumber>8</ReferenceNumber>
+          <Value>
+            <StringWithMarkup>
+              <String>75747-14-7</String>
+            </StringWithMarkup>
+          </Value>
+        </Information>
+        <Information>
+          <ReferenceNumber>9</ReferenceNumber>
+          <Name>CAS</Name>
+          <Value>
+            <StringWithMarkup>
+              <String>75747-14-7</String>
+            </StringWithMarkup>
+          </Value>
+        </Information>
+        <Information>
+          <ReferenceNumber>10</ReferenceNumber>
+          <Value>
+            <StringWithMarkup>
+              <String>75747-14-7</String>
+            </StringWithMarkup>
+          </Value>
+        </Information>
+      </Section>
+      <Section>
+        <TOCHeading>NSC Number</TOCHeading>
+        <Description>The NSC number is a numeric identifier for substances submitted to the National Cancer Institute (NCI) for testing and evaluation. It is a registration number for the Developmental Therapeutics Program (DTP) repository. NSC stands for National Service Center.</Description>
+        <Information>
+          <ReferenceNumber>9</ReferenceNumber>
+          <Name>NSC Number</Name>
+          <URL>https://dtp.cancer.gov/dtpstandard/servlet/dwindex?searchtype=NSC&amp;outputformat=html&amp;searchlist=330507</URL>
+          <Value>
+            <StringWithMarkup>
+              <String>330507</String>
+            </StringWithMarkup>
+          </Value>
+        </Information>
+      </Section>
+      <Section>
+        <TOCHeading>UNII</TOCHeading>
+        <Description>A non-proprietary registry number assigned by the U.S. Food and Drug Administration (FDA) known as an UNique Ingredient Identifier (UNII) code.</Description>
+        <URL>http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/</URL>
+        <Information>
+          <ReferenceNumber>24</ReferenceNumber>
+          <Name>UNII</Name>
+          <Value>
+            <StringWithMarkup>
+              <String>4GY0AVT3L4</String>
+            </StringWithMarkup>
+          </Value>
+        </Information>
+      </Section>
+      <Section>
+        <TOCHeading>DSSTox Substance ID</TOCHeading>
+        <Description>Substance identifier at the Distributed Structure-Searchable Toxicity (DSSTox) Database.</Description>
+        <URL>https://www.epa.gov/chemical-research/distributed-structure-searchable-toxicity-dsstox-database/</URL>
+        <Information>
+          <ReferenceNumber>10</ReferenceNumber>
+          <URL>https://comptox.epa.gov/dashboard/DTXSID5046352</URL>
+          <Value>
+            <StringWithMarkup>
+              <String>DTXSID5046352</String>
+            </StringWithMarkup>
+          </Value>
+        </Information>
+      </Section>
+      <Section>
+        <TOCHeading>Wikipedia</TOCHeading>
+        <Description>Links to Wikipedia or wikidata for this record.</Description>
+        <Information>
+          <ReferenceNumber>31</ReferenceNumber>
+          <Name>Wikipedia</Name>
+          <URL>https://en.wikipedia.org/wiki/Tanespimycin</URL>
+          <Value>
+            <StringWithMarkup>
+              <String>Tanespimycin</String>
+            </StringWithMarkup>
+          </Value>
+        </Information>
+      </Section>
+    </Section>
+    <Section>
+      <TOCHeading>Synonyms</TOCHeading>
+      <Description>Alternative names for this PubChem Compound record.  A compound can have many different names.  For example, acetone (CH3C(=O)CH3) is also known as propanone, propan-2-one, or dimethyl ketone.  The brand name of a product is commonly used to indicate the primary chemical ingredient(s) in the product (e.g., Tylenol, a common pain killer, is often used for acetaminophen, its active ingredient).  Another example of common synonyms is record identifiers used in different data collections, such as Chemical Abstract Service (CAS) registry numbers, FDA UNII (Unique Ingredient Identifiers), and many others.  All these various names and identifiers that designate this compound are organized under the Synonyms section.</Description>
+      <Section>
+        <TOCHeading>MeSH Entry Terms</TOCHeading>
+        <Description>Medical Subject Heading (MeSH) names or identifiers matching this PubChem Compound record.  The matching between the MeSH and compound records is performed by name matching (i.e., identical common names).</Description>
+        <DisplayControls>
+          <ListType>Columns</ListType>
+        </DisplayControls>
+        <Information>
+          <ReferenceNumber>33</ReferenceNumber>
+          <Value>
+            <StringWithMarkup>
+              <String>17-(allylamino)-17-demethoxy-geldanamycin</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>17-(allylamino)-17-demethoxygeldanamycin</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>17-AAG</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>17-allyl-aminogeldanamycin</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>17-allylamino-17-demethoxygeldanamycin</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>17-allylamino-17-demethoxygeldanamycin hydroquinone</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>17-allylamino-17-demethoxygeldanamycin hydroquinone salt</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>17-allylamino-geldanamycin</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>17-allylaminogeldanamycin</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>17-N-allylamino-17-demethoxygeldanamycin</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>17AAG</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>CNF1010</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>IPI 493</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>IPI 504</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>IPI-493</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>IPI-504</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>IPI493</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>IPI504</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>NSC 330507</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>NSC-330507</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>retaspimycin hydrochloride</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>tanespimycin</String>
+            </StringWithMarkup>
+          </Value>
+        </Information>
+      </Section>
+      <Section>
+        <TOCHeading>Depositor-Supplied Synonyms</TOCHeading>
+        <Description>Chemical names provided by individual data contributors. Synonyms of Substances corresponding to a PubChem Compound record are combined. Some contributed names may be considered erroneous and filtered out. The link on each synonym shows which depositors provided that particular synonym for this structure.</Description>
+        <DisplayControls>
+          <ListType>Columns</ListType>
+          <MoveToTop>true</MoveToTop>
+        </DisplayControls>
+        <Information>
+          <ReferenceNumber>32</ReferenceNumber>
+          <Value>
+            <StringWithMarkup>
+              <String>Tanespimycin</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>17-AAG</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>75747-14-7</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>17-Allylaminogeldanamycin</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>17-(Allylamino)geldanamycin</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>NSC-330507</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>KOS-953</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>17-Demethoxy-17-allylamino geldanamycin</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>UNII-4GY0AVT3L4</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>Cp 127374</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>NSC 330507</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>17AAG</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>17-(Allylamino)-17-demethoxygeldanamycin</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>CHEBI:64153</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>17-AAG (Tanespimycin)</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>BMS-722782</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>4GY0AVT3L4</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>NCGC00163424-01</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>17-N-allylamino-17-demethoxygeldanamycin</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>17-demethoxy-17-(2-propenylamino)geldanamycin</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>Geldanamycin, 17-demethoxy-17-(2-propenylamino)-</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>NSC330507</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>Tanespimycin (USAN)</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>(4E,6Z,8S,9S,10E,12S,13R,14S,16R)-13-hydroxy-8,14-dimethoxy-4,10,12,16-tetramethyl-3,20,22-trioxo-19-(prop-2-en-1-ylamino)-2-azabicyclo[16.3.1]docosa-1(21),4,6,10,18-pentaen-9-yl carbamate</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>[(3S,5S,6R,7S,8E,10R,11S,12E,14E)-6-Hydroxy-5,11-dimethoxy-3,7,9,15-tetramethyl-16,20,22-trioxo-21-(prop-2-enylamino)-17-azabicyclo[16.3.1]docosa-8,12,14,18,21-pentaen-10-yl] carbamate</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>Geldanamycin, 17-(Allylamino)-17-demethoxy-</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>Tanespimycin [USAN:INN]</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>tanespimycina</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>tanespimycine</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>tanespimycinum</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>CCRIS 9401</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>17-Demethoxy-17-allylaminogeldanamycin</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>C31H43N3O8</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>DSSTox_CID_26352</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>DSSTox_RID_81555</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>DSSTox_GSID_46352</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>BSPBio_001434</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>SCHEMBL2604976</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>DTXSID5046352</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>SCHEMBL13037468</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>SCHEMBL16226295</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>CHEBI:94756</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>CNF-101</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>CNF1010</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>AYUNIORJHRXIBJ-TXHRRWQRSA-N</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>HMS1361H16</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>HMS1791H16</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>HMS1989H16</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>HMS3402H16</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>(4E,6Z,8S,9S,10E,12S,13R,14S,16R)-13-Hydroxy-8,14-dimethoxy-4,10,12,16- tetramethyl-3,20,22-trioxo-19-(prop-2-enylamino)-2-azabicyclo(16.3.1)docosa- 1(21),4,6,10,18-penten-9-yl carbamate</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>(4E,6Z,8S,9S,10E,12S,13R,14S,16R)-19-(allylamino)-13-hydroxy-8,14-dimethoxy-4,10,12,16-tetramethyl-3,20,22-trioxo-2-azabicyclo[16.3.1]docosa-1(21),4,6,10,18-pentaen-9-yl carbamate</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>CNF-1010</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>NSC-330507D</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>Tox21_112054</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>BDBM50008057</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>MFCD04973892</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>s1141</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>AKOS024456643</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>ZINC100014666</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>BCP9000064</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>CCG-208039</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>CS-0161</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>DB05134</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>NSC-704057</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>IDI1_033904</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>NCGC00163424-02</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>NCGC00163424-04</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>NCGC00163424-05</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>NCGC00163424-06</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>NCGC00163424-07</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>HY-10211</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>SC-22451</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>Geldanamycin, des-O-methyl-17-allylamino-</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>CAS-75747-14-7</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>CP-127374</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>Geldanamycin, 17-allylamino-17-demethoxy-</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>X7553</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>D06650</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>W-5317</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>747A147</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>Geldanamycin,17-demethoxy-17-(2-propenylamino)-</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>J-504153</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>BRD-K81473043-001-03-9</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>BRD-K81473043-001-08-8</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>17-(Allylamino)-17-demethoxygeldanamycin, &gt;=98% (HPLC), solid</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>[(3R,5S,6R,7S,8E,10S,11S,12Z,14E)-21-(allylamino)-6-hydroxy-5,11-dimethoxy-3,7,9,15-tetramethyl-16,20,22-trioxo-17-azabicyclo[16.3.1]docosa-1(21),8,12,14,18-pentaen-10-yl] carbamate</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>17-AAG|||17-(Allylamino)-17-demethoxy-geldanamycin|||[(3R,5S,6R,7S,8E,10S,11S,12Z,14E)-6-Hydroxy-5,11-dimethoxy-3,7,9,15-tetramethyl-16,20,22-trioxo-21-(prop-2-enylamino)-17-azabicyclo[16.3.1]docosa-1(21),8,12,14,18-pentaen-10-yl] carbamate</String>
+            </StringWithMarkup>
+          </Value>
+        </Information>
+      </Section>
+      <Section>
+        <TOCHeading>Removed Synonyms</TOCHeading>
+        <Description>Potentially erroneous chemical names and identifiers provided by PubChem Substance records for the same chemical structure that were removed by name/structure consistency filtering.</Description>
+        <DisplayControls>
+          <HideThisSection>true</HideThisSection>
+        </DisplayControls>
+        <Information>
+          <ReferenceNumber>32</ReferenceNumber>
+          <Value>
+            <StringWithMarkup>
+              <String>Telatinib</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>geldanamycin</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>Tanespimyci</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>Tanespimycin [USAN]</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>17-AAG(Geldanamycin)</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>D0XV0T</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>AC1O6S9N</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>17-AG</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>CHEMBL109480</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>GLD-36</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>KOS 953</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>C31-H43-N3-O8</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>CID6505803</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>RL04887</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>17-allylamino-17-desmethoxy-geldanamycin</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>CP127374</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>AB2000717</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>CP127374,NSC-330507</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>2-Azabicyclo[16.3.1]docosane, geldanamycin deriv.</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>CP 127374, 75747-14-7</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>AAG</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>17-Demethoxy-17-allylaminogeldanamycin; Tanespimycin; 17-Allylaminogeldanamycin</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>(8S,9S,12S,13R,14S,16R)-13-hydroxy-8,14-dimethoxy-4,10,12,16-tetramethyl-3,20,22-trioxo-19-(prop-2-en-1-ylamino)-2-azabicyclo[16.3.1]docosa-1(21),4,6,10,18-pentaen-9-yl carbamate</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>[(3R,5S,6R,7S,8E,10S,11S,12Z,14E)-6-hydroxy-5,11-dimethoxy-3,7,9,15-tetramethyl-16,20,22-trioxo-21-(prop-2-enylamino)-17-azabicyclo[16.3.1]docosa-1(21),8,12,14,18-pentaen-10-yl] carbamate</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>17-(Allylamino)geldanamycin; 17-Demethoxy-17-allylamino geldanamycin; 17-AAG; CP 127374; Geldanamycin,17-demethoxy-17-(2-propenylamino)-; NSC 330507; Tanespimycin</String>
+            </StringWithMarkup>
+          </Value>
+        </Information>
+      </Section>
+    </Section>
+    <Section>
+      <TOCHeading>Create Date</TOCHeading>
+      <Description>Date the compound record was initially added to PubChem</Description>
+      <DisplayControls>
+        <HideThisSection>true</HideThisSection>
+        <MoveToTop>true</MoveToTop>
+      </DisplayControls>
+      <Information>
+        <ReferenceNumber>32</ReferenceNumber>
+        <Value>
+          <DateISO8601>2006-05-01</DateISO8601>
+        </Value>
+      </Information>
+    </Section>
+    <Section>
+      <TOCHeading>Modify Date</TOCHeading>
+      <Description>Date this record was last updated in PubChem</Description>
+      <DisplayControls>
+        <HideThisSection>true</HideThisSection>
+        <MoveToTop>true</MoveToTop>
+      </DisplayControls>
+      <Information>
+        <ReferenceNumber>32</ReferenceNumber>
+        <Value>
+          <DateISO8601>2020-06-27</DateISO8601>
+        </Value>
+      </Information>
+    </Section>
+  </Section>
+  <Section>
+    <TOCHeading>Chemical and Physical Properties</TOCHeading>
+    <Description>Chemical and physical properties such as melting point, molecular weight, etc.</Description>
+    <Section>
+      <TOCHeading>Computed Properties</TOCHeading>
+      <Description>Properties computed automatically from the given chemical structure</Description>
+      <DisplayControls>
+        <CreateTable>
+          <FromInformationIn>Subsections</FromInformationIn>
+          <NumberOfColumns>3</NumberOfColumns>
+          <ColumnHeadings>Property Name</ColumnHeadings>
+          <ColumnHeadings>Property Value</ColumnHeadings>
+          <ColumnHeadings>Reference</ColumnHeadings>
+          <ColumnContents>Name</ColumnContents>
+          <ColumnContents>Value</ColumnContents>
+          <ColumnContents>Reference</ColumnContents>
+        </CreateTable>
+      </DisplayControls>
+      <Section>
+        <TOCHeading>Molecular Weight</TOCHeading>
+        <Description>Molecular weight or molecular mass refers to the mass of a molecule. It is calculated as the sum of the mass of each constituent atom multiplied by the number of atoms of that element in the molecular formula.</Description>
+        <DisplayControls>
+          <MoveToTop>true</MoveToTop>
+        </DisplayControls>
+        <Information>
+          <ReferenceNumber>32</ReferenceNumber>
+          <Reference>Computed by PubChem 2.1 (PubChem release 2019.06.18)</Reference>
+          <Value>
+            <Number>585.7</Number>
+            <Unit>g/mol</Unit>
+          </Value>
+        </Information>
+      </Section>
+      <Section>
+        <TOCHeading>XLogP3</TOCHeading>
+        <Description>Computed Octanol/Water Partition Coefficient</Description>
+        <Information>
+          <ReferenceNumber>32</ReferenceNumber>
+          <Name>XLogP3-AA</Name>
+          <Reference>Computed by XLogP3 3.0 (PubChem release 2019.06.18)</Reference>
+          <Value>
+            <Number>2.6</Number>
+          </Value>
+        </Information>
+      </Section>
+      <Section>
+        <TOCHeading>Hydrogen Bond Donor Count</TOCHeading>
+        <Description>The number of hydrogen bond donors in the structure.</Description>
+        <Information>
+          <ReferenceNumber>32</ReferenceNumber>
+          <Reference>Computed by Cactvs 3.4.6.11 (PubChem release 2019.06.18)</Reference>
+          <Value>
+            <Number>4</Number>
+          </Value>
+        </Information>
+      </Section>
+      <Section>
+        <TOCHeading>Hydrogen Bond Acceptor Count</TOCHeading>
+        <Description>The number of hydrogen bond acceptors in the structure.</Description>
+        <Information>
+          <ReferenceNumber>32</ReferenceNumber>
+          <Reference>Computed by Cactvs 3.4.6.11 (PubChem release 2019.06.18)</Reference>
+          <Value>
+            <Number>9</Number>
+          </Value>
+        </Information>
+      </Section>
+      <Section>
+        <TOCHeading>Rotatable Bond Count</TOCHeading>
+        <Description>A rotatable bond is defined as any single-order non-ring bond, where atoms on either side of the bond are in turn bound to nonterminal heavy (i.e., non-hydrogen) atoms. That is, where rotation around the bond axis changes the overall shape of the molecule, and generates conformers which can be distinguished by standard fast spectroscopic methods.</Description>
+        <Information>
+          <ReferenceNumber>32</ReferenceNumber>
+          <Reference>Computed by Cactvs 3.4.6.11 (PubChem release 2019.06.18)</Reference>
+          <Value>
+            <Number>7</Number>
+          </Value>
+        </Information>
+      </Section>
+      <Section>
+        <TOCHeading>Exact Mass</TOCHeading>
+        <Description>The exact mass of an isotopic species is obtained by summing the masses of the individual isotopes of the molecule.</Description>
+        <Information>
+          <ReferenceNumber>32</ReferenceNumber>
+          <Reference>Computed by PubChem 2.1 (PubChem release 2019.06.18)</Reference>
+          <Value>
+            <Number>585.305015</Number>
+            <Unit>g/mol</Unit>
+          </Value>
+        </Information>
+      </Section>
+      <Section>
+        <TOCHeading>Monoisotopic Mass</TOCHeading>
+        <Description>The monoisotopic mass is the sum of the masses of the atoms in a molecule using the unbound, ground-state, rest mass of the principal (most abundant) isotope for each element instead of the isotopic average mass.</Description>
+        <Information>
+          <ReferenceNumber>32</ReferenceNumber>
+          <Reference>Computed by PubChem 2.1 (PubChem release 2019.06.18)</Reference>
+          <Value>
+            <Number>585.305015</Number>
+            <Unit>g/mol</Unit>
+          </Value>
+        </Information>
+      </Section>
+      <Section>
+        <TOCHeading>Topological Polar Surface Area</TOCHeading>
+        <Description>The topological polar surface area (TPSA) of a molecule is defined as the surface sum over all polar atoms in a molecule. </Description>
+        <Information>
+          <ReferenceNumber>32</ReferenceNumber>
+          <Reference>Computed by Cactvs 3.4.6.11 (PubChem release 2019.06.18)</Reference>
+          <Value>
+            <Number>166</Number>
+            <Unit>Å²</Unit>
+          </Value>
+        </Information>
+      </Section>
+      <Section>
+        <TOCHeading>Heavy Atom Count</TOCHeading>
+        <Description>A heavy atom is defined as any atom except hydrogen in a chemical structure.</Description>
+        <Information>
+          <ReferenceNumber>32</ReferenceNumber>
+          <Reference>Computed by PubChem</Reference>
+          <Value>
+            <Number>42</Number>
+          </Value>
+        </Information>
+      </Section>
+      <Section>
+        <TOCHeading>Formal Charge</TOCHeading>
+        <Description>Formal charge is the difference between the number of valence electrons of each atom and the number of electrons the atom is associated with. Formal charge assumes any shared electrons are equally shared between the two bonded atoms.</Description>
+        <Information>
+          <ReferenceNumber>32</ReferenceNumber>
+          <Reference>Computed by PubChem</Reference>
+          <Value>
+            <Number>0</Number>
+          </Value>
+        </Information>
+      </Section>
+      <Section>
+        <TOCHeading>Complexity</TOCHeading>
+        <Description>The complexity rating of a compound is a rough estimate of how complicated a structure is, seen from both the point of view of the elements contained and the displayed structural features including symmetry. This complexity rating is computed using the Bertz/Hendrickson/Ihlenfeldt formula.</Description>
+        <Information>
+          <ReferenceNumber>32</ReferenceNumber>
+          <Reference>Computed by Cactvs 3.4.6.11 (PubChem release 2019.06.18)</Reference>
+          <Value>
+            <Number>1210</Number>
+          </Value>
+        </Information>
+      </Section>
+      <Section>
+        <TOCHeading>Isotope Atom Count</TOCHeading>
+        <Description>Isotope Atom Count is the number of isotopes that are not most abundant for the corresponding chemical elements.  Isotopes are variants of a chemical element which differ in neutron number.  For example, among three isotopes of carbon (i.e., C-12, C-13, and C-14), the isotope atom count considers the C-13 and C-14 atoms, because C-12 is the most abundant isotope of carbon.</Description>
+        <Information>
+          <ReferenceNumber>32</ReferenceNumber>
+          <Reference>Computed by PubChem</Reference>
+          <Value>
+            <Number>0</Number>
+          </Value>
+        </Information>
+      </Section>
+      <Section>
+        <TOCHeading>Defined Atom Stereocenter Count</TOCHeading>
+        <Description>An atom stereocenter, also known as a chiral center, is an atom that is attached to four different types of atoms (or groups of atoms) in the tetrahedral arrangement. It can have either (R)- or (S)- configurations.  Some compounds, such as racemic mixtures, have an undefined atom stereocenter, whose (R/S)-configuration is not specifically defined.</Description>
+        <Information>
+          <ReferenceNumber>32</ReferenceNumber>
+          <Reference>Computed by PubChem</Reference>
+          <Value>
+            <Number>6</Number>
+          </Value>
+        </Information>
+      </Section>
+      <Section>
+        <TOCHeading>Undefined Atom Stereocenter Count</TOCHeading>
+        <Description>An atom stereocenter, also known as a chiral center, is an atom that is attached to four different types of atoms (or groups of atoms) in the tetrahedral arrangement. It can have either (R)- or (S)- configurations.  Some compounds, such as racemic mixtures, have an undefined atom stereocenter, whose (R/S)-configuration is not specifically defined.</Description>
+        <Information>
+          <ReferenceNumber>32</ReferenceNumber>
+          <Reference>Computed by PubChem</Reference>
+          <Value>
+            <Number>0</Number>
+          </Value>
+        </Information>
+      </Section>
+      <Section>
+        <TOCHeading>Defined Bond Stereocenter Count</TOCHeading>
+        <Description>A bond stereocenter is a non-rotatable bond around which two atoms can have different arrangement (as in cis- and trans-forms of butene around its double bond).  Some compounds have an undefined bond stereocenter, whose stereochemistry is not specifically defined.</Description>
+        <Information>
+          <ReferenceNumber>32</ReferenceNumber>
+          <Reference>Computed by PubChem</Reference>
+          <Value>
+            <Number>3</Number>
+          </Value>
+        </Information>
+      </Section>
+      <Section>
+        <TOCHeading>Undefined Bond Stereocenter Count</TOCHeading>
+        <Description>A bond stereocenter is a non-rotatable bond around which two atoms can have different arrangement (as in cis- and trans-forms of butene around its double bond).  Some compounds have an undefined bond stereocenter, whose stereochemistry is not specifically defined.</Description>
+        <Information>
+          <ReferenceNumber>32</ReferenceNumber>
+          <Reference>Computed by PubChem</Reference>
+          <Value>
+            <Number>0</Number>
+          </Value>
+        </Information>
+      </Section>
+      <Section>
+        <TOCHeading>Covalently-Bonded Unit Count</TOCHeading>
+        <Description>The number of separate chemical structures not connected by covalent bonds.</Description>
+        <Information>
+          <ReferenceNumber>32</ReferenceNumber>
+          <Reference>Computed by PubChem</Reference>
+          <Value>
+            <Number>1</Number>
+          </Value>
+        </Information>
+      </Section>
+      <Section>
+        <TOCHeading>Compound Is Canonicalized</TOCHeading>
+        <Description>Whether the compound has successfully passed PubChem&apos;s valence bond canonicalization procedure. Some large, complex, or highly symmetric structures may fail this process.</Description>
+        <Information>
+          <ReferenceNumber>32</ReferenceNumber>
+          <Reference>Computed by PubChem (release 2019.01.04)</Reference>
+          <Value>
+            <StringWithMarkup>
+              <String>Yes</String>
+            </StringWithMarkup>
+          </Value>
+        </Information>
+      </Section>
+    </Section>
+  </Section>
+  <Section>
+    <TOCHeading>Related Records</TOCHeading>
+    <Description>Related compounds/substances information based on the similar structure, annotations, etc.</Description>
+    <Section>
+      <TOCHeading>Related Compounds with Annotation</TOCHeading>
+      <Description>The subset of compounds that are related to the one currently displayed AND that have biomedical annotations.</Description>
+      <Information>
+        <ReferenceNumber>32</ReferenceNumber>
+        <Value>
+          <Boolean>true</Boolean>
+        </Value>
+      </Information>
+    </Section>
+    <Section>
+      <TOCHeading>Related Compounds</TOCHeading>
+      <Description>Compound records closely associated to this record.</Description>
+      <DisplayControls>
+        <CreateTable>
+          <FromInformationIn>ThisSection</FromInformationIn>
+          <NumberOfColumns>2</NumberOfColumns>
+          <ColumnContents>Name</ColumnContents>
+          <ColumnContents>Value</ColumnContents>
+        </CreateTable>
+        <ShowAtMost>1</ShowAtMost>
+      </DisplayControls>
+      <Information>
+        <ReferenceNumber>32</ReferenceNumber>
+        <Name>Same Connectivity Count</Name>
+        <URL>https://www.ncbi.nlm.nih.gov/pccompound?cmd=Link&amp;LinkName=pccompound_pccompound_sameconnectivity_pulldown&amp;from_uid=6505803</URL>
+        <Value>
+          <Number>105</Number>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>32</ReferenceNumber>
+        <Name>Same Isotope Count</Name>
+        <URL>https://www.ncbi.nlm.nih.gov/pccompound?cmd=Link&amp;LinkName=pccompound_pccompound_sameisotopic_pulldown&amp;from_uid=6505803</URL>
+        <Value>
+          <Number>100</Number>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>32</ReferenceNumber>
+        <Name>Same Parent, Connectivity Count</Name>
+        <URL>https://www.ncbi.nlm.nih.gov/pccompound?cmd=Link&amp;LinkName=pccompound_pccompound_parent_connectivity_pulldown&amp;from_uid=6505803</URL>
+        <Value>
+          <Number>115</Number>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>32</ReferenceNumber>
+        <Name>Same Parent, Isotope Count</Name>
+        <URL>https://www.ncbi.nlm.nih.gov/pccompound?cmd=Link&amp;LinkName=pccompound_pccompound_parent_isotopes_pulldown&amp;from_uid=6505803</URL>
+        <Value>
+          <Number>110</Number>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>32</ReferenceNumber>
+        <Name>Same Parent, Exact Count</Name>
+        <URL>https://www.ncbi.nlm.nih.gov/pccompound?cmd=Link&amp;LinkName=pccompound_pccompound_parent_pulldown&amp;from_uid=6505803</URL>
+        <Value>
+          <Number>4</Number>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>32</ReferenceNumber>
+        <Name>Mixtures, Components, and Neutralized Forms Count</Name>
+        <URL>https://www.ncbi.nlm.nih.gov/pccompound?cmd=Link&amp;LinkName=pccompound_pccompound_mixture&amp;from_uid=6505803</URL>
+        <Value>
+          <Number>12</Number>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>32</ReferenceNumber>
+        <Name>Similar Compounds Count</Name>
+        <URL>https://www.ncbi.nlm.nih.gov/pccompound?cmd=Link&amp;LinkName=pccompound_pccompound&amp;from_uid=6505803</URL>
+        <Value>
+          <Number>910</Number>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>32</ReferenceNumber>
+        <Name>Similar Conformers Count</Name>
+        <URL>https://www.ncbi.nlm.nih.gov/pccompound?cmd=Link&amp;LinkName=pccompound_pccompound_3d&amp;from_uid=6505803</URL>
+        <Value>
+          <Number>2</Number>
+        </Value>
+      </Information>
+    </Section>
+    <Section>
+      <TOCHeading>Substances</TOCHeading>
+      <Description>Substance records linked to this compound.</Description>
+      <Section>
+        <TOCHeading>Related Substances</TOCHeading>
+        <Description>Substances identical or nearly identical to this record.</Description>
+        <URL>https://pubchemdocs.ncbi.nlm.nih.gov/substances</URL>
+        <DisplayControls>
+          <CreateTable>
+            <FromInformationIn>ThisSection</FromInformationIn>
+            <NumberOfColumns>2</NumberOfColumns>
+            <ColumnContents>Name</ColumnContents>
+            <ColumnContents>Value</ColumnContents>
+          </CreateTable>
+          <ShowAtMost>1</ShowAtMost>
+        </DisplayControls>
+        <Information>
+          <ReferenceNumber>32</ReferenceNumber>
+          <Name>All Count</Name>
+          <URL>https://www.ncbi.nlm.nih.gov/pcsubstance/?term=6505803[CompoundID]</URL>
+          <Value>
+            <Number>123</Number>
+          </Value>
+        </Information>
+        <Information>
+          <ReferenceNumber>32</ReferenceNumber>
+          <Name>Same Count</Name>
+          <URL>https://www.ncbi.nlm.nih.gov/pcsubstance/?term=6505803[StandardizedCID]</URL>
+          <Value>
+            <Number>99</Number>
+          </Value>
+        </Information>
+        <Information>
+          <ReferenceNumber>32</ReferenceNumber>
+          <Name>Mixture Count</Name>
+          <URL>https://www.ncbi.nlm.nih.gov/pcsubstance/?term=6505803[ComponentCID]</URL>
+          <Value>
+            <Number>24</Number>
+          </Value>
+        </Information>
+      </Section>
+      <Section>
+        <TOCHeading>Substances by Category</TOCHeading>
+        <Description>Substance category according to the depositors. Substance Categorization Classification - The subheaders in this section of a PubChem Compound record reflect the various categories of depositors that have submitted corresponding PubChem Substance records. This allows you to quickly find the corresponding PubChem Substance records that are likely to contain a given type of information, such as Chemical Reactions.</Description>
+        <URL>https://pubchemdocs.ncbi.nlm.nih.gov/substances</URL>
+        <Information>
+          <ReferenceNumber>32</ReferenceNumber>
+          <Value>
+            <StringWithMarkup>
+              <String>Chemical Vendors</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>Curation Efforts</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>Governmental Organizations</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>Journal Publishers</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>Legacy Depositors</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>NIH Initiatives</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>Research and Development</String>
+            </StringWithMarkup>
+            <StringWithMarkup>
+              <String>Subscription Services</String>
+            </StringWithMarkup>
+          </Value>
+        </Information>
+      </Section>
+    </Section>
+    <Section>
+      <TOCHeading>Entrez Crosslinks</TOCHeading>
+      <Description>Cross-references to associated records in other Entrez databases such as PubMed, Gene, Protein, etc.</Description>
+      <DisplayControls>
+        <CreateTable>
+          <FromInformationIn>ThisSection</FromInformationIn>
+          <NumberOfColumns>2</NumberOfColumns>
+          <ColumnContents>Name</ColumnContents>
+          <ColumnContents>Value</ColumnContents>
+        </CreateTable>
+        <ShowAtMost>1</ShowAtMost>
+      </DisplayControls>
+      <Information>
+        <ReferenceNumber>32</ReferenceNumber>
+        <Name>PubMed Count</Name>
+        <URL>https://www.ncbi.nlm.nih.gov/sites/entrez?LinkName=pccompound_pubmed&amp;db=pccompound&amp;cmd=Link&amp;from_uid=6505803</URL>
+        <Value>
+          <Number>1</Number>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>32</ReferenceNumber>
+        <Name>Gene Count</Name>
+        <URL>https://www.ncbi.nlm.nih.gov/sites/entrez?LinkName=pccompound_gene&amp;db=pccompound&amp;cmd=Link&amp;from_uid=6505803</URL>
+        <Value>
+          <Number>3</Number>
+        </Value>
+      </Information>
+    </Section>
+  </Section>
+  <Section>
+    <TOCHeading>Chemical Vendors</TOCHeading>
+    <Description>A list of chemical vendors that sell this compound.  Each vendor may have multiple products containing the same chemical, but different in various aspects, such as amount and purity.  For each product, the external identifier used to locate the product on the vendor&apos;s website is provided under the Purcharsable Chemical column, and clicking this identifier directs you to the vendor&apos;s website.  The information on the product provided by the vendor to PubChem can be accessed at the Summary page of the corresponding PubChem Substance ID (SID).  Note that the order of chemical vendors on the list is randomized, and that PubChem do not endorse any of the vendors.</Description>
+    <Information>
+      <ReferenceNumber>32</ReferenceNumber>
+      <Value>
+        <Boolean>true</Boolean>
+      </Value>
+    </Information>
+  </Section>
+  <Section>
+    <TOCHeading>Drug and Medication Information</TOCHeading>
+    <Description>Drug and medication information from multiple sources.</Description>
+    <Section>
+      <TOCHeading>Drug Indication</TOCHeading>
+      <Description>Drug Indication information from various sources.</Description>
+      <DisplayControls>
+        <ShowAtMost>3</ShowAtMost>
+      </DisplayControls>
+      <Information>
+        <ReferenceNumber>8</ReferenceNumber>
+        <Value>
+          <StringWithMarkup>
+            <String>Investigated for use/treatment in leukemia (myeloid) and solid tumors.</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+    </Section>
+    <Section>
+      <TOCHeading>Clinical Trials</TOCHeading>
+      <Description>Clinical trials are research studies performed in people that are aimed at evaluating a medical, surgical, or behavioral intervention. They are the primary way that researchers find out if a new treatment, like a new drug or diet or medical device (for example, a pacemaker) is safe and effective in people.</Description>
+      <Section>
+        <TOCHeading>ClinicalTrials.gov</TOCHeading>
+        <Description>The brief clinical trials summary from the ClinicalTrials.gov at the U.S. National Library of Medicine.</Description>
+        <URL>https://clinicaltrials.gov/</URL>
+        <Information>
+          <ReferenceNumber>3</ReferenceNumber>
+          <Name>ClinicalTrials.gov</Name>
+          <Value>
+            <ExternalTableName>clinicaltrials</ExternalTableName>
+            <ExternalTableNumRows>34</ExternalTableNumRows>
+          </Value>
+        </Information>
+      </Section>
+      <Section>
+        <TOCHeading>EU Clinical Trials Register</TOCHeading>
+        <Description>The clinical trials summary from the EU Clinical Trials Register.</Description>
+        <URL>https://www.clinicaltrialsregister.eu/</URL>
+        <Information>
+          <ReferenceNumber>11</ReferenceNumber>
+          <Name>EU Clinical Trials Register</Name>
+          <Value>
+            <ExternalTableName>clinicaltrials_eu</ExternalTableName>
+            <ExternalTableNumRows>2</ExternalTableNumRows>
+          </Value>
+        </Information>
+      </Section>
+    </Section>
+    <Section>
+      <TOCHeading>EMA Drug Information</TOCHeading>
+      <Description>Drug and medicines information from the European Medicines Agency (EMA)</Description>
+      <URL>https://www.ema.europa.eu/en/medicines</URL>
+      <DisplayControls>
+        <CreateTable>
+          <FromInformationIn>ThisSection</FromInformationIn>
+          <NumberOfColumns>2</NumberOfColumns>
+          <ColumnContents>Name</ColumnContents>
+          <ColumnContents>Value</ColumnContents>
+        </CreateTable>
+        <ShowAtMost>2</ShowAtMost>
+      </DisplayControls>
+      <Information>
+        <ReferenceNumber>12</ReferenceNumber>
+        <Name>Medicine</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Elelyso</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>12</ReferenceNumber>
+        <Name>Disease/Condition</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Treatment of malignant gastrointestinal stromal tumours</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>12</ReferenceNumber>
+        <Name>Active Substance</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>17-(Allylamino)-17-demethoxygeldanamycin, hydroquinone hydrochloride</String>
+            <Markup>
+              <Start>0</Start>
+              <Length>40</Length>
+              <URL>https://pubchem.ncbi.nlm.nih.gov/compound/17-%28Allylamino%29-17-demethoxygeldanamycin</URL>
+              <Type>PubChem Internal Link</Type>
+              <Extra>CID-6440175</Extra>
+            </Markup>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>12</ReferenceNumber>
+        <Name>Status of Orphan Designation</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Withdrawn</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>12</ReferenceNumber>
+        <Name>Decision Date</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>2007-11-29</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>13</ReferenceNumber>
+        <Name>Medicine</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Elelyso</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>13</ReferenceNumber>
+        <Name>Disease/Condition</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Treatment of primary malignant bone tumours</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>13</ReferenceNumber>
+        <Name>Active Substance</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Fenretinide</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>13</ReferenceNumber>
+        <Name>Status of Orphan Designation</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Withdrawn</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>13</ReferenceNumber>
+        <Name>Decision Date</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>2007-01-26</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>14</ReferenceNumber>
+        <Name>Medicine</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Elelyso</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>14</ReferenceNumber>
+        <Name>Disease/Condition</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Treatment of soft tissue sarcoma</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>14</ReferenceNumber>
+        <Name>Active Substance</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Fenretinide</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>14</ReferenceNumber>
+        <Name>Status of Orphan Designation</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Withdrawn</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>14</ReferenceNumber>
+        <Name>Decision Date</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>2007-01-30</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>15</ReferenceNumber>
+        <Name>Medicine</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Elelyso</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>15</ReferenceNumber>
+        <Name>Disease/Condition</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Treatment of gastric cancer</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>15</ReferenceNumber>
+        <Name>Active Substance</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Tegafur, gimeracil, oteracil potassium</String>
+            <Markup>
+              <Start>0</Start>
+              <Length>7</Length>
+              <URL>https://pubchem.ncbi.nlm.nih.gov/compound/Tegafur</URL>
+              <Type>PubChem Internal Link</Type>
+              <Extra>CID-5386</Extra>
+            </Markup>
+            <Markup>
+              <Start>9</Start>
+              <Length>9</Length>
+              <URL>https://pubchem.ncbi.nlm.nih.gov/compound/gimeracil</URL>
+              <Type>PubChem Internal Link</Type>
+              <Extra>CID-54679224</Extra>
+            </Markup>
+            <Markup>
+              <Start>20</Start>
+              <Length>18</Length>
+              <URL>https://pubchem.ncbi.nlm.nih.gov/compound/oteracil%20potassium</URL>
+              <Type>PubChem Internal Link</Type>
+              <Extra>CID-2723920</Extra>
+            </Markup>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>15</ReferenceNumber>
+        <Name>Status of Orphan Designation</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Withdrawn</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>15</ReferenceNumber>
+        <Name>Decision Date</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>2007-12-20</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>16</ReferenceNumber>
+        <Name>Medicine</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Elelyso</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>16</ReferenceNumber>
+        <Name>Disease/Condition</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Treatment of neuroblastoma</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>16</ReferenceNumber>
+        <Name>Active Substance</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Murine monoclonal antibody to GD2</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>16</ReferenceNumber>
+        <Name>Status of Orphan Designation</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Withdrawn</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>16</ReferenceNumber>
+        <Name>Decision Date</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>2009-06-12</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>17</ReferenceNumber>
+        <Name>Medicine</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Elelyso</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>17</ReferenceNumber>
+        <Name>Disease/Condition</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Treatment of hyperphenylalaninaemia</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>17</ReferenceNumber>
+        <Name>Active Substance</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Sapropterin</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>17</ReferenceNumber>
+        <Name>Status of Orphan Designation</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Withdrawn</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>17</ReferenceNumber>
+        <Name>Decision Date</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>2005-08-26</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>18</ReferenceNumber>
+        <Name>Medicine</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Elelyso</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>18</ReferenceNumber>
+        <Name>Disease/Condition</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Treatment of fallopian tube cancer</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>18</ReferenceNumber>
+        <Name>Active Substance</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Patupilone</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>18</ReferenceNumber>
+        <Name>Status of Orphan Designation</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Withdrawn</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>18</ReferenceNumber>
+        <Name>Decision Date</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>2009-11-05</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>19</ReferenceNumber>
+        <Name>Medicine</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Elelyso</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>19</ReferenceNumber>
+        <Name>Disease/Condition</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Treatment of renal-cell carcinoma</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>19</ReferenceNumber>
+        <Name>Active Substance</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>4-Amino-5-oxo-4 (pyridinium-1-ylmethyl) proline</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>19</ReferenceNumber>
+        <Name>Status of Orphan Designation</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Positive</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>19</ReferenceNumber>
+        <Name>Decision Date</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>2006-02-16</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>20</ReferenceNumber>
+        <Name>Medicine</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Elelyso</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>20</ReferenceNumber>
+        <Name>Disease/Condition</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Treatment of partial deep dermal and full-thickness burns</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>20</ReferenceNumber>
+        <Name>Active Substance</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>N&apos;-(5-chloro-2-hydroxy-3-methylbenzylidene)-2,4-dihydroxybenzhydrazide</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>20</ReferenceNumber>
+        <Name>Status of Orphan Designation</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Positive</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>20</ReferenceNumber>
+        <Name>Decision Date</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>2008-09-22</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>21</ReferenceNumber>
+        <Name>Medicine</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Elelyso</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>21</ReferenceNumber>
+        <Name>Disease/Condition</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Treatment of non-papillary transitional cell carcinoma of the urinary bladder</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>21</ReferenceNumber>
+        <Name>Active Substance</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Pralatrexate</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>21</ReferenceNumber>
+        <Name>Status of Orphan Designation</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Positive</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>21</ReferenceNumber>
+        <Name>Decision Date</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>2009-01-19</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>22</ReferenceNumber>
+        <Name>Medicine</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Elelyso</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>22</ReferenceNumber>
+        <Name>Disease/Condition</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Prevention of oral mucositis in head and neck cancer patients undergoing radiation therapy</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>22</ReferenceNumber>
+        <Name>Active Substance</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Soluble yeast beta-1,3/1,6- glucan</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>22</ReferenceNumber>
+        <Name>Status of Orphan Designation</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Positive</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>22</ReferenceNumber>
+        <Name>Decision Date</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>2005-06-16</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>23</ReferenceNumber>
+        <Name>Medicine</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Elelyso</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>23</ReferenceNumber>
+        <Name>Disease/Condition</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Treatment of glycogen storage disease type II (Pompe&apos;s disease)</String>
+            <Markup>
+              <Start>13</Start>
+              <Length>8</Length>
+              <URL>https://pubchem.ncbi.nlm.nih.gov/compound/glycogen</URL>
+              <Type>PubChem Internal Link</Type>
+              <Extra>CID-439177</Extra>
+            </Markup>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>23</ReferenceNumber>
+        <Name>Active Substance</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Recombinant adeno-associated viral vector containing human acid alfa-glucosidase-gene</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>23</ReferenceNumber>
+        <Name>Status of Orphan Designation</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Withdrawn</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>23</ReferenceNumber>
+        <Name>Decision Date</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>2007-07-09</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+    </Section>
+  </Section>
+  <Section>
+    <TOCHeading>Pharmacology and Biochemistry</TOCHeading>
+    <Description>Pharmacology and biochemistry information related to this record</Description>
+    <Section>
+      <TOCHeading>Pharmacology</TOCHeading>
+      <Description>Pharmacology information related to this record</Description>
+      <Information>
+        <ReferenceNumber>27</ReferenceNumber>
+        <Name>Pharmacology</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Tanespimycin is a benzoquinone antineoplastic antibiotic derived from the antineoplastic antibiotic geldanamycin. Tanespimycin binds to and inhibits the cytosolic chaperone functions of heat shock protein 90 (HSP90). HSP90 maintains the stability and functional shape of many oncogenic signaling proteins; the inhibition of HSP90 promotes the proteasomal degradation of oncogenic signaling proteins that may be overexpressed by tumor cells.</String>
+            <Markup>
+              <Start>0</Start>
+              <Length>12</Length>
+              <URL>https://pubchem.ncbi.nlm.nih.gov/compound/Tanespimycin</URL>
+              <Type>PubChem Internal Link</Type>
+              <Extra>CID-6505803</Extra>
+            </Markup>
+            <Markup>
+              <Start>18</Start>
+              <Length>12</Length>
+              <URL>https://pubchem.ncbi.nlm.nih.gov/compound/benzoquinone</URL>
+              <Type>PubChem Internal Link</Type>
+              <Extra>CID-4650</Extra>
+            </Markup>
+            <Markup>
+              <Start>100</Start>
+              <Length>12</Length>
+              <URL>https://pubchem.ncbi.nlm.nih.gov/compound/geldanamycin</URL>
+              <Type>PubChem Internal Link</Type>
+              <Extra>CID-3460</Extra>
+            </Markup>
+            <Markup>
+              <Start>114</Start>
+              <Length>12</Length>
+              <URL>https://pubchem.ncbi.nlm.nih.gov/compound/Tanespimycin</URL>
+              <Type>PubChem Internal Link</Type>
+              <Extra>CID-6505803</Extra>
+            </Markup>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+    </Section>
+    <Section>
+      <TOCHeading>Mechanism of Action</TOCHeading>
+      <Description>Mechanism of Action  information related to the record</Description>
+      <Information>
+        <ReferenceNumber>8</ReferenceNumber>
+        <Value>
+          <StringWithMarkup>
+            <String>Tanespimycin is a small molecule inhibitor of heat shock protein 90 (HSP90). HSP90 is a molecular “chaperone” protein that controls protein shape or conformation, including that of key signaling molecules involved in the growth and survival of tumor cells.</String>
+            <Markup>
+              <Start>0</Start>
+              <Length>12</Length>
+              <URL>https://pubchem.ncbi.nlm.nih.gov/compound/Tanespimycin</URL>
+              <Type>PubChem Internal Link</Type>
+              <Extra>CID-6505803</Extra>
+            </Markup>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+    </Section>
+  </Section>
+  <Section>
+    <TOCHeading>Use and Manufacturing</TOCHeading>
+    <Description>The use and manufacture of the chemical and related information</Description>
+    <Section>
+      <TOCHeading>Use Classification</TOCHeading>
+      <Description>This section contains use classification/category information from various sources</Description>
+      <Information>
+        <ReferenceNumber>12</ReferenceNumber>
+        <Name>Use Classification</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Human drugs -&gt; Rare disease (orphan)</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>13</ReferenceNumber>
+        <Name>Use Classification</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Human drugs -&gt; Rare disease (orphan)</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>14</ReferenceNumber>
+        <Name>Use Classification</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Human drugs -&gt; Rare disease (orphan)</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>15</ReferenceNumber>
+        <Name>Use Classification</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Human drugs -&gt; Rare disease (orphan)</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>16</ReferenceNumber>
+        <Name>Use Classification</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Human drugs -&gt; Rare disease (orphan)</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>17</ReferenceNumber>
+        <Name>Use Classification</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Human drugs -&gt; Rare disease (orphan)</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>18</ReferenceNumber>
+        <Name>Use Classification</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Human drugs -&gt; Rare disease (orphan)</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>19</ReferenceNumber>
+        <Name>Use Classification</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Human drugs -&gt; Rare disease (orphan)</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>20</ReferenceNumber>
+        <Name>Use Classification</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Human drugs -&gt; Rare disease (orphan)</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>21</ReferenceNumber>
+        <Name>Use Classification</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Human drugs -&gt; Rare disease (orphan)</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>22</ReferenceNumber>
+        <Name>Use Classification</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Human drugs -&gt; Rare disease (orphan)</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>23</ReferenceNumber>
+        <Name>Use Classification</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>Human drugs -&gt; Rare disease (orphan)</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+    </Section>
+  </Section>
+  <Section>
+    <TOCHeading>Literature</TOCHeading>
+    <Description>Literature citation references mainly refers to regular publications such as journal articles, etc.</Description>
+    <URL>https://pubchemdocs.ncbi.nlm.nih.gov/literature</URL>
+    <Section>
+      <TOCHeading>NLM Curated PubMed Citations</TOCHeading>
+      <Description>The &quot;NLM Curated PubMed Citations&quot; section links to all PubMed records that are tagged with the same MeSH term that has been associated with a particular compound.</Description>
+      <Information>
+        <ReferenceNumber>32</ReferenceNumber>
+        <URL>https://www.ncbi.nlm.nih.gov/sites/entrez?LinkName=pccompound_pubmed_mesh&amp;db=pccompound&amp;cmd=Link&amp;from_uid=6505803</URL>
+        <Value>
+          <Boolean>true</Boolean>
+        </Value>
+      </Information>
+    </Section>
+    <Section>
+      <TOCHeading>Springer Nature References</TOCHeading>
+      <Description>Literature references related to scientific contents from Springer Nature journals and books. These references have been ranked automatically by an algorithm which calculates the relevance for each substance in a Springer Nature document. It is based on: 1. the TF-IDF, adapted to chemical structures, 2. location information in the text (e.g. title, abstract, keywords), and 3. the document size.  Springer Nature aims to provide only high qualitative and relevant content but references of lower relevance aren&apos;t withheld as they might contain also very useful information</Description>
+      <URL>https://group.springernature.com/gp/group/aboutus</URL>
+      <Information>
+        <ReferenceNumber>28</ReferenceNumber>
+        <Name>Springer Nature References</Name>
+        <Value>
+          <ExternalTableName>springernature</ExternalTableName>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>29</ReferenceNumber>
+        <Name>Springer Nature References</Name>
+        <Value>
+          <ExternalTableName>springernature</ExternalTableName>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>30</ReferenceNumber>
+        <Name>Springer Nature References</Name>
+        <Value>
+          <ExternalTableName>springernature</ExternalTableName>
+        </Value>
+      </Information>
+    </Section>
+    <Section>
+      <TOCHeading>Depositor Provided PubMed Citations</TOCHeading>
+      <Description>This section displays a concatenated list of all PubMed records that have been cited by the depositors of all PubChem Substance records that contain the same chemical structure as the compound.</Description>
+      <Information>
+        <ReferenceNumber>32</ReferenceNumber>
+        <Name>Depositor Provided PubMed Citations</Name>
+        <URL>https://www.ncbi.nlm.nih.gov/sites/entrez?LinkName=pccompound_pubmed&amp;db=pccompound&amp;cmd=Link&amp;from_uid=6505803</URL>
+        <Value>
+          <ExternalTableName>collection=pubmed&amp;pmidsrcs=xref</ExternalTableName>
+          <ExternalTableNumRows>1</ExternalTableNumRows>
+        </Value>
+      </Information>
+    </Section>
+    <Section>
+      <TOCHeading>General References</TOCHeading>
+      <Description>General References</Description>
+      <DisplayControls>
+        <ListType>Numbered</ListType>
+      </DisplayControls>
+      <Information>
+        <ReferenceNumber>25</ReferenceNumber>
+        <URL>http://dx.doi.org/10.1038/NChemBio.2007.10</URL>
+        <Value>
+          <StringWithMarkup>
+            <String>Rodnina et al. Selective compounds define Hsp90 as a major inhibitor of apoptosis in small cell lung cancer. Nature Chemical Biology, doi: 10.1038/NChemBio.2007.10, published online 1 July 2007. http://www.nature.com/naturechemicalbiology</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>26</ReferenceNumber>
+        <URL>http://dx.doi.org/10.1038/nchem.1596</URL>
+        <Value>
+          <StringWithMarkup>
+            <String>Kitson et al. Synthesis of 19-substituted geldanamycins with altered conformations and their binding to heat shock protein Hsp90. Nature Chemistry, doi: 10.1038/nchem.1596, published online 10 March 2013 http://www.nature.com/nchem</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+    </Section>
+    <Section>
+      <TOCHeading>Chemical Co-Occurrences in Literature</TOCHeading>
+      <Description>Chemical co-occurrences in literature highlight chemicals mentioned together in scientific articles. This may suggest an important relationship exists between the two. Please note that this content is not human curated. It is generated by text-mining algorithms that can be fooled such that a co-occurrence may be happenstance or a casual mention. The lists are ordered by relevancy as indicated by count of publications and other statistics, with the most relevant mentions appearing at the top.</Description>
+      <URL>https://pubchemdocs.ncbi.nlm.nih.gov/knowledge-panels</URL>
+      <Information>
+        <ReferenceNumber>32</ReferenceNumber>
+        <Name>Co-Occurrence Panel</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>ChemicalNeighbor</String>
+          </StringWithMarkup>
+          <StringWithMarkup>
+            <String>Chemical</String>
+          </StringWithMarkup>
+          <StringWithMarkup>
+            <String>ChemicalName_1</String>
+          </StringWithMarkup>
+          <StringWithMarkup>
+            <String>ChemicalName_2</String>
+          </StringWithMarkup>
+          <StringWithMarkup>
+            <String>SUMMARY_URL.cid</String>
+          </StringWithMarkup>
+          <StringWithMarkup>
+            <String>CID</String>
+          </StringWithMarkup>
+          <StringWithMarkup>
+            <String>CID</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+    </Section>
+    <Section>
+      <TOCHeading>Chemical-Gene Co-Occurrences in Literature</TOCHeading>
+      <Description>Chemical-gene co-occurrences in the literature highlight chemical-&apos;gene&apos; pairs mentioned together in scientific articles. Note that a co-occurring &apos;gene&apos; entity is organism non-specific and could refer to a gene, protein, or enzyme. This may suggest an important relationship exists between the two. Please note that this content is not human curated. It is generated by text-mining algorithms that can be fooled such that a co-occurrence may be happenstance or a casual mention. The lists are ordered by relevancy as indicated by count of publications and other statistics, with the most relevant mentions appearing at the top.</Description>
+      <URL>https://pubchemdocs.ncbi.nlm.nih.gov/knowledge-panels</URL>
+      <Information>
+        <ReferenceNumber>32</ReferenceNumber>
+        <Name>Co-Occurrence Panel</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>ChemicalGeneSymbolNeighbor</String>
+          </StringWithMarkup>
+          <StringWithMarkup>
+            <String>Gene/Protein/Enzyme</String>
+          </StringWithMarkup>
+          <StringWithMarkup>
+            <String>ChemicalName</String>
+          </StringWithMarkup>
+          <StringWithMarkup>
+            <String>GeneSymbolName</String>
+          </StringWithMarkup>
+          <StringWithMarkup>
+            <String>SUMMARY_URL.genesymbol</String>
+          </StringWithMarkup>
+          <StringWithMarkup>
+            <String>CID</String>
+          </StringWithMarkup>
+          <StringWithMarkup>
+            <String>GeneSymbol</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+    </Section>
+    <Section>
+      <TOCHeading>Chemical-Disease Co-Occurrences in Literature</TOCHeading>
+      <Description>Chemical-disease co-occurrences in literature highlight chemical-disease pairs mentioned together in scientific articles. This may suggest an important relationship exists between the two. Please note that this content is not human curated. It is generated by text-mining algorithms that can be fooled such that a co-occurrence may be happenstance or a casual mention. The lists are ordered by relevancy as indicated by count of publications and other statistics, with the most relevant mentions appearing at the top.</Description>
+      <URL>https://pubchemdocs.ncbi.nlm.nih.gov/knowledge-panels</URL>
+      <Information>
+        <ReferenceNumber>32</ReferenceNumber>
+        <Name>Co-Occurrence Panel</Name>
+        <Value>
+          <StringWithMarkup>
+            <String>ChemicalDiseaseNeighbor</String>
+          </StringWithMarkup>
+          <StringWithMarkup>
+            <String>Disease</String>
+          </StringWithMarkup>
+          <StringWithMarkup>
+            <String>ChemicalName</String>
+          </StringWithMarkup>
+          <StringWithMarkup>
+            <String>DiseaseName</String>
+          </StringWithMarkup>
+          <StringWithMarkup>
+            <String>https://meshb.nlm.nih.gov/record/ui?ui=</String>
+          </StringWithMarkup>
+          <StringWithMarkup>
+            <String>CID</String>
+          </StringWithMarkup>
+          <StringWithMarkup>
+            <String>MeSH</String>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+    </Section>
+  </Section>
+  <Section>
+    <TOCHeading>Patents</TOCHeading>
+    <Description>A PubChem summary page displays Patent information when available for the given molecule.</Description>
+    <URL>https://pubchemdocs.ncbi.nlm.nih.gov/patents</URL>
+    <DisplayControls>
+      <ListType>Columns</ListType>
+    </DisplayControls>
+    <Section>
+      <TOCHeading>Depositor-Supplied Patent Identifiers</TOCHeading>
+      <Description>Patent identifiers and more information provided by depositors in form of a widget.</Description>
+      <Information>
+        <ReferenceNumber>32</ReferenceNumber>
+        <Value>
+          <ExternalTableName>patent</ExternalTableName>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>32</ReferenceNumber>
+        <Value>
+          <StringWithMarkup>
+            <String>Link to all deposited patent identifiers</String>
+            <Markup>
+              <Start>0</Start>
+              <Length>40</Length>
+              <URL>https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/6505803/xrefs/PatentID/TXT</URL>
+            </Markup>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+    </Section>
+    <Section>
+      <TOCHeading>WIPO PATENTSCOPE</TOCHeading>
+      <Description>Use the provided link to show patents associated with this chemical structure in WIPO&apos;s PATENTSCOPE system.</Description>
+      <URL>https://patentscope.wipo.int/</URL>
+      <Information>
+        <ReferenceNumber>40</ReferenceNumber>
+        <Value>
+          <StringWithMarkup>
+            <String>Patents are available for this chemical structure:</String>
+          </StringWithMarkup>
+          <StringWithMarkup>
+            <String>https://patentscope.wipo.int/search/en/result.jsf?inchikey=AYUNIORJHRXIBJ-TXHRRWQRSA-N</String>
+            <Markup>
+              <Start>0</Start>
+              <Length>86</Length>
+              <URL>https://patentscope.wipo.int/search/en/result.jsf?inchikey=AYUNIORJHRXIBJ-TXHRRWQRSA-N</URL>
+            </Markup>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>41</ReferenceNumber>
+        <Value>
+          <StringWithMarkup>
+            <String>Patents are available for this chemical structure:</String>
+          </StringWithMarkup>
+          <StringWithMarkup>
+            <String>https://patentscope.wipo.int/search/en/result.jsf?inchikey=AYUNIORJHRXIBJ-UPXYMWIDSA-N</String>
+            <Markup>
+              <Start>0</Start>
+              <Length>86</Length>
+              <URL>https://patentscope.wipo.int/search/en/result.jsf?inchikey=AYUNIORJHRXIBJ-UPXYMWIDSA-N</URL>
+            </Markup>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+      <Information>
+        <ReferenceNumber>42</ReferenceNumber>
+        <Value>
+          <StringWithMarkup>
+            <String>Patents are available for this chemical structure:</String>
+          </StringWithMarkup>
+          <StringWithMarkup>
+            <String>https://patentscope.wipo.int/search/en/result.jsf?inchikey=AYUNIORJHRXIBJ-ZIKJQUQBSA-N</String>
+            <Markup>
+              <Start>0</Start>
+              <Length>86</Length>
+              <URL>https://patentscope.wipo.int/search/en/result.jsf?inchikey=AYUNIORJHRXIBJ-ZIKJQUQBSA-N</URL>
+            </Markup>
+          </StringWithMarkup>
+        </Value>
+      </Information>
+    </Section>
+  </Section>
+  <Section>
+    <TOCHeading>Biomolecular Interactions and Pathways</TOCHeading>
+    <Description>A PubChem summary page displays biomolecular interactions and pathways information when available for the given record.</Description>
+    <Section>
+      <TOCHeading>Drug-Gene Interactions</TOCHeading>
+      <Description>Drug-gene interactions provided by the Drug Gene Interaction Database (DGIdb)</Description>
+      <Information>
+        <ReferenceNumber>4</ReferenceNumber>
+        <Value>
+          <ExternalTableName>collection=dgidb&amp;view=concise_cid</ExternalTableName>
+        </Value>
+      </Information>
+    </Section>
+    <Section>
+      <TOCHeading>DrugBank Interactions</TOCHeading>
+      <DisplayControls>
+        <CreateTable>
+          <FromInformationIn>Subsections</FromInformationIn>
+          <NumberOfColumns>2</NumberOfColumns>
+          <ColumnContents>Name</ColumnContents>
+          <ColumnContents>Value</ColumnContents>
+        </CreateTable>
+        <ListType>Numbered</ListType>
+        <ShowAtMost>1</ShowAtMost>
+      </DisplayControls>
+      <Section>
+        <TOCHeading>Target</TOCHeading>
+        <Description>A protein, macromolecule, nucleic acid, or small molecule to which a given drug binds, resulting in an alteration of the normal function of the bound molecule and a desirable therapeutic effect. Drug targets are most commonly proteins such as enzymes, ion channels, and receptors.</Description>
+        <Information>
+          <ReferenceNumber>5</ReferenceNumber>
+          <URL>http://www.drugbank.ca/biodb/bio_entities/BE0001120</URL>
+          <Value>
+            <StringWithMarkup>
+              <String>Heat shock protein HSP 90-alpha</String>
+            </StringWithMarkup>
+          </Value>
+        </Information>
+        <Information>
+          <ReferenceNumber>6</ReferenceNumber>
+          <URL>http://www.drugbank.ca/biodb/bio_entities/BE0001898</URL>
+          <Value>
+            <StringWithMarkup>
+              <String>Heat shock protein HSP 90-beta</String>
+            </StringWithMarkup>
+          </Value>
+        </Information>
+      </Section>
+      <Section>
+        <TOCHeading>Carrier</TOCHeading>
+        <Description>A secreted protein which binds to drugs, carrying them to cell transporters, where they are moved into the cell. Drug carriers may be used in drug design to increase the effectiveness of drug delivery to the target sites of pharmacological actions.</Description>
+        <Information>
+          <ReferenceNumber>7</ReferenceNumber>
+          <URL>http://www.drugbank.ca/biodb/bio_entities/BE0000530</URL>
+          <Value>
+            <StringWithMarkup>
+              <String>Serum albumin</String>
+            </StringWithMarkup>
+          </Value>
+        </Information>
+      </Section>
+      <Section>
+        <TOCHeading>PubChem Protein Target</TOCHeading>
+        <Description>Mapped protein target in PubChem</Description>
+        <Information>
+          <ReferenceNumber>5</ReferenceNumber>
+          <URL>https://pubchem.ncbi.nlm.nih.gov/protein/P07900</URL>
+          <Value>
+            <StringWithMarkup>
+              <String>P07900</String>
+            </StringWithMarkup>
+          </Value>
+        </Information>
+        <Information>
+          <ReferenceNumber>6</ReferenceNumber>
+          <URL>https://pubchem.ncbi.nlm.nih.gov/protein/P08238</URL>
+          <Value>
+            <StringWithMarkup>
+              <String>P08238</String>
+            </StringWithMarkup>
+          </Value>
+        </Information>
+        <Information>
+          <ReferenceNumber>7</ReferenceNumber>
+          <URL>https://pubchem.ncbi.nlm.nih.gov/protein/P02768</URL>
+          <Value>
+            <StringWithMarkup>
+              <String>P02768</String>
+            </StringWithMarkup>
+          </Value>
+        </Information>
+      </Section>
+      <Section>
+        <TOCHeading>PubChem Gene Target</TOCHeading>
+        <Description>Mapped gene target in PubChem</Description>
+        <Information>
+          <ReferenceNumber>5</ReferenceNumber>
+          <URL>https://pubchem.ncbi.nlm.nih.gov/gene/3320</URL>
+          <Value>
+            <StringWithMarkup>
+              <String>HSP90AA1</String>
+            </StringWithMarkup>
+          </Value>
+        </Information>
+        <Information>
+          <ReferenceNumber>6</ReferenceNumber>
+          <URL>https://pubchem.ncbi.nlm.nih.gov/gene/3326</URL>
+          <Value>
+            <StringWithMarkup>
+              <String>HSP90AB1</String>
+            </StringWithMarkup>
+          </Value>
+        </Information>
+        <Information>
+          <ReferenceNumber>7</ReferenceNumber>
+          <URL>https://pubchem.ncbi.nlm.nih.gov/gene/213</URL>
+          <Value>
+            <StringWithMarkup>
+              <String>ALB</String>
+            </StringWithMarkup>
+          </Value>
+        </Information>
+      </Section>
+      <Section>
+        <TOCHeading>General Function</TOCHeading>
+        <Description>Short 3-4 word summary of the primary functions</Description>
+        <Information>
+          <ReferenceNumber>5</ReferenceNumber>
+          <Value>
+            <StringWithMarkup>
+              <String>Tpr domain binding</String>
+            </StringWithMarkup>
+          </Value>
+        </Information>
+        <Information>
+          <ReferenceNumber>6</ReferenceNumber>
+          <Value>
+            <StringWithMarkup>
+              <String>Utp binding</String>
+            </StringWithMarkup>
+          </Value>
+        </Information>
+        <Information>
+          <ReferenceNumber>7</ReferenceNumber>
+          <Value>
+            <StringWithMarkup>
+              <String>Toxic substance binding</String>
+            </StringWithMarkup>
+          </Value>
+        </Information>
+      </Section>
+      <Section>
+        <TOCHeading>Specific Function</TOCHeading>
+        <Description>Detailed 30-40 word summary of the specific functions</Description>
+        <Information>
+          <ReferenceNumber>5</ReferenceNumber>
+          <Value>
+            <StringWithMarkup>
+              <String>Molecular chaperone that promotes the maturation, structural maintenance and proper regulation of specific target proteins involved for instance in cell cycle control and signal transduction. Undergoes a functional cycle that is linked to its ATPase activity. This cycle probably induces conformational changes in the client proteins, thereby causing their activation. Interacts dynamically with various co-chaperones that modulate its substrate recognition, ATPase cycle and chaperone function. Binds bacterial lipopolysaccharide (LPS) et mediates LPS-induced inflammatory response, including TNF secretion by monocytes.</String>
+              <Markup>
+                <Start>512</Start>
+                <Length>18</Length>
+                <URL>https://pubchem.ncbi.nlm.nih.gov/compound/lipopolysaccharide</URL>
+                <Type>PubChem Internal Link</Type>
+                <Extra>CID-11970143</Extra>
+              </Markup>
+            </StringWithMarkup>
+          </Value>
+        </Information>
+        <Information>
+          <ReferenceNumber>6</ReferenceNumber>
+          <Value>
+            <StringWithMarkup>
+              <String>Molecular chaperone that promotes the maturation, structural maintenance and proper regulation of specific target proteins involved for instance in cell cycle control and signal transduction. Undergoes a functional cycle that is linked to its ATPase activity. This cycle probably induces conformational changes in the client proteins, thereby causing their activation. Interacts dynamically with various co-chaperones that modulate its substrate recognition, ATPase cycle and chaperone function.</String>
+            </StringWithMarkup>
+          </Value>
+        </Information>
+        <Information>
+          <ReferenceNumber>7</ReferenceNumber>
+          <Value>
+            <StringWithMarkup>
+              <String>Serum albumin, the main protein of plasma, has a good binding capacity for water, Ca(2+), Na(+), K(+), fatty acids, hormones, bilirubin and drugs. Its main function is the regulation of the colloidal osmotic pressure of blood. Major zinc transporter in plasma, typically binds about 80% of all plasma zinc.</String>
+              <Markup>
+                <Start>75</Start>
+                <Length>5</Length>
+                <URL>https://pubchem.ncbi.nlm.nih.gov/compound/water</URL>
+                <Type>PubChem Internal Link</Type>
+                <Extra>CID-962</Extra>
+              </Markup>
+              <Markup>
+                <Start>126</Start>
+                <Length>9</Length>
+                <URL>https://pubchem.ncbi.nlm.nih.gov/compound/bilirubin</URL>
+                <Type>PubChem Internal Link</Type>
+                <Extra>CID-5280352</Extra>
+              </Markup>
+              <Markup>
+                <Start>233</Start>
+                <Length>4</Length>
+                <URL>https://pubchem.ncbi.nlm.nih.gov/element/Zinc</URL>
+                <Type>PubChem Internal Link</Type>
+                <Extra>Element-Zinc</Extra>
+              </Markup>
+              <Markup>
+                <Start>301</Start>
+                <Length>4</Length>
+                <URL>https://pubchem.ncbi.nlm.nih.gov/element/Zinc</URL>
+                <Type>PubChem Internal Link</Type>
+                <Extra>Element-Zinc</Extra>
+              </Markup>
+            </StringWithMarkup>
+          </Value>
+        </Information>
+      </Section>
+      <Section>
+        <TOCHeading>Interaction References</TOCHeading>
+        <Description>Interaction References</Description>
+        <Information>
+          <ReferenceNumber>7</ReferenceNumber>
+          <Value>
+            <StringWithMarkup>
+              <String>Guo W, Siegel D, Ross D: Stability of the Hsp90 inhibitor 17AAG hydroquinone and prevention of metal-catalyzed oxidation. J Pharm Sci. 2008 Dec;97(12):5147-57. doi: 10.1002/jps.21394. [PMID:18393300]</String>
+              <Markup>
+                <Start>185</Start>
+                <Length>13</Length>
+                <URL>https://www.ncbi.nlm.nih.gov/pubmed/18393300</URL>
+              </Markup>
+              <Markup>
+                <Start>58</Start>
+                <Length>5</Length>
+                <URL>https://pubchem.ncbi.nlm.nih.gov/compound/17AAG</URL>
+                <Type>PubChem Internal Link</Type>
+                <Extra>multiple-CIDs</Extra>
+              </Markup>
+              <Markup>
+                <Start>64</Start>
+                <Length>12</Length>
+                <URL>https://pubchem.ncbi.nlm.nih.gov/compound/hydroquinone</URL>
+                <Type>PubChem Internal Link</Type>
+                <Extra>CID-785</Extra>
+              </Markup>
+            </StringWithMarkup>
+          </Value>
+        </Information>
+      </Section>
+    </Section>
+  </Section>
+  <Section>
+    <TOCHeading>Biological Test Results</TOCHeading>
+    <Description>A PubChem substance or compound summary page displays biological test results from the PubChem BioAssay database, if/as available, for the chemical structure currently displayed. (Note that you can embed biological test results displays within your own web pages, for a PubChem Compound or Substance of interest, by using the BioActivity Widget.)</Description>
+    <URL>https://pubchemdocs.ncbi.nlm.nih.gov/bioassays</URL>
+    <Section>
+      <TOCHeading>BioAssay Results</TOCHeading>
+      <Description>BioActivity information showed in tabular widget.</Description>
+      <Information>
+        <ReferenceNumber>32</ReferenceNumber>
+        <Value>
+          <ExternalTableName>bioactivity</ExternalTableName>
+        </Value>
+      </Information>
+    </Section>
+  </Section>
+  <Section>
+    <TOCHeading>Classification</TOCHeading>
+    <Description>Classification systems from MeSH, ChEBI, Kegg, etc.</Description>
+    <URL>https://pubchem.ncbi.nlm.nih.gov/classification</URL>
+    <Section>
+      <TOCHeading>Ontologies</TOCHeading>
+      <Description>Ontologies</Description>
+      <Section>
+        <TOCHeading>MeSH Tree</TOCHeading>
+        <Description>MeSH tree</Description>
+        <Information>
+          <ReferenceNumber>34</ReferenceNumber>
+          <Name>HID</Name>
+          <URL>https://pubchem.ncbi.nlm.nih.gov/classification/#hid=1</URL>
+          <Value>
+            <Number>1</Number>
+          </Value>
+        </Information>
+      </Section>
+      <Section>
+        <TOCHeading>ChEBI Ontology</TOCHeading>
+        <Description>ChEBI Ontology tree</Description>
+        <Information>
+          <ReferenceNumber>35</ReferenceNumber>
+          <Name>HID</Name>
+          <URL>https://pubchem.ncbi.nlm.nih.gov/classification/#hid=2</URL>
+          <Value>
+            <Number>2</Number>
+          </Value>
+        </Information>
+      </Section>
+      <Section>
+        <TOCHeading>KEGG: Target-based Classification of Drugs</TOCHeading>
+        <Description>KEGG : Target-based Classification of Drugs tree</Description>
+        <Information>
+          <ReferenceNumber>36</ReferenceNumber>
+          <Name>HID</Name>
+          <URL>https://pubchem.ncbi.nlm.nih.gov/classification/#hid=22</URL>
+          <Value>
+            <Number>22</Number>
+          </Value>
+        </Information>
+      </Section>
+      <Section>
+        <TOCHeading>WIPO IPC</TOCHeading>
+        <Description>WIPO IPC tree</Description>
+        <Information>
+          <ReferenceNumber>37</ReferenceNumber>
+          <Name>HID</Name>
+          <URL>https://pubchem.ncbi.nlm.nih.gov/classification/#hid=58</URL>
+          <Value>
+            <Number>58</Number>
+          </Value>
+        </Information>
+      </Section>
+      <Section>
+        <TOCHeading>ChemIDplus</TOCHeading>
+        <Description>ChemIDplus tree</Description>
+        <Information>
+          <ReferenceNumber>38</ReferenceNumber>
+          <Name>HID</Name>
+          <URL>https://pubchem.ncbi.nlm.nih.gov/classification/#hid=84</URL>
+          <Value>
+            <Number>84</Number>
+          </Value>
+        </Information>
+      </Section>
+      <Section>
+        <TOCHeading>ChEMBL Target Tree</TOCHeading>
+        <Description>Protein target tree from ChEMBL</Description>
+        <URL>https://www.ebi.ac.uk/chembl/target/browser</URL>
+        <Information>
+          <ReferenceNumber>39</ReferenceNumber>
+          <Name>HID</Name>
+          <URL>https://pubchem.ncbi.nlm.nih.gov/classification/#hid=87</URL>
+          <Value>
+            <Number>87</Number>
+          </Value>
+        </Information>
+      </Section>
+    </Section>
+  </Section>
+  <Reference>
+    <ReferenceNumber>1</ReferenceNumber>
+    <SourceName>ChEBI</SourceName>
+    <SourceID>CHEBI:OBO:6505803</SourceID>
+    <Name>Tanespimycin</Name>
+    <Description>Chemical Entities of Biological Interest (ChEBI) is a database and ontology of molecular entities focused on &apos;small&apos; chemical compounds, that is part of the Open Biomedical Ontologies effort. The term &quot;molecular entity&quot; refers to any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical, radical ion, complex, conformer, etc., identifiable as a separately distinguishable entity.</Description>
+    <URL>http://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:64153</URL>
+    <ANID>2526656</ANID>
+  </Reference>
+  <Reference>
+    <ReferenceNumber>8</ReferenceNumber>
+    <SourceName>DrugBank</SourceName>
+    <SourceID>DB05134</SourceID>
+    <Name>Tanespimycin</Name>
+    <Description>The DrugBank database is a unique bioinformatics and cheminformatics resource that combines detailed drug (i.e. chemical, pharmacological and pharmaceutical) data with comprehensive drug target (i.e. sequence, structure, and pathway) information.</Description>
+    <URL>http://www.drugbank.ca/drugs/DB05134</URL>
+    <LicenseNote>Creative Common&apos;s Attribution-NonCommercial 4.0 International License (http://creativecommons.org/licenses/by-nc/4.0/legalcode)</LicenseNote>
+    <LicenseURL>https://www.drugbank.ca/legal/terms_of_use</LicenseURL>
+    <ANID>3618850</ANID>
+  </Reference>
+  <Reference>
+    <ReferenceNumber>27</ReferenceNumber>
+    <SourceName>NCI Thesaurus (NCIt)</SourceName>
+    <SourceID>C37899_1680</SourceID>
+    <Name>Tanespimycin</Name>
+    <Description>NCI Thesaurus (NCIt) provides reference terminology for many systems. It covers vocabulary for clinical care, translational and basic research, and public information and administrative activities.</Description>
+    <URL>https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&amp;ns=NCI_Thesaurus&amp;code=C37899</URL>
+    <LicenseNote>Unless otherwise indicated, all text within NCI products is free of copyright and may be reused without our permission. Credit the National Cancer Institute as the source.</LicenseNote>
+    <LicenseURL>https://www.cancer.gov/policies/copyright-reuse</LicenseURL>
+    <ANID>9040995</ANID>
+  </Reference>
+  <Reference>
+    <ReferenceNumber>2</ReferenceNumber>
+    <SourceName>ChemIDplus</SourceName>
+    <SourceID>0075747147</SourceID>
+    <Name>Tanespimycin [USAN:INN]</Name>
+    <Description>ChemIDplus is a free, web search system that provides access to the structure and nomenclature authority files used for the identification of chemical substances cited in National Library of Medicine (NLM) databases, including the TOXNET system.</Description>
+    <URL>https://chem.nlm.nih.gov/chemidplus/sid/0075747147</URL>
+    <LicenseURL>https://www.nlm.nih.gov/copyright.html</LicenseURL>
+    <IsToxnet>true</IsToxnet>
+    <ANID>998761</ANID>
+  </Reference>
+  <Reference>
+    <ReferenceNumber>9</ReferenceNumber>
+    <SourceName>DTP/NCI</SourceName>
+    <SourceID>NSC 330507</SourceID>
+    <Name>Tanespimycin</Name>
+    <Description>The NCI Development Therapeutics Program (DTP) provides services and resources to the academic and private-sector research communities worldwide to facilitate the discovery and development of new cancer therapeutic agents.</Description>
+    <URL>https://dtp.cancer.gov/dtpstandard/servlet/dwindex?searchtype=NSC&amp;outputformat=html&amp;searchlist=330507</URL>
+    <ANID>6626577</ANID>
+  </Reference>
+  <Reference>
+    <ReferenceNumber>10</ReferenceNumber>
+    <SourceName>EPA DSSTox</SourceName>
+    <SourceID>DTXSID5046352</SourceID>
+    <Name>Tanespimycin</Name>
+    <Description>DSSTox provides a high quality public chemistry resource for supporting improved predictive toxicology.</Description>
+    <URL>https://comptox.epa.gov/dashboard/DTXSID5046352</URL>
+    <LicenseURL>https://www.epa.gov/privacy/privacy-act-laws-policies-and-resources</LicenseURL>
+    <ANID>1161235</ANID>
+  </Reference>
+  <Reference>
+    <ReferenceNumber>3</ReferenceNumber>
+    <SourceName>ClinicalTrials.gov</SourceName>
+    <SourceID>cid6505803</SourceID>
+    <Description>ClinicalTrials.gov is an NIH registry and results database of publicly and privately supported clinical studies of human participants conducted around the world.</Description>
+    <URL>https://clinicaltrials.gov/</URL>
+    <LicenseNote>The ClinicalTrials.gov data carry an international copyright outside the United States and its Territories or Possessions. Some ClinicalTrials.gov data may be subject to the copyright of third parties; you should consult these entities for any additional terms of use.</LicenseNote>
+    <LicenseURL>https://clinicaltrials.gov/ct2/about-site/terms-conditions#Use</LicenseURL>
+    <ANID>5189984</ANID>
+  </Reference>
+  <Reference>
+    <ReferenceNumber>4</ReferenceNumber>
+    <SourceName>Drug Gene Interaction database (DGIdb)</SourceName>
+    <SourceID>TANESPIMYCIN</SourceID>
+    <Description>The Drug Gene Interaction Database (DGIdb, www.dgidb.org) is a web resource that consolidates disparate data sources describing drug - gene interactions and gene druggability.</Description>
+    <URL>http://www.dgidb.org/drugs/TANESPIMYCIN</URL>
+    <LicenseNote>The data used in DGIdb is all open access and where possible made available as raw data dumps in the downloads section.</LicenseNote>
+    <LicenseURL>http://www.dgidb.org/downloads</LicenseURL>
+    <ANID>8268197</ANID>
+  </Reference>
+  <Reference>
+    <ReferenceNumber>5</ReferenceNumber>
+    <SourceName>DrugBank</SourceName>
+    <SourceID>DB05134 interaction #1</SourceID>
+    <Description>The DrugBank database is a unique bioinformatics and cheminformatics resource that combines detailed drug (i.e. chemical, pharmacological and pharmaceutical) data with comprehensive drug target (i.e. sequence, structure, and pathway) information.</Description>
+    <URL>http://www.drugbank.ca/drugs/DB05134#targets</URL>
+    <LicenseNote>Creative Common&apos;s Attribution-NonCommercial 4.0 International License (http://creativecommons.org/licenses/by-nc/4.0/legalcode)</LicenseNote>
+    <LicenseURL>https://www.drugbank.ca/legal/terms_of_use</LicenseURL>
+    <ANID>3618847</ANID>
+  </Reference>
+  <Reference>
+    <ReferenceNumber>6</ReferenceNumber>
+    <SourceName>DrugBank</SourceName>
+    <SourceID>DB05134 interaction #2</SourceID>
+    <Description>The DrugBank database is a unique bioinformatics and cheminformatics resource that combines detailed drug (i.e. chemical, pharmacological and pharmaceutical) data with comprehensive drug target (i.e. sequence, structure, and pathway) information.</Description>
+    <URL>http://www.drugbank.ca/drugs/DB05134#targets</URL>
+    <LicenseNote>Creative Common&apos;s Attribution-NonCommercial 4.0 International License (http://creativecommons.org/licenses/by-nc/4.0/legalcode)</LicenseNote>
+    <LicenseURL>https://www.drugbank.ca/legal/terms_of_use</LicenseURL>
+    <ANID>3618848</ANID>
+  </Reference>
+  <Reference>
+    <ReferenceNumber>7</ReferenceNumber>
+    <SourceName>DrugBank</SourceName>
+    <SourceID>DB05134 interaction #3</SourceID>
+    <Description>The DrugBank database is a unique bioinformatics and cheminformatics resource that combines detailed drug (i.e. chemical, pharmacological and pharmaceutical) data with comprehensive drug target (i.e. sequence, structure, and pathway) information.</Description>
+    <URL>http://www.drugbank.ca/drugs/DB05134#carriers</URL>
+    <LicenseNote>Creative Common&apos;s Attribution-NonCommercial 4.0 International License (http://creativecommons.org/licenses/by-nc/4.0/legalcode)</LicenseNote>
+    <LicenseURL>https://www.drugbank.ca/legal/terms_of_use</LicenseURL>
+    <ANID>3618849</ANID>
+  </Reference>
+  <Reference>
+    <ReferenceNumber>11</ReferenceNumber>
+    <SourceName>EU Clinical Trials Register</SourceName>
+    <SourceID>cid6505803</SourceID>
+    <Description>The EU Clinical Trials Register contains information on interventional clinical trials on medicines conducted in the European Union (EU), or the European Economic Area (EEA) which started after 1 May 2004.</Description>
+    <URL>https://www.clinicaltrialsregister.eu/</URL>
+    <ANID>6481982</ANID>
+  </Reference>
+  <Reference>
+    <ReferenceNumber>12</ReferenceNumber>
+    <SourceName>European Medicines Agency (EMA)</SourceName>
+    <SourceID>EU/3/07/512_1</SourceID>
+    <Name>17-(Allylamino)-17-demethoxygeldanamycin, hydroquinone hydrochloride(EU/3/07/512)</Name>
+    <Description>The European Medicines Agency (EMA) presents information on regulatory topics of the medicinal product lifecycle in EU countries.</Description>
+    <URL>https://www.ema.europa.eu/en/medicines/human/orphan-designations/eu307512</URL>
+    <LicenseNote>Information on the European Medicines Agency&apos;s (EMA)  website is subject to a disclaimer and copyright and limited reproduction notices.</LicenseNote>
+    <LicenseURL>https://www.ema.europa.eu/en/about-us/legal-notice</LicenseURL>
+    <ANID>8856481</ANID>
+  </Reference>
+  <Reference>
+    <ReferenceNumber>13</ReferenceNumber>
+    <SourceName>European Medicines Agency (EMA)</SourceName>
+    <SourceID>EU/3/06/426_1</SourceID>
+    <Name>Fenretinide(EU/3/06/426)</Name>
+    <Description>The European Medicines Agency (EMA) presents information on regulatory topics of the medicinal product lifecycle in EU countries.</Description>
+    <URL>https://www.ema.europa.eu/en/medicines/human/orphan-designations/eu306426</URL>
+    <LicenseNote>Information on the European Medicines Agency&apos;s (EMA)  website is subject to a disclaimer and copyright and limited reproduction notices.</LicenseNote>
+    <LicenseURL>https://www.ema.europa.eu/en/about-us/legal-notice</LicenseURL>
+    <ANID>8856482</ANID>
+  </Reference>
+  <Reference>
+    <ReferenceNumber>14</ReferenceNumber>
+    <SourceName>European Medicines Agency (EMA)</SourceName>
+    <SourceID>EU/3/06/427_1</SourceID>
+    <Name>Fenretinide(EU/3/06/427)</Name>
+    <Description>The European Medicines Agency (EMA) presents information on regulatory topics of the medicinal product lifecycle in EU countries.</Description>
+    <URL>https://www.ema.europa.eu/en/medicines/human/orphan-designations/eu306427</URL>
+    <LicenseNote>Information on the European Medicines Agency&apos;s (EMA)  website is subject to a disclaimer and copyright and limited reproduction notices.</LicenseNote>
+    <LicenseURL>https://www.ema.europa.eu/en/about-us/legal-notice</LicenseURL>
+    <ANID>8856483</ANID>
+  </Reference>
+  <Reference>
+    <ReferenceNumber>15</ReferenceNumber>
+    <SourceName>European Medicines Agency (EMA)</SourceName>
+    <SourceID>EU/3/07/515_1</SourceID>
+    <Name>Tegafur, gimeracil, oteracil potassium(EU/3/07/515)</Name>
+    <Description>The European Medicines Agency (EMA) presents information on regulatory topics of the medicinal product lifecycle in EU countries.</Description>
+    <URL>https://www.ema.europa.eu/en/medicines/human/orphan-designations/eu307515</URL>
+    <LicenseNote>Information on the European Medicines Agency&apos;s (EMA)  website is subject to a disclaimer and copyright and limited reproduction notices.</LicenseNote>
+    <LicenseURL>https://www.ema.europa.eu/en/about-us/legal-notice</LicenseURL>
+    <ANID>8856484</ANID>
+  </Reference>
+  <Reference>
+    <ReferenceNumber>16</ReferenceNumber>
+    <SourceName>European Medicines Agency (EMA)</SourceName>
+    <SourceID>EU/3/09/644_1</SourceID>
+    <Name>Murine monoclonal antibody to GD2(EU/3/09/644)</Name>
+    <Description>The European Medicines Agency (EMA) presents information on regulatory topics of the medicinal product lifecycle in EU countries.</Description>
+    <URL>https://www.ema.europa.eu/en/medicines/human/orphan-designations/eu309644</URL>
+    <LicenseNote>Information on the European Medicines Agency&apos;s (EMA)  website is subject to a disclaimer and copyright and limited reproduction notices.</LicenseNote>
+    <LicenseURL>https://www.ema.europa.eu/en/about-us/legal-notice</LicenseURL>
+    <ANID>8856485</ANID>
+  </Reference>
+  <Reference>
+    <ReferenceNumber>17</ReferenceNumber>
+    <SourceName>European Medicines Agency (EMA)</SourceName>
+    <SourceID>EU/3/05/308_1</SourceID>
+    <Name>Sapropterin(EU/3/05/308)</Name>
+    <Description>The European Medicines Agency (EMA) presents information on regulatory topics of the medicinal product lifecycle in EU countries.</Description>
+    <URL>https://www.ema.europa.eu/en/medicines/human/orphan-designations/eu305308</URL>
+    <LicenseNote>Information on the European Medicines Agency&apos;s (EMA)  website is subject to a disclaimer and copyright and limited reproduction notices.</LicenseNote>
+    <LicenseURL>https://www.ema.europa.eu/en/about-us/legal-notice</LicenseURL>
+    <ANID>8856486</ANID>
+  </Reference>
+  <Reference>
+    <ReferenceNumber>18</ReferenceNumber>
+    <SourceName>European Medicines Agency (EMA)</SourceName>
+    <SourceID>EU/3/09/688_1</SourceID>
+    <Name>Patupilone(EU/3/09/688)</Name>
+    <Description>The European Medicines Agency (EMA) presents information on regulatory topics of the medicinal product lifecycle in EU countries.</Description>
+    <URL>https://www.ema.europa.eu/en/medicines/human/orphan-designations/eu309688</URL>
+    <LicenseNote>Information on the European Medicines Agency&apos;s (EMA)  website is subject to a disclaimer and copyright and limited reproduction notices.</LicenseNote>
+    <LicenseURL>https://www.ema.europa.eu/en/about-us/legal-notice</LicenseURL>
+    <ANID>8856487</ANID>
+  </Reference>
+  <Reference>
+    <ReferenceNumber>19</ReferenceNumber>
+    <SourceName>European Medicines Agency (EMA)</SourceName>
+    <SourceID>EU/3/06/356_1</SourceID>
+    <Name>4-Amino-5-oxo-4 (pyridinium-1-ylmethyl) proline(EU/3/06/356)</Name>
+    <Description>The European Medicines Agency (EMA) presents information on regulatory topics of the medicinal product lifecycle in EU countries.</Description>
+    <URL>https://www.ema.europa.eu/en/medicines/human/orphan-designations/eu306356</URL>
+    <LicenseNote>Information on the European Medicines Agency&apos;s (EMA)  website is subject to a disclaimer and copyright and limited reproduction notices.</LicenseNote>
+    <LicenseURL>https://www.ema.europa.eu/en/about-us/legal-notice</LicenseURL>
+    <ANID>8856488</ANID>
+  </Reference>
+  <Reference>
+    <ReferenceNumber>20</ReferenceNumber>
+    <SourceName>European Medicines Agency (EMA)</SourceName>
+    <SourceID>EU/3/08/568_1</SourceID>
+    <Name>N&apos;-(5-chloro-2-hydroxy-3-methylbenzylidene)-2,4-dihydroxybenzhydrazide(EU/3/08/568)</Name>
+    <Description>The European Medicines Agency (EMA) presents information on regulatory topics of the medicinal product lifecycle in EU countries.</Description>
+    <URL>https://www.ema.europa.eu/en/medicines/human/orphan-designations/eu308568</URL>
+    <LicenseNote>Information on the European Medicines Agency&apos;s (EMA)  website is subject to a disclaimer and copyright and limited reproduction notices.</LicenseNote>
+    <LicenseURL>https://www.ema.europa.eu/en/about-us/legal-notice</LicenseURL>
+    <ANID>8856489</ANID>
+  </Reference>
+  <Reference>
+    <ReferenceNumber>21</ReferenceNumber>
+    <SourceName>European Medicines Agency (EMA)</SourceName>
+    <SourceID>EU/3/08/603_1</SourceID>
+    <Name>Pralatrexate(EU/3/08/603)</Name>
+    <Description>The European Medicines Agency (EMA) presents information on regulatory topics of the medicinal product lifecycle in EU countries.</Description>
+    <URL>https://www.ema.europa.eu/en/medicines/human/orphan-designations/eu308603</URL>
+    <LicenseNote>Information on the European Medicines Agency&apos;s (EMA)  website is subject to a disclaimer and copyright and limited reproduction notices.</LicenseNote>
+    <LicenseURL>https://www.ema.europa.eu/en/about-us/legal-notice</LicenseURL>
+    <ANID>8856490</ANID>
+  </Reference>
+  <Reference>
+    <ReferenceNumber>22</ReferenceNumber>
+    <SourceName>European Medicines Agency (EMA)</SourceName>
+    <SourceID>EU/3/05/294_1</SourceID>
+    <Name>Soluble yeast beta-1,3/1,6- glucan(EU/3/05/294)</Name>
+    <Description>The European Medicines Agency (EMA) presents information on regulatory topics of the medicinal product lifecycle in EU countries.</Description>
+    <URL>https://www.ema.europa.eu/en/medicines/human/orphan-designations/eu305294</URL>
+    <LicenseNote>Information on the European Medicines Agency&apos;s (EMA)  website is subject to a disclaimer and copyright and limited reproduction notices.</LicenseNote>
+    <LicenseURL>https://www.ema.europa.eu/en/about-us/legal-notice</LicenseURL>
+    <ANID>8856491</ANID>
+  </Reference>
+  <Reference>
+    <ReferenceNumber>23</ReferenceNumber>
+    <SourceName>European Medicines Agency (EMA)</SourceName>
+    <SourceID>EU/3/07/454_1</SourceID>
+    <Name>Recombinant adeno-associated viral vector containing human acid alfa-glucosidase-gene(EU/3/07/454)</Name>
+    <Description>The European Medicines Agency (EMA) presents information on regulatory topics of the medicinal product lifecycle in EU countries.</Description>
+    <URL>https://www.ema.europa.eu/en/medicines/human/orphan-designations/eu307454</URL>
+    <LicenseNote>Information on the European Medicines Agency&apos;s (EMA)  website is subject to a disclaimer and copyright and limited reproduction notices.</LicenseNote>
+    <LicenseURL>https://www.ema.europa.eu/en/about-us/legal-notice</LicenseURL>
+    <ANID>8856492</ANID>
+  </Reference>
+  <Reference>
+    <ReferenceNumber>24</ReferenceNumber>
+    <SourceName>FDA/SPL Indexing Data</SourceName>
+    <SourceID>4GY0AVT3L4</SourceID>
+    <Name>4GY0AVT3L4</Name>
+    <Description>The UNique Ingredient Identifier (UNII) is an alphanumeric substance identifier from the joint FDA/USP Substance Registration System (SRS).</Description>
+    <URL>https://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/</URL>
+    <LicenseNote>Unless otherwise noted, the contents of the FDA website (www.fda.gov), both text and graphics, are not copyrighted. They are in the public domain and may be republished, reprinted and otherwise used freely by anyone without the need to obtain permission from FDA. Credit to the U.S. Food and Drug Administration as the source is appreciated but not required.</LicenseNote>
+    <LicenseURL>https://www.fda.gov/about-fda/about-website/website-policies#linking</LicenseURL>
+    <ANID>5823745</ANID>
+  </Reference>
+  <Reference>
+    <ReferenceNumber>25</ReferenceNumber>
+    <SourceName>Nature Chemical Biology</SourceName>
+    <SourceID>NChemBio.2007.10-comp2</SourceID>
+    <Description>Nature Chemical Biology is an international monthly journal that provides a high-visibility forum for the publication of top-tier original research and commentary for the chemical biology community. Chemical biology combines the scientific ideas and approaches of chemistry, biology and allied disciplines to understand and manipulate biological systems with molecular precision.</Description>
+    <URL>https://pubchem.ncbi.nlm.nih.gov/substance/24769880</URL>
+    <ANID>8532925</ANID>
+  </Reference>
+  <Reference>
+    <ReferenceNumber>26</ReferenceNumber>
+    <SourceName>Nature Chemistry</SourceName>
+    <SourceID>nchem.1596-comp2</SourceID>
+    <Description>Nature Chemistry is a monthly journal dedicated to publishing high-quality papers that describe the most significant and cutting-edge research in all areas of chemistry. As well as reflecting the traditional core subjects of analytical, inorganic, organic and physical chemistry, the journal also features a broad range of chemical research including, but not limited to, catalysis, computational and theoretical chemistry, environmental chemistry, green chemistry, medicinal chemistry, nuclear chemistry, polymer chemistry, supramolecular chemistry and surface chemistry.</Description>
+    <URL>https://pubchem.ncbi.nlm.nih.gov/substance/160843272</URL>
+    <ANID>8520894</ANID>
+  </Reference>
+  <Reference>
+    <ReferenceNumber>28</ReferenceNumber>
+    <SourceName>Springer Nature</SourceName>
+    <SourceID>42061117-772227046</SourceID>
+    <Description>Literature references related to scientific contents from Springer Nature journals and books. Read more: https://link.springer.com/</Description>
+    <ANID>3849999</ANID>
+  </Reference>
+  <Reference>
+    <ReferenceNumber>29</ReferenceNumber>
+    <SourceName>Springer Nature</SourceName>
+    <SourceID>42061117-772240784</SourceID>
+    <Description>Literature references related to scientific contents from Springer Nature journals and books. https://link.springer.com/</Description>
+    <URL>https://pubchem.ncbi.nlm.nih.gov/substance/341284783</URL>
+    <ANID>3965208</ANID>
+  </Reference>
+  <Reference>
+    <ReferenceNumber>30</ReferenceNumber>
+    <SourceName>Springer Nature</SourceName>
+    <SourceID>42053858-294466352</SourceID>
+    <Description>Literature references related to scientific contents from Springer Nature journals and books. https://link.springer.com/</Description>
+    <URL>https://pubchem.ncbi.nlm.nih.gov/substance/341827526</URL>
+    <ANID>4449042</ANID>
+  </Reference>
+  <Reference>
+    <ReferenceNumber>31</ReferenceNumber>
+    <SourceName>Wikipedia</SourceName>
+    <SourceID>Q4552288</SourceID>
+    <Name>tanespimycin</Name>
+    <Description>Link to the compound information in Wikipedia.</Description>
+    <URL>https://en.wikipedia.org/wiki/Tanespimycin</URL>
+    <ANID>2375585</ANID>
+  </Reference>
+  <Reference>
+    <ReferenceNumber>32</ReferenceNumber>
+    <SourceName>PubChem</SourceName>
+    <SourceID>PubChem</SourceID>
+    <Description>Data deposited in or computed by PubChem</Description>
+    <URL>https://pubchem.ncbi.nlm.nih.gov</URL>
+  </Reference>
+  <Reference>
+    <ReferenceNumber>33</ReferenceNumber>
+    <SourceName>MeSH</SourceName>
+    <SourceID>67112765</SourceID>
+    <Name>tanespimycin</Name>
+    <URL>https://www.ncbi.nlm.nih.gov/mesh/67112765</URL>
+  </Reference>
+  <Reference>
+    <ReferenceNumber>34</ReferenceNumber>
+    <SourceName>MeSH</SourceName>
+    <SourceID>DescTree</SourceID>
+    <Name>MeSH Tree</Name>
+    <Description>MeSH (Medical Subject Headings) is the NLM controlled vocabulary thesaurus used for indexing articles for PubMed.</Description>
+    <URL>http://www.nlm.nih.gov/mesh/meshhome.html</URL>
+  </Reference>
+  <Reference>
+    <ReferenceNumber>35</ReferenceNumber>
+    <SourceName>ChEBI</SourceName>
+    <SourceID>OBO</SourceID>
+    <Name>ChEBI Ontology</Name>
+    <Description>The ChEBI Ontology is a structured classification of the entities contained within ChEBI.</Description>
+    <URL>http://www.ebi.ac.uk/chebi/userManualForward.do#ChEBI%20Ontology</URL>
+  </Reference>
+  <Reference>
+    <ReferenceNumber>36</ReferenceNumber>
+    <SourceName>KEGG</SourceName>
+    <SourceID>br08310</SourceID>
+    <Name>Target-based classification of drugs</Name>
+    <URL>http://www.genome.jp/kegg-bin/get_htext?br08310.keg</URL>
+  </Reference>
+  <Reference>
+    <ReferenceNumber>37</ReferenceNumber>
+    <SourceName>WIPO</SourceName>
+    <SourceID>IPC</SourceID>
+    <Name>International Patent Classification</Name>
+    <Description>The World Intellectual Property Organization (WIPO) International Patent Classification (IPC), established by the Strasbourg Agreement 1971, provides for a hierarchical system of language independent symbols for the classification of patents and utility models according to the different areas of technology to which they pertain.</Description>
+    <URL>http://www.wipo.int/classifications/ipc/</URL>
+  </Reference>
+  <Reference>
+    <ReferenceNumber>38</ReferenceNumber>
+    <SourceName>ChemIDplus</SourceName>
+    <SourceID>ChemIDplus_tree</SourceID>
+    <Name>ChemIDplus Chemical Information Classification</Name>
+    <Description>ChemIDplus is a TOXNET (TOXicology Data NETwork) databases that contain chemicals and drugs related information. It is managed by the Toxicology and Environmental Health Information Program (TEHIP) in the Division of Specialized Information Services (SIS) of the National Library of Medicine (NLM).</Description>
+    <URL>https://chem.nlm.nih.gov/chemidplus/</URL>
+    <IsToxnet>true</IsToxnet>
+  </Reference>
+  <Reference>
+    <ReferenceNumber>39</ReferenceNumber>
+    <SourceName>ChEMBL</SourceName>
+    <SourceID>Target Tree</SourceID>
+    <Name>Target Tree</Name>
+    <Description>The ChEMBL Protein Target Tree is a structured classification of the protein target entities contained with the ChEMBL resource.</Description>
+    <URL>https://www.ebi.ac.uk/chembl/target/browser</URL>
+  </Reference>
+  <Reference>
+    <ReferenceNumber>40</ReferenceNumber>
+    <SourceName>PATENTSCOPE (WIPO)</SourceName>
+    <Name>SID 389227285</Name>
+    <URL>https://pubchem.ncbi.nlm.nih.gov/substance/389227285</URL>
+  </Reference>
+  <Reference>
+    <ReferenceNumber>41</ReferenceNumber>
+    <SourceName>PATENTSCOPE (WIPO)</SourceName>
+    <Name>SID 390652289</Name>
+    <URL>https://pubchem.ncbi.nlm.nih.gov/substance/390652289</URL>
+  </Reference>
+  <Reference>
+    <ReferenceNumber>42</ReferenceNumber>
+    <SourceName>PATENTSCOPE (WIPO)</SourceName>
+    <Name>SID 402782501</Name>
+    <URL>https://pubchem.ncbi.nlm.nih.gov/substance/402782501</URL>
+  </Reference>
+</Record>
