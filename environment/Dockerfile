@@ -1,4 +1,4 @@
-# hash:sha256:7e8a3204620cc4f91f6b2625f5d511875759dedeb08c7958719a766c436ef17d
+# hash:sha256:c5414dbbbe9dd1af24b330d6b806f64905e77a307de3f697873259711f179a20
 FROM registry.codeocean.com/codeocean/r-base:3.6.0-ubuntu18.04
 
 ARG DEBIAN_FRONTEND=noninteractive
@@ -14,8 +14,6 @@ RUN apt-get update \
         pandoc=1.19.2.4~dfsg-1build4 \
         rstudio-server=1.2.5033 \
     && rm -rf /var/lib/apt/lists/*
-
-RUN Rscript -e 'remotes::install_version("CePa")'
 
 RUN Rscript -e 'options(warn=2); install.packages("BiocManager")'
 RUN Rscript -e 'options(warn=2); BiocManager::install(c( \
