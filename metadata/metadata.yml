@@ -1,3 +1,8 @@
 metadata_version: 1
 name: Consistency of in vitro drug sensitivities within pharmacological classes
+description: BCB330 Project
+authors:
+- name: Casey Hon
+  affiliations:
+  - name: University of Toronto
 corresponding_contributor: {}
