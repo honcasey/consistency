@@ -1,4 +1,4 @@
-# hash:sha256:c5414dbbbe9dd1af24b330d6b806f64905e77a307de3f697873259711f179a20
+# hash:sha256:bcc2df2ccde270625a6d0faa0a83cd197fa46a875cc491c1eda6a20da8c2a84d
 FROM registry.codeocean.com/codeocean/r-base:3.6.0-ubuntu18.04
 
 ARG DEBIAN_FRONTEND=noninteractive
@@ -18,4 +18,4 @@ RUN apt-get update \
 RUN Rscript -e 'options(warn=2); install.packages("BiocManager")'
 RUN Rscript -e 'options(warn=2); BiocManager::install(c( \
         "PharmacoGx" \
-    ))' # Original versions: 1.17.1
+    ))' # Original versions: 2.0.5
