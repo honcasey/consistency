@@ -1,4 +1,4 @@
-library(PharmacoGx)
+library(PharmacoGx); library(dplyr); library(reshape2)
 # downloadPSet("GDSC_2013"); downloadPSet("CCLE_2013")
 
 # ==== loading PSets and intersecting CCLE and GDSC for common drugs and cell lines ====
@@ -81,14 +81,15 @@ for (cell_line in rownames(auc.cor)) {
 # ==== sort drugs into broad-spectrum vs. targeted ====
 broad_spectrum_drugs <- classes[grep("broad-spectrum", classes$BroadSpectrum_or_Targeted), "drug"] # drugs that are broad-spectrum
 targeted_drugs <- classes[grep("targeted", classes$BroadSpectrum_or_Targeted), "drug"] # drugs that are targeted
-unclassified_drugs <- classes[grep(NA, classes$BroadSpectrum_or_Targeted), "drug"] # drugs that aren't sorted
+# TO-DO: this doesn't work, intersect whatever drugs aren't in broad_spectrum_drugs and targeted_drugs
+# unclassified_drugs <- classes[grep(NA, classes$BroadSpectrum_or_Targeted), "drug"] # drugs that aren't sorted
 
 # ==== sort drugs into PCLs ====
 # make list of all PCLs and the drugs in each one
 # TO-DO: make this nicer...
-pcl_count <- select(classes, PCL)
+pcl_count <- dplyr::select(classes, PCL)
 pcl_count$drug <- rownames(pcl_count)
-pcls <- (dcast(pcl_count, drug~PCL))
+pcls <- (reshape2::dcast(pcl_count, drug~PCL))
 pcls <- pcls[, -1]
 
 pcl_list = list()
@@ -144,38 +145,40 @@ for (cell_line in rownames(auc.targ.cor)) {
 }
 
 # ==== remove inconsistent cell lines within GDSC ====
-# inconsistent as in removing cell lines that had low correlation between measures
+# inconsistent as in removing cell lines that had low correlation between measures (inconsistent defined as Spearman rank less than 0.5)
 
 # ==== remove inconsistent cell lines within CCLE ====
 
 # ==== recompute sens measures after sorting into PCLs ====
 #how to organize all these objects into one?
+auc.pcl.cor = data.frame(cell_line = colnames(ccle_auc), row.names = colnames(ccle_auc))
+for (pcl in colnames(pcls)) {
+  auc.pcl.cor[, paste0(pcl, ".pearson")] <- NA
+  auc.pcl.cor[, paste0(pcl, ".spearman")] <- NA
+}
 
 for (pcl in pcl_list) {
   temp <- assign(pcl, data.frame(pcl_list[[pcl]])) # name of the PCL 
-  ccle_auc_temp <- ccle_auc[pcl_list[[pcl]], ]
-  gdsc_auc_temp <- gdsc_auc[temp, ]
+  ccle_auc_temp <- ccle_auc[pcl_list[[pcl]], ] # subset by the drugs in the PCL
+  gdsc_auc_temp <- gdsc_auc[pcl_list[[pcl]], ]
   auc.temp.cor = data.frame(cell_line = colnames(ccle_auc), row.names = colnames(ccle_auc))
   auc.temp.cor$pearson <- NA
   auc.temp.cor$spearman <- NA
-  
+  for (cell_line in rownames(auc.temp.cor)) {
+    auc.temp.cor[cell_line, "pearson"] <- cor(ccle_auc_temp[, cell_line], gdsc_auc_temp[, cell_line], method = "pearson", use = "pairwise.complete.obs")
+    auc.temp.cor[cell_line, "spearman"] <- cor(ccle_auc_temp[, cell_line], gdsc_auc_temp[, cell_line], method = "spearman", use = "pairwise.complete.obs")
+  }
 }
-ccle_auc_targ <- ccle_auc[targeted_drugs, ] # auc for each cell lines and drugs that are targeted
-gdsc_auc_targ <- gdsc_auc[targeted_drugs, ] 
-auc.targ.cor = data.frame(cell_line = colnames(ccle_auc), row.names = colnames(ccle_auc))
-auc.targ.cor$pearson <- NA
-auc.targ.cor$spearman <- NA
-for (cell_line in rownames(auc.targ.cor)) {
-  auc.targ.cor[cell_line, "pearson"] <- cor(ccle_auc_targ[, cell_line], gdsc_auc_targ[, cell_line], method = "pearson", use = "pairwise.complete.obs")
-  auc.targ.cor[cell_line, "spearman"] <- cor(ccle_auc_targ[, cell_line], gdsc_auc_targ[, cell_line], method = "spearman", use = "pairwise.complete.obs")
-}
-
 
 
 # ==== remove inconsistent cell lines within GDSC ====
 
 # ==== remove inconsistent cell lines within CCLE ====
 
-# ==== correlation between CCLE and GDSC after binary sorting ====
+# ==== Pearson correlation between CCLE and GDSC after binary sorting ====
 
-# ==== correlation between CCLE and GDSC after sorting into PCLs ====
+# ==== Harrell's CI correlation between CCLE and GDSC after binary sorting ====
+
+# ==== Pearson correlation between CCLE and GDSC after sorting into PCLs ====
+
+# ==== Harrell's CI correlation between CCLE and GDSC after sorting into PCLs ====
