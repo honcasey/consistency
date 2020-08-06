@@ -86,7 +86,7 @@ gdsc_auc = as.data.frame(summarizeSensitivityProfiles(gdsc, sensitivity.measure 
 # ====================================================
 # correlation of published IC50 between CCLE and GDSC 
 # ====================================================
-ic50.cor = data.frame(matrix(ncol = length(coef), nrow = length(colnames(ccle_ic50), row.names = colnames(ccle_ic50))))
+ic50.cor = data.frame(matrix(ncol = length(coef), nrow = length(colnames(ccle_ic50)), row.names = colnames(ccle_ic50)))
 colnames(ic50.cor) <- coef
 
 for (cell.line in rownames(ic50.cor)) {
@@ -100,9 +100,9 @@ for (cell.line in rownames(ic50.cor)) {
 }
 
 # ====================================================
-# correlation of published AUC between CCLE and GDSC 
+# correlation of published AUC between CCLE and GDSC (by cell line)
 # ====================================================
-auc.cor = data.frame(matrix(ncol = length(coef), nrow = length(colnames(ccle_auc), row.names = colnames(ccle_auc))))
+auc.cor = data.frame(matrix(ncol = length(coef), nrow = length(colnames(ccle_auc)), row.names = colnames(ccle_auc)))
 colnames(auc.cor) <- coef
 
 for (cell.line in rownames(auc.cor)) {
@@ -146,7 +146,7 @@ for (pcl in colnames(pcls)) {
 ccle_ic50_brsp <- ccle_ic50[broad_spectrum_drugs, ] 
 gdsc_ic50_brsp <- gdsc_ic50[broad_spectrum_drugs, ] 
 
-ic50.brsp.cor = data.frame(matrix(ncol = length(coef), nrow = length(colnames(ccle_ic50), row.names = colnames(ccle_ic50))))
+ic50.brsp.cor = data.frame(matrix(ncol = length(coef), nrow = length(colnames(ccle_ic50)), row.names = colnames(ccle_ic50)))
 colnames(ic50.brsp.cor) <- coef
 
 for (cell.line in rownames(ic50.brsp.cor)) {
@@ -163,7 +163,7 @@ for (cell.line in rownames(ic50.brsp.cor)) {
 ccle_auc_brsp <- ccle_auc[broad_spectrum_drugs, ]
 gdsc_auc_brsp <- gdsc_auc[broad_spectrum_drugs, ] 
 
-auc.brsp.cor = data.frame(matrix(ncol = length(coef), nrow = length(colnames(ccle_ic50), row.names = colnames(ccle_ic50))))
+auc.brsp.cor = data.frame(matrix(ncol = length(coef), nrow = length(colnames(ccle_ic50)), row.names = colnames(ccle_ic50)))
 colnames(auc.brsp.cor) <- coef
 
 for (cell_line in rownames(auc.brsp.cor)) {
@@ -181,7 +181,7 @@ for (cell_line in rownames(auc.brsp.cor)) {
 ccle_ic50_targ <- ccle_ic50[targeted_drugs, ]
 gdsc_ic50_targ <- gdsc_ic50[targeted_drugs, ] 
 
-ic50.targ.cor = data.frame(matrix(ncol = length(coef), nrow = length(colnames(ccle_ic50), row.names = colnames(ccle_ic50))))
+ic50.targ.cor = data.frame(matrix(ncol = length(coef), nrow = length(colnames(ccle_ic50)), row.names = colnames(ccle_ic50)))
 colnames(ic50.targ.cor) <- coef
 
 for (cell.line in rownames(ic50.targ.cor)) {
@@ -198,7 +198,7 @@ for (cell.line in rownames(ic50.targ.cor)) {
 ccle_auc_targ <- ccle_auc[targeted_drugs, ]
 gdsc_auc_targ <- gdsc_auc[targeted_drugs, ] 
 
-auc.targ.cor = data.frame(matrix(ncol = length(coef), nrow = length(colnames(ccle_auc), row.names = colnames(ccle_auc))))
+auc.targ.cor = data.frame(matrix(ncol = length(coef), nrow = length(colnames(ccle_auc)), row.names = colnames(ccle_auc)))
 colnames(auc.targ.cor) <- coef
 
 for (cell.line in rownames(auc.targ.cor)) {
@@ -211,7 +211,9 @@ for (cell.line in rownames(auc.targ.cor)) {
   auc.targ.cor[cell.line, "spearman p-value"] <- spearman.cor$p.value
 }
 
-# ==== recompute sens measures after sorting into PCLs ====
+# ====================================================
+#   recompute sens measures after PCL sorting 
+# ====================================================
 # keeping only pcls that contain at least 3 drugs 
 pcl_temp <- data.frame(matrix(NA, nrow = 3)) #TO-DO: remove all the hard-coded numbers/stuff
 for (pcl in colnames(pcls)) {
@@ -222,28 +224,38 @@ for (pcl in colnames(pcls)) {
 pcl_temp <- pcl_temp[, -1]
 
 # correlation of auc in drugs by pcl for each cell line 
-auc.pcl.cor = data.frame(cell_line = colnames(ccle_auc), row.names = colnames(ccle_auc))
+auc.pcl.cor = data.frame(matrix(ncol = length(coef), nrow = length(colnames(ccle_auc), row.names = colnames(ccle_auc))))
 
 for (pcl in colnames(pcl_temp)) {
   auc.pcl.cor[, paste0(pcl, ".pearson")] <- NA
+    auc.pcl.cor[, paste0(pcl, ".pearson p-value")] <- NA
   auc.pcl.cor[, paste0(pcl, ".spearman")] <- NA
+    auc.pcl.cor[, paste0(pcl, ".spearman p-value")] <- NA
 }
 
 for (pcl in colnames(pcl_temp)) {
   ccle_auc_temp <- ccle_auc[pcl_list[[pcl]], ] # subset by the drugs in the PCL
   gdsc_auc_temp <- gdsc_auc[pcl_list[[pcl]], ]
 
-  for (cell_line in rownames(auc.pcl.cor)) {
-    auc.pcl.cor[cell_line, paste0(pcl, ".pearson")] <- cor(ccle_auc_temp[, cell_line], gdsc_auc_temp[, cell_line], method = "pearson", use = "pairwise.complete.obs")
-    auc.pcl.cor[cell_line, paste0(pcl, ".spearman")] <- cor(ccle_auc_temp[, cell_line], gdsc_auc_temp[, cell_line], method = "spearman", use = "pairwise.complete.obs")
-  }
+  for (cell.line in rownames(auc.pcl.cor)) {
+  pearson.cor <- cor.test(x = ccle_auc_temp[, cell.line], y = gdsc_auc_temp[, cell.line], method = 'pearson', use = 'pairw')
+  auc.pcl.cor[cell.line, paste0(pcl, ".pearson")] <- pearson.cor$estimate
+  auc.pcl.cor[cell.line, paste0(pcl, ".pearson p-value")] <- pearson.cor$p.value
+  
+  spearman.cor <- cor.test(x = ccle_auc_temp[, cell.line], y = gdsc_auc_temp[, cell.line], method = 'spearman', use = 'pairw')
+  auc.pcl.cor[cell.line, paste0(pcl, ".spearman")] <- spearman.cor$estimate
+  auc.pcl.cor[cell.line, paste0(pcl, ".spearman p-value")] <- spearman.cor$p.value
+}
 }
 
 # correlation of ic50 in drugs by pcl for each cell line
-ic50.pcl.cor = data.frame(cell_line = colnames(ccle_auc), row.names = colnames(ccle_auc))
+ic50.pcl.cor = data.frame(matrix(ncol = length(coef), nrow = length(colnames(ccle_ic50), row.names = colnames(ccle_ic50))))
+
 for (pcl in colnames(pcl_temp)) {
   ic50.pcl.cor[, paste0(pcl, ".pearson")] <- NA
+    ic50.pcl.cor[, paste0(pcl, ".pearson p-value")] <- NA
   ic50.pcl.cor[, paste0(pcl, ".spearman")] <- NA
+    ic50.pcl.cor[, paste0(pcl, ".spearman p-value")] <- NA
 }
 
 for (pcl in colnames(pcl_temp)) {
@@ -251,25 +263,32 @@ for (pcl in colnames(pcl_temp)) {
   gdsc_ic50_temp <- gdsc_ic50[pcl_list[[pcl]], ]
   
   for (cell_line in rownames(ic50.pcl.cor)) {
-    ic50.pcl.cor[cell_line, paste0(pcl, ".pearson")] <- cor(ccle_ic50_temp[, cell_line], gdsc_ic50_temp[, cell_line], method = "pearson", use = "pairwise.complete.obs")
-    ic50.pcl.cor[cell_line, paste0(pcl, ".spearman")] <- cor(ccle_ic50_temp[, cell_line], gdsc_ic50_temp[, cell_line], method = "spearman", use = "pairwise.complete.obs")
-  }
+    pearson.cor <- cor.test(x = ccle_ic50_temp[, cell.line], y = gdsc_ic50_temp[, cell.line], method = 'pearson', use = 'pairw')
+  ic50.pcl.cor[cell.line, paste0(pcl, ".pearson")] <- pearson.cor$estimate
+  ic50.pcl.cor[cell.line, paste0(pcl, ".pearson p-value")] <- pearson.cor$p.value
+  
+  spearman.cor <- cor.test(x = ccle_ic50_temp[, cell.line], y = gdsc_ic50_temp[, cell.line], method = 'spearman', use = 'pairw')
+  ic50.pcl.cor[cell.line, paste0(pcl, ".spearman")] <- spearman.cor$estimate
+  ic50.pcl.cor[cell.line, paste0(pcl, ".spearman p-value")] <- spearman.cor$p.value
+}
 }
 
-# ==== removing inconsistent cell lines ====
-# inconsistent based on broad-spectrum drugs:
+# ====================================================
+#       removing inconsistent cell lines
+# ====================================================
+# ===== inconsistent based on broad-spectrum drugs =====
 rmv.ic50.brsp.cor <- ic50.brsp.cor[which(ic50.brsp.cor$spearman > 0.5), ] # subset by removing cell lines that had low correlation (Spearman less than 0.5)
 brsp.ic50.cc <- rownames(rmv.ic50.brsp.cor)
 rmv.auc.brsp.cor <- auc.brsp.cor[which(auc.brsp.cor$spearman > 0.5), ]
 brsp.auc.cc <- rownames(rmv.auc.brsp.cor)
 
-# inconsistent based on targeted drugs:
+# ===== inconsistent based on targeted drugs =====
 rmv.ic50.targ.cor <- ic50.targ.cor[which(ic50.targ.cor$spearman > 0.5), ]
 targ.ic50.cc <- rownames(rmv.ic50.targ.cor)
 rmv.auc.targ.cor <- auc.targ.cor[which(auc.targ.cor$spearman > 0.5), ]
 targ.auc.cc <- rownames(rmv.auc.targ.cor)
 
-# inconsistent based on pcls:
+# ===== inconsistent based on pcls =====
 # MEK inhibitor
 rmv.ic50.mek.cor <- ic50.pcl.cor[which(ic50.pcl.cor$`MEK inhibitor.spearman` > 0.5), c("cell_line", "MEK inhibitor.pearson", "MEK inhibitor.spearman")]
 mek.ic50.cc <- rownames(rmv.ic50.mek.cor)
@@ -282,7 +301,9 @@ src.ic50.cc <- rownames(rmv.ic50.src.cor)
 rmv.auc.src.cor <- auc.pcl.cor[which(auc.pcl.cor$`SRC inhibitor.spearman` > 0.5), c("cell_line", "SRC inhibitor.pearson", "SRC inhibitor.spearman")]
 src.auc.cc <- rownames(rmv.auc.src.cor)
 
-# ==== remove inconsistent cell lines within GDSC ====
+# ====================================================
+#    remove inconsistent cell lines within GDSC 
+# ====================================================
 # filtering based on broad-spectrum classification
 gdsc_ic50_cc_brsp = as.data.frame(summarizeSensitivityProfiles(gdsc, sensitivity.measure = "ic50_published", cell.lines = brsp.ic50.cc))
 gdsc_auc_cc_brsp = as.data.frame(summarizeSensitivityProfiles(gdsc, sensitivity.measure = "auc_published", cell.lines = brsp.auc.cc))
@@ -299,7 +320,9 @@ gdsc_auc_cc_mek = as.data.frame(summarizeSensitivityProfiles(gdsc, sensitivity.m
 gdsc_ic50_cc_src = as.data.frame(summarizeSensitivityProfiles(gdsc, sensitivity.measure = "ic50_published", cell.lines = src.ic50.cc))
 gdsc_auc_cc_src = as.data.frame(summarizeSensitivityProfiles(gdsc, sensitivity.measure = "auc_published", cell.lines = src.auc.cc))
 
-# ==== remove inconsistent cell lines within CCLE ====
+# ====================================================
+#    remove inconsistent cell lines within CCLE 
+# ====================================================
 # filtering based on broad-spectrum classification
 ccle_ic50_cc_brsp = as.data.frame(summarizeSensitivityProfiles(ccle, sensitivity.measure = "ic50_published", cell.lines = brsp.ic50.cc))
 ccle_auc_cc_brsp = as.data.frame(summarizeSensitivityProfiles(ccle, sensitivity.measure = "auc_published", cell.lines = brsp.auc.cc))
@@ -316,33 +339,58 @@ ccle_auc_cc_mek = as.data.frame(summarizeSensitivityProfiles(ccle, sensitivity.m
 ccle_ic50_cc_src = as.data.frame(summarizeSensitivityProfiles(ccle, sensitivity.measure = "ic50_published", cell.lines = src.ic50.cc))
 ccle_auc_cc_src = as.data.frame(summarizeSensitivityProfiles(ccle, sensitivity.measure = "auc_published", cell.lines = src.auc.cc))
 
-# ==== original Pearson & Spearman correlation of sens measures of each common cell line between CCLE and GDSC ====
-orig.ic50.cor = data.frame(drug = rownames(ccle_ic50), row.names = rownames(ccle_ic50))
-orig.ic50.cor$pearson <- NA; orig.ic50.cor$spearman <- NA 
+# ====================================================
+# correlation of published sens measures between CCLE and GDSC (by drug)
+# ====================================================
+orig.ic50.cor = data.frame(matrix(ncol = length(coef), nrow = length(rownames(ccle_ic50)), row.names = rownames(ccle_ic50)))
+colnames(orig.ic50.cor) <- coef
+
 for (drug in rownames(orig.ic50.cor)) {
-  orig.ic50.cor[drug, "pearson"] <- cor(as.numeric(ccle_ic50[drug, ]), as.numeric(gdsc_ic50[drug, ]), method = "pearson", use = "pairwise.complete.obs")
-  orig.ic50.cor[drug, "spearman"] <- cor(as.numeric(ccle_ic50[drug, ]), as.numeric(gdsc_ic50[drug, ]), method = "spearman", use = "pairwise.complete.obs")
+  pearson.cor <- cor.test(x = ccle_ic50[drug, ], y = gdsc_ic50[drug, ], method = 'pearson', use = 'pairw')
+  orig.ic50.cor[drug, "pearson")] <- pearson.cor$estimate
+  orig.ic50.cor[drug, "pearson p-value"] <- pearson.cor$p.value
+  
+  spearman.cor <- cor.test(x = ccle_ic50[drug, ], y = gdsc_ic50[drug, ], method = 'spearman', use = 'pairw')
+  orig.ic50.cor[drug, "spearman"] <- spearman.cor$estimate
+  orig.ic50.cor[drug, "spearman p-value"] <- spearman.cor$p.value
 }
 
-orig.auc.cor = data.frame(drug = rownames(ccle_auc), row.names = rownames(ccle_auc))
-orig.auc.cor$pearson <- NA; orig.auc.cor$spearman <- NA
+orig.auc.cor = data.frame(matrix(ncol = length(coef), nrow = length(rownames(ccle_auc)), row.names = rownames(ccle_auc)))
+colnames(orig.auc.cor) <- coef
+
 for (drug in rownames(orig.auc.cor)) {
-  orig.auc.cor[drug, "pearson"] <- cor(as.numeric(ccle_auc[drug,]), as.numeric(gdsc_auc[drug,]), method = "pearson", use = "pairwise.complete.obs")
-  orig.auc.cor[drug, "spearman"] <- cor(as.numeric(ccle_auc[drug,]), as.numeric(gdsc_auc[drug,]), method = "spearman", use = "pairwise.complete.obs")
-}
-# ==== Pearson & Spearman correlation between CCLE and GDSC after binary sorting ====
-# broad-spectrum 
-brsp.ic50.cor = data.frame(drug = rownames(ccle_ic50_cc_brsp), row.names = rownames(ccle_ic50_cc_brsp))
-brsp.ic50.cor$pearson <- NA
-brsp.ic50.cor$spearman <- NA
-for (drug in rownames(brsp.ic50.cor)) {
-  brsp.ic50.cor[drug, "pearson"] <- cor(as.numeric(ccle_ic50_cc_brsp[drug, ]), as.numeric(gdsc_ic50_cc_brsp[drug, ]), method = "pearson", use = "pairwise.complete.obs")
-  brsp.ic50.cor[drug, "spearman"] <- cor(as.numeric(ccle_ic50_cc_brsp[drug, ]), as.numeric(gdsc_ic50_cc_brsp[drug, ]), method = "spearman", use = "pairwise.complete.obs")
+  pearson.cor <- cor.test(x = ccle_auc[drug, ], y = gdsc_auc[drug, ], method = 'pearson', use = 'pairw')
+  orig.auc.cor[drug, "pearson")] <- pearson.cor$estimate
+  orig.auc.cor[drug, "pearson p-value"] <- pearson.cor$p.value
+  
+  spearman.cor <- cor.test(x = ccle_auc[drug, ], y = gdsc_auc[drug, ], method = 'spearman', use = 'pairw')
+  orig.auc.cor[drug, "spearman"] <- spearman.cor$estimate
+  orig.auc.cor[drug, "spearman p-value"] <- spearman.cor$p.value
 }
 
-brsp.auc.cor = data.frame(drug = rownames(ccle_auc_cc_brsp), row.names = rownames(ccle_auc_cc_brsp))
-brsp.auc.cor$pearson <- NA
-brsp.auc.cor$spearman <- NA
+# ====================================================
+# correlation between CCLE and GDSC (by drug)
+# ====================================================
+# ==== correlation after binary sorting ====
+# broad-spectrum 
+# IC50
+brsp.ic50.cor = data.frame(matrix(ncol = length(coef), nrow = length(rownames(ccle_ic50_cc_brsp)), row.names = rownames(ccle_ic50_cc_brsp)))
+colnames(brsp.ic50.cor) <- coef
+
+for (drug in rownames(brsp.ic50.cor)) {
+  pearson.cor <- cor.test(x = ccle_ic50_cc_brsp[drug, ], y = gdsc_ic50_cc_brsp[drug, ], method = 'pearson', use = 'pairw')
+  brsp.ic50.cor[drug, "pearson")] <- pearson.cor$estimate
+  brsp.ic50.cor[drug, "pearson p-value"] <- pearson.cor$p.value
+  
+  spearman.cor <- cor.test(x = ccle_ic50_cc_brsp[drug, ], y = gdsc_ic50_cc_brsp[drug, ], method = 'spearman', use = 'pairw')
+  brsp.ic50.cor[drug, "spearman"] <- spearman.cor$estimate
+  brsp.ic50.cor[drug, "spearman p-value"] <- spearman.cor$p.value
+}
+
+# AUC
+brsp.auc.cor = data.frame(matrix(ncol = length(coef), nrow = length(rownames(ccle_auc_cc_brsp)), row.names = rownames(ccle_auc_cc_brsp)))
+colnames(brsp.auc.cor) <- coef
+
 for (drug in rownames(brsp.auc.cor)) {
   brsp.auc.cor[drug, "pearson"] <- cor(as.numeric(ccle_auc_cc_brsp[drug, ]), as.numeric(gdsc_auc_cc_brsp[drug, ]), method = "pearson", use = "pairwise.complete.obs")
   brsp.auc.cor[drug, "spearman"] <- cor(as.numeric(ccle_auc_cc_brsp[drug, ]), as.numeric(gdsc_auc_cc_brsp[drug, ]), method = "spearman", use = "pairwise.complete.obs")
@@ -364,7 +412,10 @@ for (drug in rownames(targ.auc.cor)) {
   targ.auc.cor[drug, "spearman"] <- cor(as.numeric(ccle_auc_cc_targ[drug, ]), as.numeric(gdsc_auc_cc_targ[drug, ]), method = "spearman", use = "pairwise.complete.obs")
 }
 
-# ==== Harrell's Concordance Index between CCLE and GDSC after binary sorting ====
+# ====================================================
+# Harrel's CI between CCLE and GDSC
+# ====================================================
+# ==== concordance after binary sorting ====
 # IC50:
 # broad-spectrum filtering:
 orig.brsp.ic50 <- merge(orig.ic50.cor, brsp.ic50.cor, by = 0, all = TRUE)
