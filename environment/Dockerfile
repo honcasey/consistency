@@ -1,4 +1,4 @@
-# hash:sha256:38bcb05d271ca72302ff2ef53d7e1f3314dc5e183e007c79e0183589d9eb5fb3
+# hash:sha256:69a97f56795a884e065360e1c9449d16bc8a578a4c750b8c75311be736b4e0eb
 FROM registry.codeocean.com/codeocean/r-base:3.6.0-ubuntu18.04
 
 ARG DEBIAN_FRONTEND=noninteractive
@@ -15,7 +15,7 @@ RUN apt-get update \
         rstudio-server=1.2.5033 \
     && rm -rf /var/lib/apt/lists/*
 
-RUN Rscript -e 'remotes::install_version("VennDiagram")' \
+RUN Rscript -e 'remotes::install_version("VennDiagram", "1.6.20")' \
     && Rscript -e 'remotes::install_version("survival", "3.2-3")'
 
 RUN Rscript -e 'options(warn=2); install.packages("BiocManager")'
