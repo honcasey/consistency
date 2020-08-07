@@ -392,117 +392,210 @@ brsp.auc.cor = data.frame(matrix(ncol = length(coef), nrow = length(rownames(ccl
 colnames(brsp.auc.cor) <- coef
 
 for (drug in rownames(brsp.auc.cor)) {
-  brsp.auc.cor[drug, "pearson"] <- cor(as.numeric(ccle_auc_cc_brsp[drug, ]), as.numeric(gdsc_auc_cc_brsp[drug, ]), method = "pearson", use = "pairwise.complete.obs")
-  brsp.auc.cor[drug, "spearman"] <- cor(as.numeric(ccle_auc_cc_brsp[drug, ]), as.numeric(gdsc_auc_cc_brsp[drug, ]), method = "spearman", use = "pairwise.complete.obs")
+  pearson.cor <- cor.test(x = ccle_auc_cc_brsp[drug, ], y = gdsc_auc_cc_brsp[drug, ], method = 'pearson', use = 'pairw')
+  brsp.auc.cor[drug, "pearson")] <- pearson.cor$estimate
+  brsp.auc.cor[drug, "pearson p-value"] <- pearson.cor$p.value
+  
+  spearman.cor <- cor.test(x = ccle_auc_cc_brsp[drug, ], y = gdsc_auc_cc_brsp[drug, ], method = 'spearman', use = 'pairw')
+  brsp.auc.cor[drug, "spearman"] <- spearman.cor$estimate
+  brsp.auc.cor[drug, "spearman p-value"] <- spearman.cor$p.value
 }
 
 # targeted
-targ.ic50.cor = data.frame(drug = rownames(ccle_ic50_cc_targ), row.names = rownames(ccle_ic50_cc_targ))
-targ.ic50.cor$pearson <- NA
-targ.ic50.cor$spearman <- NA
-for (drug in rownames(targ.ic50.cor)) {
-  targ.ic50.cor[drug, "pearson"] <- cor(as.numeric(ccle_ic50_cc_targ[drug, ]), as.numeric(gdsc_ic50_cc_targ[drug, ]), method = "pearson", use = "pairwise.complete.obs")
-  targ.ic50.cor[drug, "spearman"] <- cor(as.numeric(ccle_ic50_cc_targ[drug, ]), as.numeric(gdsc_ic50_cc_targ[drug, ]), method = "spearman", use = "pairwise.complete.obs")
+# IC50
+targ.ic50.cor = data.frame(matrix(ncol = length(coef), nrow = length(rownames(ccle_ic50_cc_targ)), row.names = rownames(ccle_ic50_cc_targ)))
+colnames(targ.ic50.cor) <- coef
+
+for (drug in rownames(brsp.ic50.cor)) {
+  pearson.cor <- cor.test(x = as.numeric(ccle_ic50_cc_targ[drug, ]), y = as.numeric(gdsc_ic50_cc_targ[drug, ]), method = 'pearson', use = 'pairw')
+  targ.ic50.cor[drug, "pearson")] <- pearson.cor$estimate
+  targ.ic50.cor[drug, "pearson p-value"] <- pearson.cor$p.value
+  
+  spearman.cor <- cor.test(x = as.numeric(ccle_ic50_cc_targ[drug, ]), y = as.numeric(gdsc_ic50_cc_targ[drug, ]), method = 'spearman', use = 'pairw')
+  targ.ic50.cor[drug, "spearman"] <- spearman.cor$estimate
+  targ.ic50.cor[drug, "spearman p-value"] <- spearman.cor$p.value
 }
 
-targ.auc.cor = data.frame(drug = rownames(ccle_auc_cc_targ), row.names = rownames(ccle_auc_cc_targ))
-targ.auc.cor$pearson <- NA; targ.auc.cor$spearman <- NA
+# AUC
+targ.auc.cor = data.frame(matrix(ncol = length(coef), nrow = length(rownames(ccle_auc_cc_targ)), row.names = rownames(ccle_auc_cc_targ)))
+colnames(targ.auc.cor) <- coef
+
 for (drug in rownames(targ.auc.cor)) {
-  targ.auc.cor[drug, "pearson"] <- cor(as.numeric(ccle_auc_cc_targ[drug, ]), as.numeric(gdsc_auc_cc_targ[drug, ]), method = "pearson", use = "pairwise.complete.obs")
-  targ.auc.cor[drug, "spearman"] <- cor(as.numeric(ccle_auc_cc_targ[drug, ]), as.numeric(gdsc_auc_cc_targ[drug, ]), method = "spearman", use = "pairwise.complete.obs")
+  pearson.cor <- cor.test(x = as.numeric(ccle_auc_cc_targ[drug, ]), y = as.numeric(gdsc_auc_cc_targ[drug, ]), method = 'pearson', use = 'pairw')
+  targ.auc.cor[drug, "pearson")] <- pearson.cor$estimate
+  targ.auc.cor[drug, "pearson p-value"] <- pearson.cor$p.value
+  
+  spearman.cor <- cor.test(x = as.numeric(ccle_auc_cc_targ[drug, ]), y = as.numeric(gdsc_auc_cc_targ[drug, ]), method = 'spearman', use = 'pairw')
+  targ.auc.cor[drug, "spearman"] <- spearman.cor$estimate
+  targ.auc.cor[drug, "spearman p-value"] <- spearman.cor$p.value
 }
 
 # ====================================================
-# Harrel's CI between CCLE and GDSC
+# Harrell's CI after sorting into broad-spectrum/targeted
 # ====================================================
-# ==== concordance after binary sorting ====
-# IC50:
-# broad-spectrum filtering:
-orig.brsp.ic50 <- merge(orig.ic50.cor, brsp.ic50.cor, by = 0, all = TRUE)
-WriteXLS::WriteXLS(orig.brsp.ic50.cor, "~/capsule/results.broad_sp_ic50_corr.xlsx", row.names = TRUE, col.names = TRUE, AdjWidth = TRUE, BoldHeaderRow = TRUE)
+# IC50
+# broad-spectrum:
+orig.brsp.ic50.cor <- merge(orig.ic50.cor, brsp.ic50.cor, by = 0, all = TRUE)
+WriteXLS::WriteXLS(orig.brsp.ic50.cor, "~/capsule/results.broad_sp_ic50_corr.xls", row.names = TRUE, col.names = TRUE, AdjWidth = TRUE, BoldHeaderRow = TRUE)
 
-orig.brsp.ic50.conc <- survival::concordance(object = pearson.x ~ pearson.y, data = orig.brsp)
-saveRDS(orig.brsp.ic50.conc, "~/capsule/results/orig.brsp.ic50.conc.rds")
+orig.brsp.ic50.conc <- survival::concordance(object = pearson.x ~ pearson.y, data = orig.brsp.ic50.cor)
+
+# TO-DO: make plot
+
+WriteXLS::WriteXLS(orig.brsp.ic50.conc, "~/capsule/results/orig.brsp.ic50.conc.xls", row.names = TRUE, col.names = TRUE, AdjWidth = TRUE, BoldHeaderRow = TRUE)
+# saveRDS(orig.brsp.ic50.conc, "~/capsule/results/orig.brsp.ic50.conc.rds")
+rm(orig.brsp.ic50.conc)
 
 # targeted:
-orig.targ.ic50 <- merge(orig.ic50.cor, targ.ic50.cor, by = 0, all = TRUE)
-WriteXLS::WriteXLS(orig.targ.ic50, "~/capsule/results.targeted_ic50_corr.xlsx", row.names = TRUE, col.names = TRUE, AdjWidth = TRUE, BoldHeaderRow = TRUE)
+orig.targ.ic50.cor <- merge(orig.ic50.cor, targ.ic50.cor, by = 0, all = TRUE)
+WriteXLS::WriteXLS(orig.targ.ic50.cor, "~/capsule/results.targeted_ic50_corr.xls", row.names = TRUE, col.names = TRUE, AdjWidth = TRUE, BoldHeaderRow = TRUE)
 
-orig.targ.ic50.conc <- survival::concordance(object = pearson.x ~ pearson.y, data = orig.targ)
-saveRDS(orig.targ.ic50.conc, "~/capsule/results/orig.targ.ic50.conc.rds")
+orig.targ.ic50.conc <- survival::concordance(object = pearson.x ~ pearson.y, data = orig.targ.ic50.cor)
 
-# AUC:
-#brsp
-orig.brsp.auc <- merge(orig.auc.cor, brsp.auc.cor, by = 0, all = TRUE)
-WriteXLS::WriteXLS(orig.brsp.auc, "~/capsule/results.broad_sp_auc_corr.xlsx", row.names = TRUE, col.names = TRUE, AdjWidth = TRUE, BoldHeaderRow = TRUE)
+# TO-DO: make plot
 
-orig.brsp.auc.conc <- survival::concordance(object = pearson.x ~ pearson.y, data = orig.brsp.auc)
-saveRDS(orig.brsp.auc.conc, "~/capsule/results/orig.brsp.auc.conc.rds")
+WriteXLS::WriteXLS(orig.targ.ic50.conc, "~/capsule/results/orig.targ.ic50.conc.xls", row.names = TRUE, col.names = TRUE, AdjWidth = TRUE, BoldHeaderRow = TRUE)
+# saveRDS(orig.targ.ic50.conc, "~/capsule/results/orig.targ.ic50.conc.rds")
+rm(orig.targ.ic50.conc)
 
-#targ
-orig.targ.auc <- merge(orig.auc.cor, targ.auc.cor, by = 0, all = TRUE)
-WriteXLS::WriteXLS(orig.targ.auc, "~/capsule/results.targ_auc_corr.xlsx", row.names = TRUE, col.names = TRUE, AdjWidth = TRUE, BoldHeaderRow = TRUE)
+# AUC
+# broad-spectrum:
+orig.brsp.auc.cor <- merge(orig.auc.cor, brsp.auc.cor, by = 0, all = TRUE)
+WriteXLS::WriteXLS(orig.brsp.auc.cor, "~/capsule/results/orig.brsp.auc.cor.xls", row.names = TRUE, col.names = TRUE, AdjWidth = TRUE, BoldHeaderRow = TRUE)
 
-orig.targ.auc.conc <- survival::concordance(object = pearson.x ~ pearson.y, data = orig.targ.auc)
-saveRDS(orig.targ.auc.conc, "~/capsule/results/orig.targ.auc.conc.rds")
+orig.brsp.auc.conc <- survival::concordance(object = pearson.x ~ pearson.y, data = orig.brsp.auc.cor)
 
-# ==== Pearson & Spearman correlation between CCLE and GDSC after sorting into PCLs ====
-# MEK inhibitor
-mek.ic50.cor = data.frame(drug = rownames(ccle_ic50_cc_mek), row.names = rownames(ccle_ic50_cc_mek))
-mek.ic50.cor$pearson <- NA; mek.ic50.cor$spearman <- NA
+# TO-DO: make plot
+
+WriteXLS::WriteXLS(orig.brsp.auc.conc, "~/capsule/results/orig.brsp.auc.conc.xls", row.names = TRUE, col.names = TRUE, AdjWidth = TRUE, BoldHeaderRow = TRUE)
+# saveRDS(orig.brsp.auc.conc, "~/capsule/results/orig.brsp.auc.conc.rds")
+rm(orig.brsp.auc.conc)
+
+# targeted:
+orig.targ.auc.cor <- merge(orig.auc.cor, targ.auc.cor, by = 0, all = TRUE)
+WriteXLS::WriteXLS(orig.targ.auc.cor, "~/capsule/results/orig.targ.auc.cor.xls", row.names = TRUE, col.names = TRUE, AdjWidth = TRUE, BoldHeaderRow = TRUE)
+
+orig.targ.auc.conc <- survival::concordance(object = pearson.x ~ pearson.y, data = orig.targ.auc.cor)
+
+# TO-DO: make plot
+
+WriteXLS::WriteXLS(orig.targ.auc.conc, "~/capsule/results/orig.targ.auc.conc.xls", row.names = TRUE, col.names = TRUE, AdjWidth = TRUE, BoldHeaderRow = TRUE)
+# saveRDS(orig.targ.auc.conc, "~/capsule/results/orig.targ.auc.conc.rds")
+rm(orig.targ.auc.conc)
+
+# ============================================================
+#  correlation between CCLE and GDSC after sorting into PCLs
+# ============================================================
+# ================ MEK inhibitor class ================
+# IC50
+mek.ic50.cor = data.frame(matrix = (ncol = length(coef), nrow = length(rownames(ccle_ic50_cc_mek)), row.names = rownames(ccle_ic50_cc_mek)))
+colnames(mek.ic50.cor) <- coef
+
 for (drug in rownames(mek.ic50.cor)) {
-  mek.ic50.cor[drug, "pearson"] <- cor(as.numeric(ccle_ic50_cc_mek[drug, ]), as.numeric(gdsc_ic50_cc_mek[drug, ]), method = "pearson", use = "pairwise.complete.obs")
-  mek.ic50.cor[drug, "spearman"] <- cor(as.numeric(ccle_ic50_cc_mek[drug, ]), as.numeric(gdsc_ic50_cc_mek[drug, ]), method = "spearman", use = "pairwise.complete.obs")
+    pearson.cor <- cor.test(x = as.numeric(ccle_ic50_cc_mek[drug, ]), y = as.numeric(gdsc_ic50_cc_mek[drug, ]), method = 'pearson', use = 'pairw')
+  mek.ic50.cor[drug, "pearson")] <- pearson.cor$estimate
+  mek.ic50.cor[drug, "pearson p-value"] <- pearson.cor$p.value
+  
+  spearman.cor <- cor.test(x = as.numeric(ccle_ic50_cc_mek[drug, ]), y = as.numeric(gdsc_ic50_cc_mek[drug, ]), method = 'spearman', use = 'pairw')
+  mek.ic50.cor[drug, "spearman"] <- spearman.cor$estimate
+  mek.ic50.cor[drug, "spearman p-value"] <- spearman.cor$p.value
 }
 
-mek.auc.cor = data.frame(drug = rownames(ccle_auc_cc_mek), row.names = rownames(ccle_auc_cc_mek))
-mek.auc.cor$pearson <- NA; mek.auc.cor$spearman <- NA
+# AUC
+mek.auc.cor = data.frame(matrix = (ncol = length(coef), nrow = length(rownames(ccle_auc_cc_mek)), row.names = rownames(ccle_auc_cc_mek)))
+colnames(mek.auc.cor) <- coef
+
 for (drug in rownames(mek.auc.cor)) {
-  mek.auc.cor[drug, "pearson"] <- cor(as.numeric(ccle_auc_cc_mek[drug, ]), as.numeric(gdsc_auc_cc_mek[drug, ]), method = "pearson", use = "pairwise.complete.obs")
-  mek.auc.cor[drug, "spearman"] <- cor(as.numeric(ccle_auc_cc_mek[drug, ]), as.numeric(gdsc_auc_cc_mek[drug, ]), method = "spearman", use = "pairwise.complete.obs")
+    pearson.cor <- cor.test(x = as.numeric(ccle_auc_cc_mek[drug, ]), y = as.numeric(gdsc_auc_cc_mek[drug, ]), method = 'pearson', use = 'pairw')
+  mek.auc.cor[drug, "pearson")] <- pearson.cor$estimate
+  mek.auc.cor[drug, "pearson p-value"] <- pearson.cor$p.value
+  
+  spearman.cor <- cor.test(x = as.numeric(ccle_auc_cc_mek[drug, ]), y = as.numeric(gdsc_auc_cc_mek[drug, ]), method = 'spearman', use = 'pairw')
+  mek.auc.cor[drug, "spearman"] <- spearman.cor$estimate
+  mek.auc.cor[drug, "spearman p-value"] <- spearman.cor$p.value
 }
 
-# SRC inhibitor
-src.ic50.cor = data.frame(cell_line = rownames(ccle_ic50_cc_src), row.names = rownames(ccle_ic50_cc_src))
-src.ic50.cor$pearson <- NA; src.ic50.cor$spearman <- NA
+# ================ SRC inhibitor class ================
+# IC50
+src.ic50.cor = data.frame(matrix = (ncol = length(coef), nrow = length(rownames(ccle_ic50_cc_src)), row.names = rownames(ccle_ic50_cc_src)))
+colnames(src.ic50.cor) <- coef
+
 for (drug in rownames(src.ic50.cor)) {
-  src.ic50.cor[drug, "pearson"] <- cor(as.numeric(ccle_ic50_cc_src[drug, ]), as.numeric(gdsc_ic50_cc_src[drug, ]), method = "pearson", use = "pairwise.complete.obs")
-  src.ic50.cor[drug, "spearman"] <- cor(as.numeric(ccle_ic50_cc_src[drug, ]), as.numeric(gdsc_ic50_cc_src[drug, ]), method = "spearman", use = "pairwise.complete.obs")
+    pearson.cor <- cor.test(x = as.numeric(ccle_ic50_cc_src[drug, ]), y = as.numeric(gdsc_ic50_cc_src[drug, ]), method = 'pearson', use = 'pairw')
+  src.ic50.cor[drug, "pearson")] <- pearson.cor$estimate
+  src.ic50.cor[drug, "pearson p-value"] <- pearson.cor$p.value
+  
+  spearman.cor <- cor.test(x = as.numeric(ccle_ic50_cc_src[drug, ]), y = as.numeric(gdsc_ic50_cc_src[drug, ]), method = 'spearman', use = 'pairw')
+  src.ic50.cor[drug, "spearman"] <- spearman.cor$estimate
+  src.ic50.cor[drug, "spearman p-value"] <- spearman.cor$p.value
 }
 
-src.auc.cor = data.frame(cell_line = rownames(ccle_auc_cc_src), row.names = rownames(ccle_auc_cc_src))
-src.auc.cor$pearson <- NA; src.auc.cor$spearman <- NA
-for (drug in rownames(src.auc.cor)) {
-  src.auc.cor[drug, "pearson"] <- cor(as.numeric(ccle_auc_cc_src[drug, ]), as.numeric(gdsc_auc_cc_src[drug, ]), method = "pearson", use = "pairwise.complete.obs")
-  src.auc.cor[drug, "spearman"] <- cor(as.numeric(ccle_auc_cc_src[drug, ]), as.numeric(gdsc_auc_cc_src[drug, ]), method = "spearman", use = "pairwise.complete.obs")
+# AUC
+src.auc.cor = data.frame(matrix = (ncol = length(coef), nrow = length(rownames(ccle_auc_cc_src)), row.names = rownames(ccle_auc_cc_src)))
+colnames(mek.auc.cor) <- coef
+
+for (drug in rownames(mek.auc.cor)) {
+    pearson.cor <- cor.test(x = as.numeric(ccle_auc_cc_src[drug, ]), y = as.numeric(gdsc_auc_cc_src[drug, ]), method = 'pearson', use = 'pairw')
+  src.auc.cor[drug, "pearson")] <- pearson.cor$estimate
+  src.auc.cor[drug, "pearson p-value"] <- pearson.cor$p.value
+  
+  spearman.cor <- cor.test(x = as.numeric(ccle_auc_cc_src[drug, ]), y = as.numeric(gdsc_auc_cc_src[drug, ]), method = 'spearman', use = 'pairw')
+  src.auc.cor[drug, "spearman"] <- spearman.cor$estimate
+  src.auc.cor[drug, "spearman p-value"] <- spearman.cor$p.value
 }
 
-# ==== Harrell's Concordance Index between CCLE and GDSC after sorting into PCLs ====
-# MEK
+# ==================================================
+#       Harrell's CI after sorting into PCLs
+# ==================================================
+# ================ MEK inhibitor class ================
 # IC50
-orig.mek.ic50 <- merge(orig.ic50.cor, mek.ic50.cor, by = 0, all = TRUE)
-WriteXLS::WriteXLS(orig.mek.ic50, "~/capsule/results.mek_ic50_corr.xlsx", row.names = TRUE, col.names = TRUE, AdjWidth = TRUE, BoldHeaderRow = TRUE)
-orig.mek.ic50.conc <- survival::concordance(object = pearson.x ~ pearson.y, data = orig.mek.ic50)
-saveRDS(orig.mek.ic50.conc, "~/capsule/results/orig.mek.ic50.conc.rds")
+orig.mek.ic50.cor <- merge(orig.ic50.cor, mek.ic50.cor, by = 0, all = TRUE)
+WriteXLS::WriteXLS(orig.targ.auc.cor, "~/capsule/results/orig.mek.ic50.cor.xls", row.names = TRUE, col.names = TRUE, AdjWidth = TRUE, BoldHeaderRow = TRUE)
 
+orig.mek.ic50.conc <- survival::concordance(object = pearson.x ~ pearson.y, data = orig.mek.ic50.cor)
+
+# TO-DO: make plot
+
+WriteXLS::WriteXLS(orig.mek.ic50.conc, "~/capsule/results/orig.mek.ic50.conc.xls", row.names = TRUE, col.names = TRUE, AdjWidth = TRUE, BoldHeaderRow = TRUE)
+# saveRDS(orig.mek.ic50.cor, "~/capsule/results/orig.targ.auc.conc.rds")
+rm(orig.mek.ic50.cor)
 
 # AUC
-orig.mek.auc <- merge(orig.auc.cor, mek.auc.cor, by = 0, all = TRUE)
-WriteXLS::WriteXLS(orig.mek.auc, "~/capsule/results.mek_auc_corr.xlsx", row.names = TRUE, col.names = TRUE, AdjWidth = TRUE, BoldHeaderRow = TRUE)
-orig.mek.auc.conc <- survival::concordance(object = pearson.x ~ pearson.y, data = orig.mek.auc)
-saveRDS(orig.mek.auc.conc, "~/capsule/results/orig.mek.auc.conc.rds")
+orig.mek.auc.cor <- merge(orig.auc.cor, mek.auc.cor, by = 0, all = TRUE)
+WriteXLS::WriteXLS(orig.mek.auc.cor, "~/capsule/results/orig.mek.auc.cor.xls", row.names = TRUE, col.names = TRUE, AdjWidth = TRUE, BoldHeaderRow = TRUE)
 
-# SRC
+orig.mek.auc.conc <- survival::concordance(object = pearson.x ~ pearson.y, data = orig.mek.auc.cor)
+
+WriteXLS::WriteXLS(orig.mek.ic50.conc, "~/capsule/results/orig.mek.ic50.conc.xls", row.names = TRUE, col.names = TRUE, AdjWidth = TRUE, BoldHeaderRow = TRUE)
+
+# TO-DO: make plot
+
+# saveRDS(orig.mek.auc.conc, "~/capsule/results/orig.mek.auc.conc.rds")
+rm(orig.mek.auc.cor)
+
+# ================ SRC inhibitor class ================
 # IC50
-orig.src.ic50 <- merge(orig.ic50.cor, src.ic50.cor, by = 0, all = TRUE)
-WriteXLS::WriteXLS(orig.src.ic50, "~/capsule/results.src_ic50_corr.xlsx", row.names = TRUE, col.names = TRUE, AdjWidth = TRUE, BoldHeaderRow = TRUE)
+orig.src.ic50.cor <- merge(orig.ic50.cor, src.ic50.cor, by = 0, all = TRUE)
+WriteXLS::WriteXLS(orig.src.ic50.cor, "~/capsule/results/orig.src.ic50.cor.xls", row.names = TRUE, col.names = TRUE, AdjWidth = TRUE, BoldHeaderRow = TRUE)
 
-orig.src.ic50.conc <- survival::concordance(object = pearson.x ~ pearson.y, data = orig.src.ic50)
-saveRDS(orig.src.ic50.conc, "~/capsule/results/orig.src.ic50.conc.rds")
+orig.src.ic50.conc <- survival::concordance(object = pearson.x ~ pearson.y, data = orig.src.ic50.cor)
+
+WriteXLS::WriteXLS(orig.src.ic50.conc, "~/capsule/results/orig.src.ic50.conc.xls", row.names = TRUE, col.names = TRUE, AdjWidth = TRUE, BoldHeaderRow = TRUE)
+
+# TO-DO: make plot
+
+# saveRDS(orig.src.ic50.conc, "~/capsule/results/orig.src.ic50.conc.rds")
+rm(orig.src.ic50.cor)
 
 # AUC
-orig.src.auc <- merge(orig.auc.cor, src.auc.cor, by = 0, all = TRUE)
-WriteXLS::WriteXLS(orig.src.auc, "~/capsule/results.src_auc_corr.xlsx", row.names = TRUE, col.names = TRUE, AdjWidth = TRUE, BoldHeaderRow = TRUE)
+orig.src.auc.cor <- merge(orig.auc.cor, src.auc.cor, by = 0, all = TRUE)
+WriteXLS::WriteXLS(orig.src.auc.cor, "~/capsule/results/orig.src.auc.cor.xls", row.names = TRUE, col.names = TRUE, AdjWidth = TRUE, BoldHeaderRow = TRUE)
 
-orig.src.auc.conc <- survival::concordance(object = pearson.x ~ pearson.y, data = orig.src.auc)
-saveRDS(orig.src.auc.conc, "~/capsule/results/orig.src.auc.conc.rds")
+orig.src.auc.conc <- survival::concordance(object = pearson.x ~ pearson.y, data = orig.src.auc.cor)
+
+WriteXLS::WriteXLS(orig.src.auc.conc, "~/capsule/results/orig.src.auc.conc.xls", row.names = TRUE, col.names = TRUE, AdjWidth = TRUE, BoldHeaderRow = TRUE)
+
+# TO-DO: make plot
+
+# saveRDS(orig.src.auc.conc, "~/capsule/results/orig.src.auc.conc.rds")
+rm(orig.src.auc.cor)
