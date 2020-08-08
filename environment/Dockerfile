@@ -1,4 +1,4 @@
-# hash:sha256:69a97f56795a884e065360e1c9449d16bc8a578a4c750b8c75311be736b4e0eb
+# hash:sha256:b0d01c356d7e1fe766b20d1e6f20554de0809cf7bc252dab67bc7355a716719c
 FROM registry.codeocean.com/codeocean/r-base:3.6.0-ubuntu18.04
 
 ARG DEBIAN_FRONTEND=noninteractive
@@ -20,5 +20,6 @@ RUN Rscript -e 'remotes::install_version("VennDiagram", "1.6.20")' \
 
 RUN Rscript -e 'options(warn=2); install.packages("BiocManager")'
 RUN Rscript -e 'options(warn=2); BiocManager::install(c( \
-        "PharmacoGx" \
-    ))' # Original versions: 1.17.1
+        "PharmacoGx", \
+        "marray" \
+    ))' # Original versions: 1.17.1 1.64.0

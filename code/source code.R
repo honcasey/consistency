@@ -1,4 +1,4 @@
-library(PharmacoGx); library(dplyr); library(reshape2); library(survival); library(WriteXLS); library(VennDiagram) #TO-DO: do the required thing to install packages
+library(PharmacoGx); library(dplyr); library(reshape2); library(survival); library(VennDiagram)
 # downloadPSet("GDSC_2013"); downloadPSet("CCLE_2013")
 
 # ==============================================================
@@ -510,9 +510,9 @@ for (drug in rownames(targ.auc.cor)) {
 # broad-spectrum:
 orig.brsp.ic50.cor <- merge(orig.ic50.cor, brsp.ic50.cor, by = 0, all = TRUE)
 marray::write.xls(orig.brsp.ic50.cor, "~/capsule/results/broad_sp_ic50_corr.xls", row.names = TRUE, col.names = TRUE)
-WriteXLS::WriteXLS(orig.brsp.ic50.cor, "~/capsule/results/broad_sp_ic50_corr.xls", row.names = TRUE, col.names = TRUE, AdjWidth = TRUE, BoldHeaderRow = TRUE)
 
 orig.brsp.ic50.conc <- survival::concordance(object = pearson.x ~ pearson.y, data = orig.brsp.ic50.cor)
+# should i do concordance between spearman?
 
 # n= 15 
 # Concordance= 0.7714 se= 0.08645
@@ -525,8 +525,7 @@ saveRDS(orig.brsp.ic50.conc, "~/capsule/results/orig.brsp.ic50.conc.rds")
 orig.targ.ic50.cor <- merge(orig.ic50.cor, targ.ic50.cor, by = 0, all = TRUE)
 # TO-DO: make plot
 
-marray::writexls(orig.targ.ic50.cor, "~/capsule/results.targeted_ic50_corr.xls", row.names = TRUE, col.names = TRUE)
-WriteXLS::WriteXLS(orig.targ.ic50.cor, "~/capsule/results.targeted_ic50_corr.xls", row.names = TRUE, col.names = TRUE, AdjWidth = TRUE, BoldHeaderRow = TRUE)
+marray::write.xls(orig.targ.ic50.cor, "~/capsule/results.targeted_ic50_corr.xls", row.names = TRUE, col.names = TRUE)
 
 orig.targ.ic50.conc <- survival::concordance(object = pearson.x ~ pearson.y, data = orig.targ.ic50.cor)
 
@@ -541,9 +540,8 @@ saveRDS(orig.targ.ic50.conc, "~/capsule/results/orig.targ.ic50.conc.rds")
 # broad-spectrum:
 orig.brsp.auc.cor <- merge(orig.auc.cor, brsp.auc.cor, by = 0, all = TRUE)
 marray::write.xls(orig.brsp.auc.cor, "~/capsule/results/orig.brsp.auc.cor.xls", row.names = TRUE, col.names = TRUE)
-WriteXLS::WriteXLS(orig.brsp.auc.cor, "~/capsule/results/orig.brsp.auc.cor.xls", row.names = TRUE, col.names = TRUE, AdjWidth = TRUE, BoldHeaderRow = TRUE)
 
-orig.brsp.auc.conc <- survival::concordance(object = pearson.x ~ pearson.y, data = orig.brsp.auc.cor)
+# orig.brsp.auc.conc <- survival::concordance(object = pearson.x ~ pearson.y, data = orig.brsp.auc.cor)
 # no concordance since brsp.auc.cor has no observations
 # TO-DO: make plot
 # saveRDS(orig.brsp.auc.conc, "~/capsule/results/orig.brsp.auc.conc.rds")
@@ -551,7 +549,6 @@ orig.brsp.auc.conc <- survival::concordance(object = pearson.x ~ pearson.y, data
 # targeted:
 orig.targ.auc.cor <- merge(orig.auc.cor, targ.auc.cor, by = 0, all = TRUE)
 marray::write.xls(orig.targ.auc.cor, "~/capsule/results/orig.targ.auc.cor.xls", row.names = TRUE, col.names = TRUE)
-WriteXLS::WriteXLS(orig.targ.auc.cor, "~/capsule/results/orig.targ.auc.cor.xls", row.names = TRUE, col.names = TRUE, AdjWidth = TRUE, BoldHeaderRow = TRUE)
 
 orig.targ.auc.conc <- survival::concordance(object = pearson.x ~ pearson.y, data = orig.targ.auc.cor)
 
@@ -633,7 +630,6 @@ for (drug in rownames(mek.auc.cor)) {
 orig.mek.ic50.cor <- merge(orig.ic50.cor, mek.ic50.cor, by = 0, all = TRUE)
 # TO-DO: make plot
 marray::write.xls(orig.mek.ic50.cor, "~/capsule/results/orig.mek.ic50.cor.xls", row.names = TRUE, col.names = TRUE)
-WriteXLS::WriteXLS(orig.targ.auc.cor, "~/capsule/results/orig.mek.ic50.cor.xls", row.names = TRUE, col.names = TRUE, AdjWidth = TRUE, BoldHeaderRow = TRUE)
 
 orig.mek.ic50.conc <- survival::concordance(object = pearson.x ~ pearson.y, data = orig.mek.ic50.cor)
 
@@ -642,12 +638,11 @@ orig.mek.ic50.conc <- survival::concordance(object = pearson.x ~ pearson.y, data
 # concordant discordant     tied.x     tied.y    tied.xy 
 # 83         22          0          0          0 
 
-saveRDS(orig.mek.ic50.cor, "~/capsule/results/orig.targ.auc.conc.rds")
+saveRDS(orig.mek.ic50.conc, "~/capsule/results/orig.mek.ic50.conc.rds")
 
 # AUC
 orig.mek.auc.cor <- merge(orig.auc.cor, mek.auc.cor, by = 0, all = TRUE)
 marray::write.xls(orig.mek.auc.cor, "~/capsule/results/orig.mek.auc.cor.xls", row.names = TRUE, col.names = TRUE)
-WriteXLS::WriteXLS(orig.mek.auc.cor, "~/capsule/results/orig.mek.auc.cor.xls", row.names = TRUE, col.names = TRUE, AdjWidth = TRUE, BoldHeaderRow = TRUE)
 
 orig.mek.auc.conc <- survival::concordance(object = pearson.x ~ pearson.y, data = orig.mek.auc.cor)
 
@@ -664,7 +659,6 @@ saveRDS(orig.mek.auc.conc, "~/capsule/results/orig.mek.auc.conc.rds")
 # IC50
 orig.src.ic50.cor <- merge(orig.ic50.cor, src.ic50.cor, by = 0, all = TRUE)
 marray::write.xls(orig.src.ic50.cor, "~/capsule/results/orig.src.ic50.cor.xls", row.names = TRUE, col.names = TRUE)
-WriteXLS::WriteXLS(orig.src.ic50.cor, "~/capsule/results/orig.src.ic50.cor.xls", row.names = TRUE, col.names = TRUE, AdjWidth = TRUE, BoldHeaderRow = TRUE)
 
 orig.src.ic50.conc <- survival::concordance(object = pearson.x ~ pearson.y, data = orig.src.ic50.cor)
 
@@ -680,7 +674,6 @@ saveRDS(orig.src.ic50.conc, "~/capsule/results/orig.src.ic50.conc.rds")
 # AUC
 orig.src.auc.cor <- merge(orig.auc.cor, src.auc.cor, by = 0, all = TRUE)
 marray::write.xls(orig.src.auc.cor, "~/capsule/results/orig.src.auc.cor.xls", row.names = TRUE, col.names = TRUE)
-WriteXLS::WriteXLS(orig.src.auc.cor, "~/capsule/results/orig.src.auc.cor.xls", row.names = TRUE, col.names = TRUE, AdjWidth = TRUE, BoldHeaderRow = TRUE)
 
 orig.src.auc.conc <- survival::concordance(object = pearson.x ~ pearson.y, data = orig.src.auc.cor)
 
@@ -694,33 +687,127 @@ orig.src.auc.conc <- survival::concordance(object = pearson.x ~ pearson.y, data 
 saveRDS(orig.src.auc.conc, "~/capsule/results/orig.src.auc.conc.rds")
 
 # ======================================================
-# 1) Bar plot representing the Spearman's rank correlation coefficient for IC50 drug sensitivity measures; significance is reported using an asterisk if two‐sided P value <0.05.
-# x axis = the drugs (which are the rownames of brsp.ic50.cor), y axis = the spearman rank
-# each drug has two bars, one with original correlation, one with new correlation when broad spectrum, one with new corr when targ, one with new corr when mek, one with new corr when src
+# 1) Bar plot representing the Spearman's rank correlation coefficient for IC50 drug sensitivity measures
+ss <- as.matrix(t(cbind(orig.ic50.cor$spearman, brsp.ic50.cor$spearman, targ.ic50.cor$spearman, src.ic50.cor$spearman, mek.ic50.cor$spearman)))
+ss[!is.na(ss) & ss < 0] <- 0
+names(ss) <- rownames(orig.ic50.cor)
+
+pdf("~/capsule/results/plots/all_ic50_bar_plot.pdf")
+mp <- barplot(ss, beside=TRUE, space=c(0.1, 2), col=rep(rainbow(length(ss), v=0.9), each=2), ylab=expression("r"[s]), density=c(0,10,20,30,7) , angle=c(0,45,90,11,36), main="Spearman's rank correlation coefficient of IC50", font.main = 1)
+legend("topright", legend=c("orig", "br-sp", "targ", "src", "mek"), density=c(0,10,20,30,7), angle=c(0,45,90,11,36), bty="n", cex=0.75)
+text(x=apply(mp, 2, mean) + 1.45, y=par("usr")[3] - (par("usr")[4] * 0.05), pos=2, labels=toupper(names(ss)), srt=45, xpd=NA, font=1, cex = 0.75)
+dev.off()
 
 # 2) Bar plot representing the Spearman's rank correlation coefficient for AUC drug sensitivity measures; significance is reported using an asterisk if two‐sided P value <0.05.
 # x axis = the drugs (which are the rownames of brsp.auc.cor), y axis = the spearman rank
 # each drug has two bars, one with original correlation, one with new correlation when broad spectrum, one with new corr when targ, one with new corr when mek, one with new corr when src
+aa <- as.matrix(t(cbind(orig.auc.cor$spearman, brsp.auc.cor$spearman, targ.auc.cor$spearman, src.auc.cor$spearman, mek.auc.cor$spearman)))
+aa[!is.na(aa) & aa < 0] <- 0
+names(aa) <- rownames(orig.auc.cor)
+
+pdf("~/capsule/results/plots/all_auc_bar_plot.pdf")
+bp <- barplot(aa, beside=TRUE, space=c(0.1, 2), col=rep(rainbow(length(aa), v=0.9), each=2), ylab=expression("r"[s]), density=c(0,10,20,30,7) , angle=c(0,45,90,11,36), main="Spearman's rank correlation coefficient of AUC", font.main = 1)
+legend("topright", legend=c("orig", "br-sp", "targ", "src", "mek"), density=c(0,10,20,30,7), angle=c(0,45,90,11,36), bty="n", cex=0.75)
+text(x=apply(bp, 2, mean) + 1.45, y=par("usr")[3] - (par("usr")[4] * 0.05), pos=1, labels=toupper(names(aa)), srt=45, xpd=NA, font=1, cex = 0.75)
+dev.off()
 
 # 3) scatter plot (for each drug) reporting drug sensitivity of all cell line
 # x axis = CCLE reported measures, y axis = GDSC reported measures
+pdf("~/capsule/results/plots/drugs_auc_cor_barplot.pdf", height = 14, width = 14)
+par(mfrow=c(4,4))
+for (drug in rownames(gdsc_auc)) {
+  plot(as.numeric(ccle_auc[drug, ]), as.numeric(gdsc_auc[drug, ]), main = drug, xlab = "ccle", ylab = "gdsc", type = "p")
+}
+dev.off()
 
-# 4) Bar plot representing spearman's ranks for IC50 drug measure comparing original with broad spectrum
+# 5) Bar plot representing spearman's ranks for AUC drug measure comparing original with targeted
+tg <- as.matrix(t(cbind(orig.auc.cor$spearman, targ.auc.cor$spearman)))
+tg[!is.na(tg) & tg < 0] <- 0
+names(tg) <- rownames(orig.auc.cor)
 
-# 5) Bar plot representing spearman's ranks for IC50 drug measure comparing original with targeted
+pdf("~/capsule/results/plots/targeted_auc_cor_bar_plot.pdf")
+tgb <- barplot(tg, beside=TRUE, space=c(0.1, 2), col=rep(rainbow(length(tg), v=0.9), each=2), ylab=expression("r"[s]), angle=c(45, -45), density=c(100, 40), main="Spearman's rank correlation coefficient of AUC", font.main = 1)
+legend("topright", legend=c("orig", "targeted"), fill=c("black", "black"), density=c(100, 40), bty="n", cex=1)
+text(x=apply(tgb, 2, mean), y=par("usr")[3] - (par("usr")[4]*0.05), pos=1, labels=toupper(names(tg)), srt=50, xpd=NA, font=1, cex = 0.75)
+dev.off()
 
-# 6) Bar plot representing spearman's ranks for IC50 drug measure comparing original with mek drugs
+# 6) Bar plot representing spearman's ranks for AUC drug measure comparing original with mek drugs
+mek <- as.matrix(t(cbind(orig.auc.cor$spearman, mek.auc.cor$spearman)))
+mek[!is.na(mek) & mek < 0] <- 0
+names(mek) <- rownames(orig.auc.cor)
 
-# 7) Bar plot representing spearman's ranks for IC50 drug measure comparing original with src drugs
+pdf("~/capsule/results/plots/MEK_auc_cor_bar_plot.pdf")
+mb <- barplot(mek, beside=TRUE, space=c(0.1, 2), col=rep(rainbow(length(mek), v=0.9), each=2), ylab=expression("r"[s]), angle=c(45, -45), density=c(100, 40), main="Spearman's rank correlation coefficient for AUC", font.main = 1)
+legend("topright", legend=c("orig", "targeted"), fill=c("black", "black"), density=c(100, 40), bty="n", cex=1)
+text(x=apply(mb, 2, mean), y=par("usr")[3] - (par("usr")[4]*0.05), pos=1, labels=toupper(names(mek)), srt=50, xpd=NA, font=1, cex = 0.75)
+dev.off()
 
-# 8) Bar plot representing spearman's ranks for AUC drug measure comparing original with broad spectrum
+# 7) Bar plot representing spearman's ranks for AUC drug measure comparing original with src drugs
+src <- as.matrix(t(cbind(orig.auc.cor$spearman, src.auc.cor$spearman)))
+src[!is.na(src) & src < 0] <- 0
+names(src) <- rownames(orig.auc.cor)
 
-# 9) Bar plot representing spearman's ranks for AUC drug measure comparing original with targeted
+pdf("~/capsule/results/plots/SRC_auc_cor_bar_plot.pdf")
+sb <- barplot(src, beside=TRUE, space=c(0.1, 2), col=rep(rainbow(length(mek), v=0.9), each=2), ylab=expression("r"[s]), angle=c(45, -45), density=c(100, 40), main="Spearman's rank correlation coefficient for AUC", font.main = 1)
+legend("topright", legend=c("orig", "targeted"), fill=c("black", "black"), density=c(100, 40), bty="n", cex=1)
+text(x=apply(sb, 2, mean), y=par("usr")[3] - (par("usr")[4]*0.05), pos=1, labels=toupper(names(src)), srt=50, xpd=NA, font=1, cex = 0.75)
+dev.off()
 
-# 10) Bar plot representing spearman's ranks for AUC drug measure comparing original with mek drugs
+# 8) Bar plot representing spearman's ranks for IC50 drug measure comparing original with broad spectrum
+aa <- as.matrix(t(cbind(orig.ic50.cor$spearman, src.ic50.cor$spearman)))
+aa[!is.na(aa) & aa < 0] <- 0
+names(aa) <- rownames(orig.ic50.cor)
 
-# 11) Bar plot representing spearman's ranks for AUC drug measure comparing original with src drugs
+pdf("~/capsule/results/plots/brsp_ic50_cor_bar_plot.pdf")
+aab <- barplot(aa, beside=TRUE, space=c(0.1, 2), col=rep(rainbow(length(aa), v=0.9), each=2), ylab=expression("r"[s]), angle=c(45, -45), density=c(100, 40), main="Spearman's rank correlation coefficient for IC50", font.main = 1)
+legend("topright", legend=c("orig", "targeted"), fill=c("black", "black"), density=c(100, 40), bty="n", cex=1)
+text(x=apply(aab, 2, mean), y=par("usr")[3] - (par("usr")[4]*0.05), pos=1, labels=toupper(names(aa)), srt=50, xpd=NA, font=1, cex = 0.75)
+dev.off()
+
+# 9) Bar plot representing spearman's ranks for IC50 drug measure comparing original with targeted
+bb <- as.matrix(t(cbind(orig.ic50.cor$spearman, targ.ic50.cor$spearman)))
+bb[!is.na(bb) & bb < 0] <- 0
+names(bb) <- rownames(orig.ic50.cor)
+
+pdf("~/capsule/results/plots/targ_ic50_cor_bar_plot.pdf")
+bbb <- barplot(bb, beside=TRUE, space=c(0.1, 2), col=rep(rainbow(length(bb), v=0.9), each=2), ylab=expression("r"[s]), angle=c(45, -45), density=c(100, 40), main="Spearman's rank correlation coefficient for IC50", font.main = 1)
+legend("topright", legend=c("orig", "targeted"), fill=c("black", "black"), density=c(100, 40), bty="n", cex=1)
+text(x=apply(bbb, 2, mean), y=par("usr")[3] - (par("usr")[4]*0.05), pos=1, labels=toupper(names(bb)), srt=50, xpd=NA, font=1, cex = 0.75)
+dev.off()
+
+# 10) Bar plot representing spearman's ranks for IC50 drug measure comparing original with mek drugs
+cc <- as.matrix(t(cbind(orig.ic50.cor$spearman, mek.ic50.cor$spearman)))
+cc[!is.na(cc) & cc < 0] <- 0
+names(cc) <- rownames(orig.ic50.cor)
+
+pdf("~/capsule/results/plots/mek_ic50_cor_bar_plot.pdf")
+ccb <- barplot(cc, beside=TRUE, space=c(0.1, 2), col=rep(rainbow(length(cc), v=0.9), each=2), ylab=expression("r"[s]), angle=c(45, -45), density=c(100, 40), main="Spearman's rank correlation coefficient for IC50", font.main = 1)
+legend("topright", legend=c("orig", "targeted"), fill=c("black", "black"), density=c(100, 40), bty="n", cex=1)
+text(x=apply(ccb, 2, mean), y=par("usr")[3] - (par("usr")[4]*0.05), pos=1, labels=toupper(names(cc)), srt=50, xpd=NA, font=1, cex = 0.75)
+dev.off()
+
+# 11) Bar plot representing spearman's ranks for IC50 drug measure comparing original with src drugs
+dd <- as.matrix(t(cbind(orig.ic50.cor$spearman, src.ic50.cor$spearman)))
+dd[!is.na(dd) & dd < 0] <- 0
+names(dd) <- rownames(orig.ic50.cor)
+
+pdf("~/capsule/results/plots/src_ic50_cor_bar_plot.pdf")
+ddb <- barplot(dd, beside=TRUE, space=c(0.1, 2), col=rep(rainbow(length(dd), v=0.9), each=2), ylab=expression("r"[s]), angle=c(45, -45), density=c(100, 40), main="Spearman's rank correlation coefficient for IC50", font.main = 1)
+legend("topright", legend=c("orig", "targeted"), fill=c("black", "black"), density=c(100, 40), bty="n", cex=1)
+text(x=apply(ddb, 2, mean), y=par("usr")[3] - (par("usr")[4]*0.05), pos=1, labels=toupper(names(dd)), srt=50, xpd=NA, font=1, cex = 0.75)
+dev.off()
 
 # 12) bar plot representing all concordance indexes
+all_ic50_concordances = c(orig.brsp.ic50.conc$concordance, orig.targ.ic50.conc$concordance, orig.mek.ic50.conc$concordance, orig.src.ic50.conc$concordance)
+names(all_ic50_concordances) <- c("Broad", "Targ","MEK Inhib", "SRC Inhib")
 
+pdf("~/capsule/results/plots/ic50_concordances_bar_plot.pdf")
+ee <- barplot(all_ic50_concordances, main = "Concordance between Pearson correlations of IC50")
+dev.off()
 
+all_auc_concordances = c(orig.targ.auc.conc$concordance, orig.mek.auc.conc$concordance, orig.src.auc.conc$concordance)
+names(all_auc_concordances) <- c("Targ","MEK Inhib", "SRC Inhib")
+
+pdf("~/capsule/results/plots/auc_concordances_bar_plot.pdf")
+ff <- barplot(all_auc_concordances, main = "Concordance between Pearson correlations of AUC")
+dev.off()
