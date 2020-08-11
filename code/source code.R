@@ -11,6 +11,8 @@ ccle <- intersected$CCLE
 gdsc <- intersected$GDSC
 
 # venn diagram of common cell lines
+dir.create("~/capsule/results/plots")
+dir.create("~/capsule/results/plots/venn")
 venn.plot <- VennDiagram::draw.pairwise.venn(area1=nrow(CCLE@cell), area2=nrow(GDSC@cell), cross.area=nrow(ccle@cell), col = "black", cex=1.5, cat.cex=1, cat.col = c("black", "black"))
 pdf("~/capsule/results/plots/venn/cell_intersection.pdf", height=4, width=4)
 grid::grid.draw(venn.plot)
@@ -76,16 +78,12 @@ for (drug in rownames(druglist)) {
 #       get published ic50 and auc
 # ==============================================
 ccle_ic50 = as.data.frame(summarizeSensitivityProfiles(ccle, sensitivity.measure = "ic50_published"))
-# TO-DO: remove columns with all NA's?
 
 ccle_auc = as.data.frame(summarizeSensitivityProfiles(ccle, sensitivity.measure = "auc_published"))
-# TO-DO: remove columns with all NA's?
 
 gdsc_ic50 = as.data.frame(summarizeSensitivityProfiles(gdsc, sensitivity.measure = "ic50_published"))
-# TO-DO: remove columns with all NA's?
 
 gdsc_auc = as.data.frame(summarizeSensitivityProfiles(gdsc, sensitivity.measure = "auc_published"))
-# TO-DO: remove columns with all NA's?
 
 # ====================================================
 # correlation of published IC50 between CCLE and GDSC 
@@ -401,6 +399,8 @@ for (drug in rownames(orig.auc.cor)) {
   orig.auc.cor[drug, "spearman"] <- spearman.cor$estimate
   orig.auc.cor[drug, "spearman p-value"] <- spearman.cor$p.value
 }
+marray::write.xls(orig.ic50.cor, "~/capsule/results/orig.ic50.cor.xls", row.names = TRUE, col.names = TRUE)
+marray::write.xls(orig.auc.cor, "~/capsule/results/orig.auc.cor.xls", row.names = TRUE, col.names = TRUE)
 
 # ======================================================================================
 #   correlation between CCLE and GDSC after sorting into broad-spectrum/targeted
@@ -445,7 +445,6 @@ binary.auc.cor <- merge(orig.auc.cor, bin.auc.cor, by = 0, all = TRUE)
 marray::write.xls(binary.auc.cor, "~/capsule/results/binary.auc.cor.xls", row.names = TRUE, col.names = TRUE)
 binary.auc.concordance <- survival::concordance(object = pearson.x ~ pearson.y, data = binary.auc.cor)
 saveRDS(binary.auc.concordance, "~/capsule/results/binary.auc.concordance.rds")
-
 
 # =============================================================================
 #       correlation between CCLE and GDSC after sorting into PCLs
