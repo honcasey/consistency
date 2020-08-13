@@ -565,7 +565,7 @@ mek <- as.matrix(t(cbind(orig.auc.cor$spearman, pcl.auc.cor$spearman)))
 mek[!is.na(mek) & mek < 0] <- 0
 names(mek) <- rownames(orig.auc.cor)
 
-pdf("~/capsule/results/pcl_auc_cor_bar_plot.pdf")
+pdf("~/capsule/results/plots/pcl_auc_cor_bar_plot.pdf")
 mb <- barplot(mek, beside=TRUE, space=c(0.1, 2), col=rep(rainbow(length(mek), v=0.9), each=2), ylab=expression("Spearman's rank correlation coefficient r"[s]), density=c(100,10) , angle=c(0,45), main="Spearman's rank correlation coefficient for AUC values \nafter filtering cell lines by PCL drug classification", font.main = 1)
 legend("topright", legend=c("orig", "PCL"), fill=c("black", "black"), density=c(100, 10), bty="n", cex=1)
 text(x=apply(mb, 2, mean), y=par("usr")[3] - (par("usr")[4]*0.05), pos=1, labels=toupper(names(mek)), srt=50, xpd=NA, font=1, cex = 0.75)
@@ -587,7 +587,7 @@ bb <- as.matrix(t(cbind(orig.ic50.cor$spearman, pcl.ic50.cor$spearman)))
 bb[!is.na(bb) & bb < 0] <- 0
 names(bb) <- rownames(orig.ic50.cor)
 
-pdf("~/capsule/results/pcl_ic50_cor_bar_plot.pdf")
+pdf("~/capsule/results/plots/pcl_ic50_cor_bar_plot.pdf")
 bbb <- barplot(bb, beside=TRUE, space=c(0.1, 2), col=rep(rainbow(length(bb), v=0.9), each=2), ylab=expression("Spearman's rank correlation coefficient r"[s]), angle=c(0, 45), density=c(100, 10), main="Spearman's rank correlation coefficient for IC50 values \nafter filtering cell lines by PCL drug classification", font.main = 1)
 legend("topright", legend=c("orig", "PCL"), fill=c("black", "black"), density=c(100, 10), bty="n", cex=1)
 text(x=apply(bbb, 2, mean), y=par("usr")[3] - (par("usr")[4]*0.05), pos=1, labels=toupper(names(bb)), srt=50, xpd=NA, font=1, cex = 0.75)
