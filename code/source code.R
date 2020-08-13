@@ -36,7 +36,7 @@ common_drugs <- ccle@drug
 # ====================================================
 # loading manually curated list of drug information
 # ====================================================
-druglist <- as.data.frame(read.csv("PSets/druglist330.csv")) 
+druglist <- as.data.frame(read.csv("PSets/drug_info.csv")) 
 druglist[] <- lapply(druglist, as.character) # change class of dataframe columns from vector to character
 rownames(druglist) <- rownames(ccle@drug)
 # rownames(druglist) <- druglist$drug_name 
@@ -48,22 +48,7 @@ classes = data.frame(drug = rownames(ccle@drug), row.names = rownames(ccle@drug)
 classes$BroadSpectrum_or_Targeted <- NA
 
 for (drug in rownames(druglist)) {
-  tryCatch(
-    expr = {
-      if (druglist[drug, "ChEMBL.drug.mechanism"] == "single protein") {
-        classes[drug, "BroadSpectrum_or_Targeted"] <- "targeted"
-      }
-      else if (druglist[drug, "ChEMBL.drug.mechanism"] == "protein family") {
-        classes[drug, "BroadSpectrum_or_Targeted"] <- "broad-spectrum"
-      }
-      else if (is.na(druglist[drug, "ChEMBL.drug.mechanism"])) {
-        classes[drug, "BroadSpectrum_or_Targeted"] <- NA 
-      }
-    },
-    error = function(e){
-      message(drug, " is unclassified")
-    }
-  )
+  classes[drug, "BroadSpectrum_or_Targeted"] <- druglist[drug, "ChEMBL.drug.mechanism"]
 }
 
 # ====================================================
@@ -136,18 +121,17 @@ for (cell.line in rownames(auc.cor)) {
 # ====================================================
 broad_spectrum_drugs <- classes[grep("broad-spectrum", classes$BroadSpectrum_or_Targeted), "drug"] 
 targeted_drugs <- classes[grep("targeted", classes$BroadSpectrum_or_Targeted), "drug"] 
-# TO-DO: this doesn't work, intersect whatever drugs aren't in broad_spectrum_drugs and targeted_drugs
-# unclassified_drugs <- classes[grep(NA, classes$BroadSpectrum_or_Targeted), "drug"] # drugs that aren't sorted
 
 # ====================================================
 #               sort drugs into PCLs 
 # ====================================================
 # make list of all PCLs and the drugs in each one
-# TO-DO: make this nicer...
 pcl_count <- dplyr::select(classes, PCL)
 pcl_count$drug <- rownames(pcl_count)
 pcls <- (reshape2::dcast(pcl_count, drug~PCL))
 pcls <- pcls[, -1]
+rm(pcl_count)
+rm(classes)
 
 pcl_list = list()
 for (pcl in colnames(pcls)) {
@@ -494,9 +478,9 @@ ss <- as.matrix(t(cbind(orig.ic50.cor$spearman, bin.ic50.cor$spearman, pcl.ic50.
 ss[!is.na(ss) & ss < 0] <- 0
 names(ss) <- rownames(orig.ic50.cor)
 
-pdf("~/capsule/results/all_ic50_bar_plot.pdf")
-mp <- barplot(ss, beside=TRUE, space=c(0.1, 2), col=rep(rainbow(length(ss), v=0.9), each=2), ylab=expression("r"[s]), density=c(0,10,20,30,7) , angle=c(0,45,90,11,36), main="Spearman's rank correlation coefficient of IC50", font.main = 1)
-legend("topright", legend=c("orig", "br-sp/targ", "pcl"), density=c(0,10,20,30,7), angle=c(0,45,90,11,36), bty="n", cex=0.75)
+pdf("~/capsule/results/plots/all_ic50_bar_plot.pdf")
+mp <- barplot(ss, beside=TRUE, space=c(0.1, 2), col=rep(rainbow(length(ss), v=0.9), each=2), ylab=expression("Spearman's rank correlation coefficient r"[s]), density=c(100,10,20) , angle=c(0,45,90), main="Spearman's rank correlation coefficient of IC50 of original values \nand after both filtering methods", font.main = 1)
+legend("topright", legend=c("orig", "br-sp/targ", "pcl"), density=c(100,10,20), angle=c(0,45,90), bty="n", cex=0.75)
 text(x=apply(mp, 2, mean) + 1.45, y=par("usr")[3] - (par("usr")[4] * 0.05), pos=2, labels=toupper(names(ss)), srt=45, xpd=NA, font=1, cex = 0.75)
 dev.off()
 
@@ -505,64 +489,64 @@ aa <- as.matrix(t(cbind(orig.auc.cor$spearman, orig.auc.cor$spearman, pcl.auc.co
 aa[!is.na(aa) & aa < 0] <- 0
 names(aa) <- rownames(orig.auc.cor)
 
-pdf("~/capsule/results/all_auc_bar_plot.pdf")
-bp <- barplot(aa, beside=TRUE, space=c(0.1, 2), col=rep(rainbow(length(aa), v=0.9), each=2), ylab=expression("r"[s]), density=c(0,10,20,30,7) , angle=c(0,45,90,11,36), main="Spearman's rank correlation coefficient of AUC", font.main = 1)
-legend("topright", legend=c("orig", "br-sp/targ", "pcl"), density=c(0,10,20), angle=c(0,45,90), bty="n", cex=0.75)
+pdf("~/capsule/results/plots/all_auc_bar_plot.pdf")
+bp <- barplot(aa, beside=TRUE, space=c(0.1, 2), col=rep(rainbow(length(aa), v=0.9), each=2), ylab=expression("Spearman's rank correlation coefficient r"[s]), density=c(100,10,20) , angle=c(0,45,90), main="Spearman's rank correlation coefficient of AUC of original values \nand after both filtering methods", font.main = 1)
+legend("topright", legend=c("orig", "br-sp/targ", "pcl"), density=c(100,10,20), angle=c(0,45,90), bty="n", cex=0.75)
 text(x=apply(bp, 2, mean) + 1.45, y=par("usr")[3] - (par("usr")[4] * 0.05), pos=1, labels=toupper(names(aa)), srt=45, xpd=NA, font=1, cex = 0.75)
 dev.off()
 
 # 3) scatter plot (for each drug) reporting AUC of all cell line
-pdf("~/capsule/results/plots/scatter/drugs_auc_scatterplot.pdf", height = 14, width = 14)
+pdf("~/capsule/results/plots/drugs_auc_scatterplot.pdf", height = 14, width = 14)
 par(mfrow=c(4,4))
 for (drug in rownames(gdsc_auc)) {
-  plot(as.numeric(ccle_auc[drug, ]), as.numeric(gdsc_auc[drug, ]), main = drug, xlab = "ccle", ylab = "gdsc", type = "p", col = "royalblue2")
+  plot(as.numeric(ccle_auc[drug, ]), as.numeric(gdsc_auc[drug, ]), main = drug, xlab = "CCLE", ylab = "GDSC", type = "p", col = "royalblue2")
 }
 mtext("Comparison of original AUC values", outer=TRUE,  cex=1, line=-1.5)
 dev.off()
 
 #scatter plot for each drug reporting AUC with cell lines removed by binary filtering
-pdf("~/capsule/results/bin_auc_scatterplot.pdf", height = 14, width = 14)
+pdf("~/capsule/results/plots/bin_auc_scatterplot.pdf", height = 14, width = 14)
 par(mfrow=c(4,4))
 for (drug in rownames(gdsc_auc_cc_binary)) {
-  plot(as.numeric(ccle_auc_cc_binary[drug, ]), as.numeric(gdsc_auc_cc_binary[drug, ]), main = drug, xlab = "ccle", ylab = "gdsc", type = "p", col = "royalblue2")
+  plot(as.numeric(ccle_auc_cc_binary[drug, ]), as.numeric(gdsc_auc_cc_binary[drug, ]), main = drug, xlab = "CCLE", ylab = "GDSC", type = "p", col = "royalblue2")
 }
 mtext("Comparison of AUC values by binary drug classification", outer=TRUE,  cex=1, line=-1.5)
 dev.off()
 
 #scatter plot for each drug reporting AUC with cell lines removed by pcl filtering
-pdf("~/capsule/results/pcl_auc_scatterplot.pdf", height = 14, width = 14)
+pdf("~/capsule/results/plots/pcl_auc_scatterplot.pdf", height = 14, width = 14)
 par(mfrow=c(4,4))
 for (drug in rownames(gdsc_auc_cc_pcl)) {
-  plot(as.numeric(ccle_auc_cc_pcl[drug, ]), as.numeric(gdsc_auc_cc_pcl[drug, ]), main = drug, xlab = "ccle", ylab = "gdsc", type = "p", col = "royalblue2")
+  plot(as.numeric(ccle_auc_cc_pcl[drug, ]), as.numeric(gdsc_auc_cc_pcl[drug, ]), main = drug, xlab = "CCLE", ylab = "GDSC", type = "p", col = "royalblue2")
 }
-mtext("Comparison of AUC values - PCL drug classification", outer=TRUE,  cex=1, line=-1.5)
+mtext("Comparison of AUC values by PCL drug classification", outer=TRUE,  cex=1, line=-1.5)
 dev.off()
 
 # 4) scatter plot for each drug reporting IC50 of all cell lines
-pdf("~/capsule/results/drugs_ic50_scatterplot.pdf", height = 14, width = 14)
+pdf("~/capsule/results/plots/drugs_ic50_scatterplot.pdf", height = 14, width = 14)
 par(mfrow=c(4,4))
 for (drug in rownames(gdsc_ic50)) {
-  plot(as.numeric(ccle_ic50[drug, ]), as.numeric(gdsc_ic50[drug, ]), main = drug, xlab = "ccle", ylab = "gdsc", type = "p", col = "royalblue2")
+  plot(as.numeric(ccle_ic50[drug, ]), as.numeric(gdsc_ic50[drug, ]), main = drug, xlab = "CCLE", ylab = "GDSC", type = "p", col = "royalblue2")
 }
-mtext("Comparison of IC50 values", outer=TRUE,  cex=1, line=-1.5)
+mtext("Comparison of reported IC50 values in all common cell lines", outer=TRUE,  cex=1, line=-1.5)
 dev.off()
 
 #scatter plot for each drug reporting ic50 with cell lines removed by broad-spectrum filtering
-pdf("~/capsule/results/bin_ic50_scatterplot.pdf", height = 14, width = 14)
+pdf("~/capsule/results/plots/bin_ic50_scatterplot.pdf", height = 14, width = 14)
 par(mfrow=c(4,4))
 for (drug in rownames(gdsc_ic50_cc_binary)) {
-  plot(as.numeric(ccle_ic50_cc_binary[drug, ]), as.numeric(gdsc_ic50_cc_binary[drug, ]), main = drug, xlab = "ccle", ylab = "gdsc", type = "p", col = "royalblue2")
+  plot(as.numeric(ccle_ic50_cc_binary[drug, ]), as.numeric(gdsc_ic50_cc_binary[drug, ]), main = drug, xlab = "CCLE", ylab = "GDSC", type = "p", col = "royalblue2")
 }
-mtext("Comparison of IC50 values - binary drug classification", outer=TRUE,  cex=1, line=-1.5)
+mtext("Comparison of reported IC50 values after filtering cell lines by binary drug classification", outer=TRUE,  cex=1, line=-1.5)
 dev.off()
 
 #scatter plot for each drug reporting ic50 with cell lines removed by pcl filtering
-pdf("~/capsule/results/pcl_ic50_scatterplot.pdf", height = 14, width = 14)
+pdf("~/capsule/results/plots/pcl_ic50_scatterplot.pdf", height = 14, width = 14)
 par(mfrow=c(4,4))
 for (drug in rownames(gdsc_ic50_cc_pcl)) {
-  plot(as.numeric(ccle_ic50_cc_pcl[drug, ]), as.numeric(gdsc_ic50_cc_pcl[drug, ]), main = drug, xlab = "ccle", ylab = "gdsc", type = "p", col = "royalblue2")
+  plot(as.numeric(ccle_ic50_cc_pcl[drug, ]), as.numeric(gdsc_ic50_cc_pcl[drug, ]), main = drug, xlab = "CCLE", ylab = "GDSC", type = "p", col = "royalblue2")
 }
-mtext("Comparison of IC50 values - PCL drug classification", outer=TRUE,  cex=1, line=-1.5)
+mtext("Comparison of reported IC50 values after filtering cell lines by PCL drug classification", outer=TRUE,  cex=1, line=-1.5)
 dev.off()
 
 # 5) Bar plot representing spearman's ranks for AUC drug measure comparing original with binary
@@ -570,9 +554,9 @@ tg <- as.matrix(t(cbind(orig.auc.cor$spearman, bin.auc.cor$spearman)))
 tg[!is.na(tg) & tg < 0] <- 0
 names(tg) <- rownames(orig.auc.cor)
 
-pdf("~/capsule/results/bin_auc_cor_bar_plot.pdf")
-tgb <- barplot(tg, beside=TRUE, space=c(0.1, 2), col=rep(rainbow(length(tg), v=0.9), each=2), ylab=expression("r"[s]), angle=c(45, -45), density=c(100, 40), main="Spearman's rank correlation coefficient of AUC", font.main = 1)
-legend("topright", legend=c("orig", "br-sp/targ"), fill=c("black", "black"), density=c(100, 40), bty="n", cex=1)
+pdf("~/capsule/results/plots/bin_auc_cor_bar_plot.pdf")
+tgb <- barplot(tg, beside=TRUE, space=c(0.1, 2), col=rep(rainbow(length(tg), v=0.9), each=2), ylab=expression("Spearman's rank correlation coefficient r"[s]), density=c(100,10) , angle=c(0,45), main="Spearman's rank correlation coefficient of AUC values \nafter filtering cell lines by binary drug classification", font.main = 1)
+legend("topright", legend=c("orig", "br-sp/targ"), fill=c("black", "black"), density=c(100, 10), bty="n", cex=1)
 text(x=apply(tgb, 2, mean), y=par("usr")[3] - (par("usr")[4]*0.05), pos=1, labels=toupper(names(tg)), srt=50, xpd=NA, font=1, cex = 0.75)
 dev.off()
 
@@ -582,8 +566,8 @@ mek[!is.na(mek) & mek < 0] <- 0
 names(mek) <- rownames(orig.auc.cor)
 
 pdf("~/capsule/results/pcl_auc_cor_bar_plot.pdf")
-mb <- barplot(mek, beside=TRUE, space=c(0.1, 2), col=rep(rainbow(length(mek), v=0.9), each=2), ylab=expression("r"[s]), angle=c(45, -45), density=c(100, 40), main="Spearman's rank correlation coefficient for AUC", font.main = 1)
-legend("topright", legend=c("orig", "PCL"), fill=c("black", "black"), density=c(100, 40), bty="n", cex=1)
+mb <- barplot(mek, beside=TRUE, space=c(0.1, 2), col=rep(rainbow(length(mek), v=0.9), each=2), ylab=expression("Spearman's rank correlation coefficient r"[s]), density=c(100,10) , angle=c(0,45), main="Spearman's rank correlation coefficient for AUC values \nafter filtering cell lines by PCL drug classification", font.main = 1)
+legend("topright", legend=c("orig", "PCL"), fill=c("black", "black"), density=c(100, 10), bty="n", cex=1)
 text(x=apply(mb, 2, mean), y=par("usr")[3] - (par("usr")[4]*0.05), pos=1, labels=toupper(names(mek)), srt=50, xpd=NA, font=1, cex = 0.75)
 dev.off()
 
@@ -592,9 +576,9 @@ aa <- as.matrix(t(cbind(orig.ic50.cor$spearman, bin.ic50.cor$spearman)))
 aa[!is.na(aa) & aa < 0] <- 0
 names(aa) <- rownames(orig.ic50.cor)
 
-pdf("~/capsule/results/bin_ic50_cor_bar_plot.pdf")
-aab <- barplot(aa, beside=TRUE, space=c(0.1, 2), col=rep(rainbow(length(aa), v=0.9), each=2), ylab=expression("r"[s]), angle=c(45, -45), density=c(100, 40), main="Spearman's rank correlation coefficient for IC50", font.main = 1)
-legend("topright", legend=c("orig", "br-sp/targ"), fill=c("black", "black"), density=c(100, 40), bty="n", cex=1)
+pdf("~/capsule/results/plots/bin_ic50_cor_bar_plot.pdf")
+aab <- barplot(aa, beside=TRUE, space=c(0.1, 2), col=rep(rainbow(length(aa), v=0.9), each=2), ylab=expression("Spearman's rank correlation coefficient r"[s]), density=c(100,10) , angle=c(0,45), main="Spearman's rank correlation coefficient for IC50 values \nafter filtering cell lines by binary drug classification", font.main = 1)
+legend("topright", legend=c("orig", "br-sp/targ"), fill=c("black", "black"), density=c(100, 10), bty="n", cex=1)
 text(x=apply(aab, 2, mean), y=par("usr")[3] - (par("usr")[4]*0.05), pos=1, labels=toupper(names(aa)), srt=50, xpd=NA, font=1, cex = 0.75)
 dev.off()
 
@@ -604,8 +588,8 @@ bb[!is.na(bb) & bb < 0] <- 0
 names(bb) <- rownames(orig.ic50.cor)
 
 pdf("~/capsule/results/pcl_ic50_cor_bar_plot.pdf")
-bbb <- barplot(bb, beside=TRUE, space=c(0.1, 2), col=rep(rainbow(length(bb), v=0.9), each=2), ylab=expression("r"[s]), angle=c(45, -45), density=c(100, 40), main="Spearman's rank correlation coefficient for IC50", font.main = 1)
-legend("topright", legend=c("orig", "PCL"), fill=c("black", "black"), density=c(100, 40), bty="n", cex=1)
+bbb <- barplot(bb, beside=TRUE, space=c(0.1, 2), col=rep(rainbow(length(bb), v=0.9), each=2), ylab=expression("Spearman's rank correlation coefficient r"[s]), angle=c(0, 45), density=c(100, 10), main="Spearman's rank correlation coefficient for IC50 values \nafter filtering cell lines by PCL drug classification", font.main = 1)
+legend("topright", legend=c("orig", "PCL"), fill=c("black", "black"), density=c(100, 10), bty="n", cex=1)
 text(x=apply(bbb, 2, mean), y=par("usr")[3] - (par("usr")[4]*0.05), pos=1, labels=toupper(names(bb)), srt=50, xpd=NA, font=1, cex = 0.75)
 dev.off()
 
@@ -613,17 +597,17 @@ dev.off()
 all_ic50_concordances = c(binary.ic50.concordance$concordance, pcl.ic50.concordance$concordance)
 names(all_ic50_concordances) <- c("Broad-Spectrum/Targeted", "PCL")
 
-pdf("~/capsule/results/ic50_concordances_bar_plot.pdf")
+pdf("~/capsule/results/plots/ic50_concordances_bar_plot.pdf")
 ylim <- c(0, 1.2*max(all_ic50_concordances))
-ee <- barplot(all_ic50_concordances, main = "Concordance between Pearson correlations of IC50", width = 0.9, ylim = ylim, ylab = "concordance index")
+ee <- barplot(all_ic50_concordances, main = "Concordance between Pearson correlations of IC50 values", width = 0.9, ylim = ylim, ylab = "concordance index")
 text(x = ee, y = all_ic50_concordances, label = signif(all_ic50_concordances, 3), pos = 3, cex = 0.8, col = "black")
 dev.off()
 
 all_auc_concordances = c(binary.auc.concordance$concordance, pcl.auc.concordance$concordance)
 names(all_auc_concordances) <- c("Broad-Spectrum/Targeted", "PCL")
 
-pdf("~/capsule/results/auc_concordances_bar_plot.pdf")
+pdf("~/capsule/results/plots/auc_concordances_bar_plot.pdf")
 ylim <- c(0, 1.2*max(all_auc_concordances))
-ff <- barplot(all_auc_concordances, main = "Concordance between Pearson correlations of AUC", width = 0.9, ylim = ylim, ylab = "concordance index")
+ff <- barplot(all_auc_concordances, main = "Concordance between Pearson correlations of AUC values", width = 0.9, ylim = ylim, ylab = "concordance index")
 text(x = ff, y = all_auc_concordances, label = signif(all_auc_concordances, 3), pos = 3, cex = 0.8, col = "black")
 dev.off()

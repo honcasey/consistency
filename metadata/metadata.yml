@@ -1,6 +1,6 @@
 metadata_version: 1
 name: Consistency of in vitro drug sensitivities within pharmacological classes
-description: BCB330 Project
+description: Analyzing the consistency of in vitro drug sensitivity measures (IC50 and AUC) between two large pharmacological datasets (CCLE and GDSC).
 authors:
 - name: Casey Hon
   affiliations:
