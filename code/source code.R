@@ -1,4 +1,4 @@
-library(PharmacoGx); library(dplyr); library(reshape2); library(survival); library(VennDiagram)
+library(PharmacoGx); library(dplyr); library(reshape2); library(survival); library(VennDiagram); library(readxl)
 # downloadPSet("GDSC_2013"); downloadPSet("ctrp_2013")
 CTRP <- downloadPSet("CTRPv2_2015")
 GDSC <- downloadPSet("GDSC_2020(v2-8.2)")
@@ -15,15 +15,15 @@ gdsc <- intersected$GDSC
 # venn diagram of common cell lines
 dir.create("~/capsule/results/plots")
 dir.create("~/capsule/results/plots/venn")
-venn.plot <- VennDiagram::draw.pairwise.venn(area1=nrow(CTRP@cell), area2=nrow(GDSC@cell), cross.area=nrow(ctrp@cell), col = "black", cex=1.5, cat.cex=1, cat.col = c("black", "black"))
-pdf("~/capsule/results/plots/venn/cell_intersection.pdf", height=4, width=4)
+venn.plot <- VennDiagram::draw.pairwise.venn(area1=nrow(CTRP@cell), area2=nrow(GDSC@cell), cross.area=nrow(ctrp@cell), category = c("CTRP", "GDSC"), col = "black", cex=1.5, cat.cex=1, cat.col = c("black", "black"),fontfamily = rep("sans", 3))
+pdf("~/capsule/results/plots/venn/cell_intersection.pdf", height=4, width=5)
 grid::grid.draw(venn.plot)
 dev.off()
 rm(venn.plot)
 
 # venn diagram of common drugs
-venn.plot2 <- VennDiagram::draw.pairwise.venn(area1=nrow(CTRP@drug), area2=nrow(GDSC@drug), cross.area=nrow(ctrp@drug), col = "black" ,cex=1.5, cat.cex=1, cat.col = c("black", "black"))
-pdf("~/capsule/results/plots/venn/drug_intersection.pdf", height=4, width=4)
+venn.plot2 <- VennDiagram::draw.pairwise.venn(area1=nrow(CTRP@drug), area2=nrow(GDSC@drug), cross.area=nrow(ctrp@drug), category = c("CTRP", "GDSC"), col = "black" ,cex=1.5, cat.cex=1, cat.col = c("black", "black"), fontfamily = rep("sans", 3))
+pdf("~/capsule/results/plots/venn/drug_intersection.pdf", height=4, width=5)
 grid::grid.draw(venn.plot2)
 dev.off()    
 rm(venn.plot2)
@@ -39,11 +39,9 @@ marray::write.xls(common_drugs, "~/capsule/results/common_drugs.xls", row.names 
 # ====================================================
 # loading manually curated list of drug information
 # ====================================================
-# druglist <- as.data.frame(read.csv("PSets/drug_info.csv")) 
 druglist <- as.data.frame(read_excel("drug_info.xls"))
-druglist[] <- lapply(druglist, as.character) # change class of dataframe columns from vector to character
-rownames(druglist) <- rownames(ctrp@drug)
-# rownames(druglist) <- druglist$drug_name 
+druglist[] <- lapply(druglist, as.character)
+rownames(druglist) <- druglist$master_cpd_id
 
 # ====================================================
 # sort drugs into broad spectrum/targeted classes
@@ -66,20 +64,16 @@ for (drug in rownames(druglist)) {
 # ==============================================
 #       get published ic50 and aac
 # ==============================================
-# ctrp_ic50 = as.data.frame(summarizeSensitivityProfiles(ctrp, sensitivity.measure = "ic50_published"))
 ctrp_ic50 = as.data.frame(summarizeSensitivityProfiles(ctrp, sensitivity.measure = "ic50_recomputed"))
 
-# ctrp_auc = as.data.frame(summarizeSensitivityProfiles(ctrp, sensitivity.measure = "auc_published"))
 ctrp_aac = as.data.frame(summarizeSensitivityProfiles(ctrp, sensitivity.measure = "aac_recomputed"))
 
-# gdsc_ic50 = as.data.frame(summarizeSensitivityProfiles(gdsc, sensitivity.measure = "ic50_published"))
 gdsc_ic50 = as.data.frame(summarizeSensitivityProfiles(gdsc, sensitivity.measure = "ic50_recomputed"))
 
-# gdsc_auc = as.data.frame(summarizeSensitivityProfiles(gdsc, sensitivity.measure = "auc_published"))
 gdsc_aac = as.data.frame(summarizeSensitivityProfiles(gdsc, sensitivity.measure = "aac_recomputed"))
 
 # ====================================================
-# correlation of published IC50 between ctrp and GDSC 
+# correlation of published IC50 between CTRP and GDSC 
 # ====================================================
 ic50.cor = data.frame(matrix(ncol = length(coef), nrow = length(colnames(ctrp_ic50))), row.names = colnames(ctrp_ic50))
 colnames(ic50.cor) <- coef
@@ -331,22 +325,22 @@ for (pcl in colnames(pcl_temp)) {
 # ====================================================
 min = 0.5
 # ===== inconsistent based on binary filtering ====
-rmv.ic50.binary.cor <- rbind(ic50.brsp.cor[which(ic50.brsp.cor$spearman > min), ], ic50.targ.cor[which(ic50.targ.cor$spearman > min), ])
-bin.ic50.cc <- rownames(rmv.ic50.binary.cor)
-rmv.auc.binary.cor <- rbind(auc.brsp.cor[which(auc.brsp.cor$spearman > min), ], auc.targ.cor[which(auc.targ.cor$spearman > min), ])
+rmv.ic50.binary.cor <- union(ic50.brsp.cor[which(ic50.brsp.cor$pearson > min), ], ic50.targ.cor[which(ic50.targ.cor$pearson > min), ])
+bin.ic50.cc <- unique(rownames(rmv.ic50.binary.cor))
+rmv.auc.binary.cor <- union(auc.brsp.cor[which(auc.brsp.cor$pearson > min), ], auc.targ.cor[which(auc.targ.cor$pearson > min), ])
 bin.auc.cc <- rownames(rmv.auc.binary.cor)
 
 # ===== inconsistent based on pcls =====
 rmv.ic50.pcl.cor = data.frame()
 for (pcl in colnames(pcl_temp)) {
-  t <- paste0(pcl, ".spearman")
+  t <- paste0(pcl, ".pearson")
   rmv.ic50.pcl.cor <- rbind(rmv.ic50.pcl.cor, ic50.pcl.cor[which(ic50.pcl.cor[, t] > min), ])
 }
 pcl.ic50.cc <- rownames(rmv.ic50.pcl.cor)
 
 rmv.auc.pcl.cor = data.frame()
 for (pcl in colnames(pcl_temp)) {
-  t <- paste0(pcl, ".spearman")
+  t <- paste0(pcl, ".pearson")
   rmv.auc.pcl.cor <- rbind(rmv.auc.pcl.cor, auc.pcl.cor[which(auc.pcl.cor[, t] > min), ])
 }
 pcl.auc.cc <- rownames(rmv.auc.pcl.cor)
@@ -468,12 +462,17 @@ for (drug in rownames(bin.auc.cor)) {
 #           Harrell's CI after sorting into broad-spectrum/targeted
 # ======================================================================================
 binary.ic50.cor <- merge(orig.ic50.cor, bin.ic50.cor, by = 0, all = TRUE)
+binary.ic50.cor$pearson.difference <- bin.ic50.cor$pearson - orig.ic50.cor$pearson 
+rownames(binary.ic50.cor) <- binary.ic50.cor$Row.names
 marray::write.xls(binary.ic50.cor, "~/capsule/results/binary.ic50.cor.xls", row.names = TRUE, col.names = TRUE)
+
 binary.ic50.concordance <- survival::concordance(object = pearson.x ~ pearson.y, data = binary.ic50.cor)
 saveRDS(binary.ic50.concordance, "~/capsule/results/binary.ic50.concordance.rds")
 
 # AUC
 binary.auc.cor <- merge(orig.auc.cor, bin.auc.cor, by = 0, all = TRUE)
+binary.auc.cor$pearson.difference <- bin.auc.cor$pearson - orig.auc.cor$pearson
+rownames(binary.auc.cor) <- binary.auc.cor$Row.names
 marray::write.xls(binary.auc.cor, "~/capsule/results/binary.auc.cor.xls", row.names = TRUE, col.names = TRUE)
 binary.auc.concordance <- survival::concordance(object = pearson.x ~ pearson.y, data = binary.auc.cor)
 saveRDS(binary.auc.concordance, "~/capsule/results/binary.auc.concordance.rds")
@@ -525,11 +524,15 @@ for (drug in rownames(pcl.auc.cor)) {
 #               Harrell's CI after sorting into PCLs
 # ====================================================================================
 orig.pcl.ic50.cor <- merge(orig.ic50.cor, pcl.ic50.cor, by = 0, all = TRUE)
+orig.pcl.ic50.cor$pearson.difference <- pcl.ic50.cor$pearson - orig.ic50.cor$pearson
+rownames(orig.pcl.ic50.cor) <- orig.pcl.ic50.cor$Row.names
 marray::write.xls(orig.pcl.ic50.cor, "~/capsule/results/pcl.ic50.cor.xls", row.names = TRUE, col.names = TRUE)
 pcl.ic50.concordance <- survival::concordance(object = pearson.x ~ pearson.y, data = orig.pcl.ic50.cor)
 saveRDS(pcl.ic50.concordance, "~/capsule/results/pcl.ic50.concordance.rds")
 
 orig.pcl.auc.cor <- merge(orig.auc.cor, pcl.auc.cor, by = 0, all = TRUE)
+orig.pcl.auc.cor$pearson.difference <- pcl.auc.cor$pearson - orig.auc.cor$pearson
+rownames(orig.pcl.auc.cor) <- orig.pcl.auc.cor$Row.names
 marray::write.xls(orig.pcl.auc.cor, "~/capsule/results/pcl.auc.cor.xls", row.names = TRUE, col.names = TRUE)
 pcl.auc.concordance <- survival::concordance(object = pearson.x ~ pearson.y, data = orig.pcl.auc.cor)
 saveRDS(pcl.auc.concordance, "~/capsule/results/pcl.auc.concordance.rds")
@@ -547,6 +550,39 @@ legend("topright", legend=c("orig", "br-sp/targ", "pcl"), density=c(100,10,0), a
 text(x=apply(ab, 2, mean) + 1.45, y=par("usr")[3] - (par("usr")[4] * 0.05) + 0.03, pos=2, labels=toupper(names(aa)), srt=45, xpd=NA, font=1, cex = 0.75)
 dev.off()
 
+# Bar plot of difference in Pearson coefficients of IC50 after both filtering methods
+hh <- as.matrix(t(cbind(binary.ic50.cor$pearson.difference, orig.pcl.ic50.cor$pearson.difference)))
+names(hh) <- binary.ic50.cor$Row.names
+
+pdf("~/capsule/results/plots/all_pearson_change_ic50_bar_plot.pdf", height = 9, width = 15)
+par(mar=c(8,5,5,5))
+hb <- barplot(hh, beside = TRUE, space = c(0.1, 2), col=rep(rainbow(length(hh), v=0.9), each=2), ylab="Difference in Pearson's correlation coefficient", ylim=c(-1.06, 1.02), density=c(100, 10), angle=c(0, 45), main="Difference in Pearson's correlation coefficient of IC50 of original values and post filtering methods", font.main = 1)
+legend("topleft", legend=c("binary", "PCL"), density=c(100, 10), angle=c(0, 45), bty = "n", cex=0.75)
+text(x=apply(hb, 2, mean) + 1.45, y=par("usr")[3] - (par("usr")[4] * 0.05) + 0.03, pos=2, labels=toupper(names(hh)), srt=45, xpd=NA, font=1, cex = 0.75)
+dev.off()
+
+# Bar plot of difference in Pearson coefficients of IC50 after binary filtering methods
+hh <- as.matrix(t(binary.ic50.cor$pearson.difference))
+names(hh) <- binary.ic50.cor$Row.names
+
+pdf("~/capsule/results/plots/bin_pearson_change_ic50_bar_plot.pdf", height = 9, width = 15)
+par(mar=c(8,5,5,5))
+hb <- barplot(hh, beside = TRUE, space = c(0.1, 2), col=rep(rainbow(length(hh), v=0.9), each=2), ylab="Difference in Pearson's correlation coefficient", ylim=c(-1.06, 1.02), density=c(100), angle=c(0), main="Difference in Pearson's correlation coefficient of IC50 of original values and post binary drug filtering methods", font.main = 1)
+legend("topleft", legend=c("binary"), density=c(100), angle=c(0), bty = "n", cex=0.75)
+text(x=apply(hb, 2, mean) + 1.45, y=par("usr")[3] - (par("usr")[4] * 0.05) + 0.03, pos=2, labels=toupper(names(hh)), srt=45, xpd=NA, font=1, cex = 0.75)
+dev.off()
+
+# Bar plot of difference in Pearson coefficients of IC50 after PCL filtering methods
+hh <- as.matrix(t(orig.pcl.ic50.cor$pearson.difference))
+names(hh) <- orig.pcl.ic50.cor$Row.names
+
+pdf("~/capsule/results/plots/pcl_pearson_change_ic50_bar_plot.pdf", height = 9, width = 15)
+par(mar=c(8,5,5,5))
+hb <- barplot(hh, beside = TRUE, space = c(0.1, 2), col=rep(rainbow(length(hh), v=0.9), each=2), ylab="Difference in Pearson's correlation coefficient", ylim=c(-1.06, 1.02), density=c(100), angle=c(0), main="Difference in Pearson's correlation coefficient of IC50 of original values and post PCL drug filtering methods", font.main = 1)
+legend("topleft", legend=c("PCL"), density=c(100), angle=c(0), bty = "n", cex=0.75)
+text(x=apply(hb, 2, mean) + 1.45, y=par("usr")[3] - (par("usr")[4] * 0.05) + 0.03, pos=2, labels=toupper(names(hh)), srt=45, xpd=NA, font=1, cex = 0.75)
+dev.off()
+
 # Bar plot of Pearson coefficients for IC50 (excluding drugs with pearson below 0)
 dr <- paste(rownames(orig.ic50.cor[which(orig.ic50.cor$pearson > 0), ]))
 dr <- append(dr, rownames(bin.ic50.cor[which(bin.ic50.cor$pearson > 0), ]))
@@ -562,6 +598,69 @@ par(mar=c(8,5,5,5))
 mp <- barplot(ss, beside=TRUE, space=c(0.1, 2), col=rep(rainbow(length(ss), v=0.9), each=2), ylim = c(0, 1), ylab="Pearson's correlation coefficient r", density=c(100,10,0) , angle=c(0,45,90), main="Pearson's correlation coefficient of IC50 of original values \nand post filtering methods", font.main = 1)
 legend("topright", legend=c("orig", "br-sp/targ", "pcl"), density=c(100,10,0), angle=c(0,45,90), bty="n", cex=0.75)
 text(x=apply(mp, 2, mean) + 1.45, y=par("usr")[3] - (par("usr")[4] * 0.01), pos=2, labels=toupper(names(ss)), srt=45, xpd=NA, font=1, cex = 0.75)
+dev.off()
+
+# Bar plot of Pearson coefficients for IC50 for all drugs after binary sorting and PCL sorting
+kk <- as.matrix(t(cbind(bin.ic50.cor$pearson, pcl.ic50.cor$pearson)))
+kk[!is.na(kk) & kk < 0] <- 0
+names(kk) <- rownames(bin.ic50.cor)
+
+pdf("~/capsule/results/plots/bin_pcl_ic50_barplot.pdf", height = 8, width = 15)
+par(mar=c(8,5,5,5))
+kp <- barplot(kk, beside=TRUE, space=c(0.1, 2), col=rep(rainbow(length(kk), v=0.9), each=2), ylim = c(0, 1), ylab="Pearson's correlation coefficient r", density=c(100,0) , angle=c(0,45), main="Pearson's correlation coefficient of IC50 of values post filtering methods", font.main = 1)
+legend("topright", legend=c("br-sp/targ", "pcl"), density=c(100,0), angle=c(0,45), bty="n", cex=0.75)
+text(x=apply(kp, 2, mean) + 1.45, y=par("usr")[3] - (par("usr")[4] * 0.01), pos=2, labels=toupper(names(kk)), srt=45, xpd=NA, font=1, cex = 0.75)
+dev.off()
+
+
+# Bar plot of Pearson coefficients for IC50 values for the 15 drugs with highest and lowest correlations after binary filtering
+t <- na.omit(binary.ic50.cor[with(binary.ic50.cor,order(binary.ic50.cor$pearson.difference)), ])
+highest <- rownames(tail(t, n=15))
+lowest <- rownames(head(t, n=15))
+
+cc <- as.matrix(t(cbind(binary.ic50.cor[highest, "pearson.x"], binary.ic50.cor[highest, "pearson.y"])))
+names(cc) <- rownames(binary.ic50.cor[highest, ])
+
+pdf("~/capsule/results/plots/top15_bin_ic50_bar_plot.pdf", height = 8, width = 10)
+par(mar=c(8,5,5,5))
+cp <- barplot(cc, beside=TRUE, space=c(0.1, 2), col=rep(rainbow(length(cc), v=0.9), each=2), ylim = c(-0.3, 1), ylab="Pearson's correlation coefficient r", density=c(100,10) , angle=c(0,45), main="Pearson's correlation coefficient of IC50 of original values \nand after binary drug classification for the 15 drugs with largest changes in correlation", font.main = 1)
+legend("topleft", legend=c("orig", "binary"), density=c(100,10), angle=c(0,45), bty="n", cex=0.75)
+text(x=apply(cp, 2, mean) + 1.45, y=par("usr")[3] - (par("usr")[4] * 0.01), pos=2, labels=toupper(names(cc)), srt=45, xpd=NA, font=1, cex = 0.75)
+dev.off()
+
+dd <- as.matrix(t(cbind(binary.ic50.cor[lowest, "pearson.x"], binary.ic50.cor[lowest, "pearson.y"])))
+names(dd) <- rownames(orig.ic50.cor[lowest, ])
+
+pdf("~/capsule/results/plots/lowest15_bin_ic50_bar_plot.pdf", height = 8, width = 10)
+par(mar=c(8,5,5,5))
+dp <- barplot(dd, beside=TRUE, space=c(0.1, 2), col=rep(rainbow(length(cc), v=0.9), each=2), ylim = c(-0.2, 1), ylab="Pearson's correlation coefficient r", density=c(100,10) , angle=c(0,45), main="Pearson's correlation coefficient of IC50 of original values \nand after binary drug classification for the 15 drugs with lowest changes in correlation", font.main = 1)
+legend("topright", legend=c("orig", "binary"), density=c(100,10), angle=c(0,45), bty="n", cex=0.75)
+text(x=apply(dp, 2, mean) + 1.45, y=par("usr")[3] - (par("usr")[4] * 0.01), pos=2, labels=toupper(names(dd)), srt=45, xpd=NA, font=1, cex = 0.75)
+dev.off()
+
+# Bar plot of Pearson coefficients for IC50 values for the 15 drugs with highest and lowest correlations after PCL filtering
+w <- na.omit(orig.pcl.ic50.cor[with(orig.pcl.ic50.cor,order(orig.pcl.ic50.cor$pearson.difference)), ])
+highest <- rownames(tail(w, n=15))
+lowest <- rownames(head(w, n=15))
+
+ee <- as.matrix(t(cbind(orig.pcl.ic50.cor[highest, "pearson.x"], orig.pcl.ic50.cor[highest, "pearson.y"])))
+names(ee) <- rownames(orig.pcl.ic50.cor[highest, ])
+
+pdf("~/capsule/results/plots/top15_pcl_ic50_bar_plot.pdf", height = 8, width = 10)
+par(mar=c(8,5,5,5))
+ep <- barplot(ee, beside=TRUE, space=c(0.1, 2), col=rep(rainbow(length(ee), v=0.9), each=2), ylim = c(-0.2, 1), ylab="Pearson's correlation coefficient r", density=c(100,10) , angle=c(0,45), main="Pearson's correlation coefficient of IC50 of original values \nand after PCL drug classification for the 15 drugs with largest changes in correlation", font.main = 1)
+legend("topright", legend=c("orig", "PCL"), density=c(100,10), angle=c(0,45), bty="n", cex=0.75)
+text(x=apply(ep, 2, mean) + 1.45, y=par("usr")[3] - (par("usr")[4] * 0.01), pos=2, labels=toupper(names(ee)), srt=45, xpd=NA, font=1, cex = 0.75)
+dev.off()
+
+ff <- as.matrix(t(cbind(orig.pcl.ic50.cor[lowest, "pearson.x"], orig.pcl.ic50.cor[lowest, "pearson.y"])))
+names(ff) <- rownames(orig.pcl.ic50.cor[lowest, ])
+
+pdf("~/capsule/results/plots/lowest15_pcl_ic50_bar_plot.pdf", height = 8, width = 10)
+par(mar=c(8,5,5,5))
+fp <- barplot(ff, beside=TRUE, space=c(0.1, 2), col=rep(rainbow(length(ff), v=0.9), each=2), ylim = c(-0.6, 1), ylab="Pearson's correlation coefficient r", density=c(100,10) , angle=c(0,45), main="Pearson's correlation coefficient of IC50 of original values \nand after PCL drug classification for the 15 drugs with lowest changes in correlation", font.main = 1)
+legend("bottomright", legend=c("orig", "PCL"), density=c(100,10), angle=c(0,45), bty="n", cex=0.75)
+text(x=apply(fp, 2, mean) + 1.45, y=par("usr")[3] - (par("usr")[4] * 0.01), pos=2, labels=toupper(names(ff)), srt=45, xpd=NA, font=1, cex = 0.75)
 dev.off()
 
 # Bar plot of Pearson coefficients for AUC of all drugs
@@ -593,37 +692,100 @@ legend("topright", legend=c("orig", "br-sp/targ", "pcl"), density=c(100, 10, 0),
 text(x=apply(tgb, 2, mean) + 1.5, y=par("usr")[3] - (par("usr")[4] * 0.01), pos=2, labels=toupper(names(tg)), srt=45, xpd=NA, font=0.75, cex = 0.75)
 dev.off()
 
-# 6) Bar plot representing spearman's ranks for AUC drug measure comparing original with pcls
-mek <- as.matrix(t(cbind(orig.auc.cor$spearman, pcl.auc.cor$spearman)))
-mek[!is.na(mek) & mek < 0] <- 0
-names(mek) <- rownames(orig.auc.cor)
+# Bar plot of difference in Pearson coefficients of AUC after both filtering methods
+hh <- as.matrix(t(cbind(binary.auc.cor$pearson.difference, orig.pcl.auc.cor$pearson.difference)))
+names(hh) <- binary.auc.cor$Row.names
 
-pdf("~/capsule/results/plots/pcl_auc_cor_bar_plot.pdf")
-mb <- barplot(mek, beside=TRUE, space=c(0.1, 2), col=rep(rainbow(length(mek), v=0.9), each=2), ylab=expression("Spearman's rank correlation coefficient r"[s]), density=c(100,10) , angle=c(0,45), main="Spearman's rank correlation coefficient for AUC values \nafter filtering cell lines by PCL drug classification", font.main = 1)
-legend("topright", legend=c("orig", "PCL"), fill=c("black", "black"), density=c(100, 10), bty="n", cex=1)
-text(x=apply(mb, 2, mean), y=par("usr")[3] - (par("usr")[4]*0.01), pos=1, labels=toupper(names(mek)), srt=50, xpd=NA, font=1, cex = 0.75)
+pdf("~/capsule/results/plots/all_pearson_change_auc_bar_plot.pdf", height = 9, width = 15)
+par(mar=c(8,5,5,5))
+hb <- barplot(hh, beside = TRUE, space = c(0.1, 2), col=rep(rainbow(length(hh), v=0.9), each=2), ylab="Difference in Pearson's correlation coefficient", ylim=c(-0.7, 0.5), density=c(100, 10), angle=c(0, 45), main="Difference in Pearson's correlation coefficient of AUC of original values and post filtering methods", font.main = 1)
+legend("topleft", legend=c("binary", "PCL"), density=c(100, 10), angle=c(0, 45), bty = "n", cex=0.75)
+text(x=apply(hb, 2, mean) + 1.45, y=par("usr")[3] - (par("usr")[4] * 0.05) + 0.03, pos=2, labels=toupper(names(hh)), srt=45, xpd=NA, font=1, cex = 0.75)
 dev.off()
 
-# 8) Bar plot representing spearman's ranks for IC50 drug measure comparing original with binary
-aa <- as.matrix(t(cbind(orig.ic50.cor$spearman, bin.ic50.cor$spearman)))
-aa[!is.na(aa) & aa < 0] <- 0
-names(aa) <- rownames(orig.ic50.cor)
+# Bar plot of difference in Pearson coefficients of AUC after binary filtering methods
+hh <- as.matrix(t(binary.auc.cor$pearson.difference))
+names(hh) <- binary.auc.cor$Row.names
 
-pdf("~/capsule/results/plots/bin_ic50_cor_bar_plot.pdf")
-aab <- barplot(aa, beside=TRUE, space=c(0.1, 2), col=rep(rainbow(length(aa), v=0.9), each=2), ylab=expression("Spearman's rank correlation coefficient r"[s]), density=c(100,10) , angle=c(0,45), main="Spearman's rank correlation coefficient for IC50 values \nafter filtering cell lines by binary drug classification", font.main = 1)
-legend("topright", legend=c("orig", "br-sp/targ"), fill=c("black", "black"), density=c(100, 10), bty="n", cex=1)
-text(x=apply(aab, 2, mean), y=par("usr")[3] - (par("usr")[4]*0.05), pos=1, labels=toupper(names(aa)), srt=50, xpd=NA, font=1, cex = 0.75)
+pdf("~/capsule/results/plots/bin_pearson_change_auc_bar_plot.pdf", height = 9, width = 15)
+par(mar=c(8,5,5,5))
+hb <- barplot(hh, beside = TRUE, space = c(0.1, 2), col=rep(rainbow(length(hh), v=0.9), each=2), ylab="Difference in Pearson's correlation coefficient", ylim=c(-0.5, 0.2), density=c(100), angle=c(0), main="Difference in Pearson's correlation coefficient of AUC of original values and post binary drug filtering method", font.main = 1)
+legend("topleft", legend=c("binary"), density=c(100), angle=c(0), bty = "n", cex=0.75)
+text(x=apply(hb, 2, mean) + 1.45, y=par("usr")[3] - (par("usr")[4] * 0.05) + 0.03, pos=2, labels=toupper(names(hh)), srt=45, xpd=NA, font=1, cex = 0.75)
 dev.off()
 
-# 9) Bar plot representing spearman's ranks for IC50 drug measure comparing original with pcl
-bb <- as.matrix(t(cbind(orig.ic50.cor$spearman, pcl.ic50.cor$spearman)))
-bb[!is.na(bb) & bb < 0] <- 0
-names(bb) <- rownames(orig.ic50.cor)
+# Bar plot of difference in Pearson coefficients of AUC after PCL filtering methods
+hh <- as.matrix(t(orig.pcl.auc.cor$pearson.difference))
+names(hh) <- orig.pcl.auc.cor$Row.names
 
-pdf("~/capsule/results/plots/pcl_ic50_cor_bar_plot.pdf")
-bbb <- barplot(bb, beside=TRUE, space=c(0.1, 2), col=rep(rainbow(length(bb), v=0.9), each=2), ylab=expression("Spearman's rank correlation coefficient r"[s]), angle=c(0, 45), density=c(100, 10), main="Spearman's rank correlation coefficient for IC50 values \nafter filtering cell lines by PCL drug classification", font.main = 1)
-legend("topright", legend=c("orig", "PCL"), fill=c("black", "black"), density=c(100, 10), bty="n", cex=1)
-text(x=apply(bbb, 2, mean), y=par("usr")[3] - (par("usr")[4]*0.05), pos=1, labels=toupper(names(bb)), srt=50, xpd=NA, font=1, cex = 0.75)
+pdf("~/capsule/results/plots/pcl_pearson_change_auc_bar_plot.pdf", height = 9, width = 15)
+par(mar=c(8,5,5,5))
+hb <- barplot(hh, beside = TRUE, space = c(0.1, 2), col=rep(rainbow(length(hh), v=0.9), each=2), ylab="Difference in Pearson's correlation coefficient", ylim=c(-0.7, 0.5), density=c(100), angle=c(0), main="Difference in Pearson's correlation coefficient of AUC of original values and post binary drug filtering method", font.main = 1)
+legend("topleft", legend=c("PCL"), density=c(100), angle=c(0), bty = "n", cex=0.75)
+text(x=apply(hb, 2, mean) + 1.45, y=par("usr")[3] - (par("usr")[4] * 0.05) + 0.03, pos=2, labels=toupper(names(hh)), srt=45, xpd=NA, font=1, cex = 0.75)
+dev.off()
+
+
+# Bar plot of Pearson coefficients for AUC for all drugs after binary sorting and PCL sorting
+ii <- as.matrix(t(cbind(bin.auc.cor$pearson, pcl.auc.cor$pearson)))
+ii[!is.na(ii) & ii < 0] <- 0
+names(ii) <- rownames(bin.auc.cor)
+
+pdf("~/capsule/results/plots/bin_pcl_auc_barplot.pdf", height = 8, width = 15)
+par(mar=c(8,5,5,5))
+ip <- barplot(ii, beside=TRUE, space=c(0.1, 2), col=rep(rainbow(length(ii), v=0.9), each=2), ylim = c(0, 1), ylab="Pearson's correlation coefficient r", density=c(100,0) , angle=c(0,45), main="Pearson's correlation coefficient of AUC of values post filtering methods", font.main = 1)
+legend("topright", legend=c("br-sp/targ", "pcl"), density=c(100,0), angle=c(0,45), bty="n", cex=0.75)
+text(x=apply(ip, 2, mean) + 1.45, y=par("usr")[3] - (par("usr")[4] * 0.01), pos=2, labels=toupper(names(ii)), srt=45, xpd=NA, font=1, cex = 0.75)
+dev.off()
+
+# Bar plot of Pearson coefficients for AUC values for the 15 drugs with highest and lowest correlations after binary filtering
+q <- na.omit(binary.auc.cor[with(binary.auc.cor,order(binary.auc.cor$pearson.difference)), ])
+highest <- rownames(tail(q, n=15))
+lowest <- rownames(head(q, n=15))
+
+qq <- as.matrix(t(cbind(binary.auc.cor[highest, "pearson.x"], binary.auc.cor[highest, "pearson.y"])))
+names(qq) <- rownames(binary.auc.cor[highest, ])
+
+pdf("~/capsule/results/plots/top15_bin_auc_bar_plot.pdf", height = 8, width = 10)
+par(mar=c(8,5,5,5))
+qp <- barplot(qq, beside=TRUE, space=c(0.1, 2), col=rep(rainbow(length(qq), v=0.9), each=2), ylim = c(0, 1), ylab="Pearson's correlation coefficient r", density=c(100,10) , angle=c(0,45), main="Pearson's correlation coefficient of AUC of original values \nand after binary drug classification for the 15 drugs with largest changes in correlation", font.main = 1)
+legend("topright", legend=c("orig", "binary"), density=c(100,10), angle=c(0,45), bty="n", cex=0.75)
+text(x=apply(qp, 2, mean) + 1.45, y=par("usr")[3] - (par("usr")[4] * 0.01), pos=2, labels=toupper(names(qq)), srt=45, xpd=NA, font=1, cex = 0.75)
+dev.off()
+
+ss <- as.matrix(t(cbind(binary.auc.cor[lowest, "pearson.x"], binary.auc.cor[lowest, "pearson.y"])))
+names(ss) <- rownames(binary.auc.cor[lowest, ])
+
+pdf("~/capsule/results/plots/lowest15_bin_auc_bar_plot.pdf", height = 8, width = 10)
+par(mar=c(8,5,5,5))
+sp <- barplot(ss, beside=TRUE, space=c(0.1, 2), col=rep(rainbow(length(ss), v=0.9), each=2), ylim = c(-1, 1), ylab="Pearson's correlation coefficient r", density=c(100,10) , angle=c(0,45), main="Pearson's correlation coefficient of AUC of original values \nand after binary drug classification for the 15 drugs with lowest changes in correlation", font.main = 1)
+legend("topleft", legend=c("orig", "binary"), density=c(100,10), angle=c(0,45), bty="n", cex=0.75)
+text(x=apply(sp, 2, mean) + 1.45, y=par("usr")[3] - (par("usr")[4] * 0.01), pos=2, labels=toupper(names(ss)), srt=45, xpd=NA, font=1, cex = 0.75)
+dev.off()
+
+# Bar plot of Pearson coefficients for AUC values for the 15 drugs with highest and lowest correlations after PCL filtering
+y <- na.omit(pcl.auc.cor[with(pcl.auc.cor,order(pcl.auc.cor$pearson)), ])
+highest <- rownames(tail(y, n=15))
+lowest <- rownames(head(y, n=15))
+
+yy <- as.matrix(t(cbind(orig.auc.cor[highest, "pearson"], pcl.auc.cor[highest, "pearson"])))
+names(yy) <- rownames(orig.auc.cor[highest, ])
+
+pdf("~/capsule/results/plots/top15_pcl_auc_bar_plot.pdf", height = 8, width = 10)
+par(mar=c(8,5,5,5))
+yp <- barplot(yy, beside=TRUE, space=c(0.1, 2), col=rep(rainbow(length(yy), v=0.9), each=2), ylim = c(0, 1), ylab="Pearson's correlation coefficient r", density=c(100,10) , angle=c(0,45), main="Pearson's correlation coefficient of AUC of original values \nand after PCL drug classification for the 15 drugs with highest correlations", font.main = 1)
+legend("topleft", legend=c("orig", "PCL"), density=c(100,10), angle=c(0,45), bty="n", cex=0.75)
+text(x=apply(yp, 2, mean) + 1.45, y=par("usr")[3] - (par("usr")[4] * 0.01), pos=2, labels=toupper(names(yy)), srt=45, xpd=NA, font=1, cex = 0.75)
+dev.off()
+
+zz <- as.matrix(t(cbind(orig.auc.cor[lowest, "pearson"], pcl.auc.cor[lowest, "pearson"])))
+names(zz) <- rownames(orig.auc.cor[lowest, ])
+
+pdf("~/capsule/results/plots/lowest15_pcl_auc_bar_plot.pdf", height = 8, width = 10)
+par(mar=c(8,5,5,5))
+zp <- barplot(zz, beside=TRUE, space=c(0.1, 2), col=rep(rainbow(length(zz), v=0.9), each=2), ylim = c(-0.4, 0.8), ylab="Pearson's correlation coefficient r", density=c(100,10) , angle=c(0,45), main="Pearson's correlation coefficient of AUC of original values \nand after PCL drug classification for the 15 drugs with lowest correlations", font.main = 1)
+legend("topleft", legend=c("orig", "PCL"), density=c(100,10), angle=c(0,45), bty="n", cex=0.75)
+text(x=apply(zp, 2, mean) + 1.45, y=par("usr")[3] - (par("usr")[4] * 0.01), pos=2, labels=toupper(names(zz)), srt=45, xpd=NA, font=1, cex = 0.75)
 dev.off()
 
 # 12) bar plot representing all concordance indexes
