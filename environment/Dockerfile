@@ -1,5 +1,5 @@
-# hash:sha256:b0d01c356d7e1fe766b20d1e6f20554de0809cf7bc252dab67bc7355a716719c
-FROM registry.codeocean.com/codeocean/r-base:3.6.0-ubuntu18.04
+# hash:sha256:ed3af7e148046c1a06a8aaf51c19c9eb62179400c8d2771d53e7a06dcd103735
+FROM registry.codeocean.com/codeocean/r-base:4.0.0-ubuntu18.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -16,10 +16,11 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 RUN Rscript -e 'remotes::install_version("VennDiagram", "1.6.20")' \
+    && Rscript -e 'remotes::install_version("dplyr", "1.0.1")' \
     && Rscript -e 'remotes::install_version("survival", "3.2-3")'
 
 RUN Rscript -e 'options(warn=2); install.packages("BiocManager")'
 RUN Rscript -e 'options(warn=2); BiocManager::install(c( \
         "PharmacoGx", \
         "marray" \
-    ))' # Original versions: 1.17.1 1.64.0
+    ))' # Original versions: 2.0.5 1.66.0
